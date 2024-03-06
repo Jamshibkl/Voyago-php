@@ -1,0 +1,84 @@
+.driver-login-page {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 200px;
+  height: 100vh;
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+}
+.driver-login-headings h1 {
+  padding: 20px;
+  color: var(--blue);
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+.driver-login-headings h3 {
+  padding: 20px;
+  color: var(--blue);
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+.driver-login-page .driver-login-form {
+  width: 500px;
+  height: 500px;
+  background: #ffffffff;
+  padding: 50px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 16px 24px 6px #407cff12;
+}
+.driver-login-page .driver-login-form form input {
+  padding: 20px 0px;
+  margin: 20px 0px;
+  border: none;
+  border-bottom-color: var(--blue);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-style: solid;
+  background: transparent;
+  box-shadow: 0px 16px 24px -2px #407cff15;
+  font-size: 20px;
+  font-weight: 600;
+  width: 94%;
+}
+.driver-login-form form input:focus {
+  outline: none;
+}
+.driver-login-form form input::placeholder {
+  color: var(--blue);
+  font-weight: bold;
+}
+.driver-login-form form span {
+  padding-left: 250px;
+  color: var(--blue);
+  width: 100%;
+  cursor: pointer;
+  font-weight: 500;
+}
+.driver-login-form form button {
+  width: 100%;
+  height: 50px;
+  background: var(--blue);
+  color: #ffffffff;
+  text-align: center;
+  align-items: center;
+  border: none;
+  border-radius: 20px;
+  margin: 10px 0px;
+  font-weight: bold;
+  box-shadow: 0px 16px 24px -2px #407cff46;
+}
+.driver-login-form form button .google-icon {
+  margin: 0px 10px;
+}
+.driver-login-para .driver-login-para{
+  text-align: center;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 500;
+}

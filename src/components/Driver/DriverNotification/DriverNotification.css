@@ -1,0 +1,51 @@
+.driver-notification-section {
+    display: flex;
+}
+.driver-notification-section .driver-notification h1{
+    padding: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--blue);
+}
+.driver-notification-section .driver-notification form {
+    width: 900px;
+    background: rgb(237, 237, 237);
+    margin: 30px 0px 0px 100px;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.driver-notification-section .driver-notification form label {
+    font-weight: 600;
+    margin-bottom:10px; 
+}
+
+.driver-notification-section .driver-notification form .horizontal-line {
+    width: 80%;
+    height: 1px;
+    background: black;
+    margin: 10px 20px; 
+}
+
+.driver-notification-section .driver-notification form .confirm
+ {
+    padding: 10px;
+    background: var(--blue);
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
+    margin-left: auto; 
+    margin-top: -100px; 
+}
+.driver-notification-section .driver-notification form .cancel {
+    width: 80px;
+    height: 45px;
+    background: rgba(255, 0, 0, 0.642);
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
+    margin-left: auto; 
+}

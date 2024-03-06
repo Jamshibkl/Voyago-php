@@ -1,0 +1,61 @@
+.driver-profile-section {
+    display: flex;
+}
+.driver-profile-info {
+    margin: 0px 200px;
+}
+.driver-profile-info .profile {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    margin: 50px 50px;
+    /* height: 300px; */
+}
+.driver-profile-info .profile .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: rgb(240, 240, 240);
+}
+.driver-profile-info h3 {
+    margin: 0;
+}
+.driver-profile-info p {
+    margin: 0;
+    font-size: 15px;
+    padding: 10px;
+}
+.driver-profile-section .driver-profile-form {
+    display: flex;
+    justify-content: center;
+    margin: 0px 50px;
+}
+.driver-profile-section .driver-profile-form form input[type=text]{
+    padding: 20px;
+    margin: 15px;
+    display: inline;
+    background: rgb(232, 232, 232);
+    border-radius: 20px;
+    border: none;
+}
+.driver-profile-section .driver-profile-form form input[type=img]{
+    padding: 20px;
+    height: 200px;
+    margin: 15px;
+    display: inline;
+    background: rgb(232, 232, 232);
+    border-radius: 20px;
+    border: none;
+}
+.driver-profile-section .driver-profile-form form button {
+    padding: 10px;
+    background: var(--blue);
+    border-radius: 20px;
+    margin-left: 180px;
+    border: none;
+    color: #ffffff;
+}
+.driver-profile-section .driver-profile-form form input::placeholder {
+    font-size: 16px;
+    font-weight: bold;
+}

@@ -1,0 +1,176 @@
+.review {
+    align-self: end;
+    display: flex;
+    margin-top: 123px;
+    justify-content: space-between;
+    gap: 20px;
+    font-size: 16px;
+    text-align: center;
+    padding: 0 80px;
+  }
+
+  .review-2 {
+    border-radius: 16px;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.25);
+    background-color: var(--Colors-primary, #fff);
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    padding: 0 24px 40px;
+  }
+
+  .review_img {
+    object-fit: auto;
+    object-position: center;
+    width: 130px;
+    align-self: center;
+    z-index: 10;
+    margin-top: -34px;
+    max-width: 100%;
+    background: white;
+    border-radius: 50%;
+  }
+  .review-3 {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin-top: 14px;
+    white-space: nowrap;
+  }
+
+  .review-4 {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Inter, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .review-5 {
+    border-radius: 16px;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    padding: 0 24px 40px;
+  }
+
+  .review-6 {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin-top: 14px;
+    white-space: nowrap;
+  }
+
+  .review-7 {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Inter, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .review-8 {
+    border-radius: 16px;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    padding: 0 24px 40px;
+  }
+ 
+  .review-9 {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin-top: 14px;
+    white-space: nowrap;
+  }
+
+  .review-10 {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Inter, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .review-11 {
+    border-radius: 16px;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    padding: 0 24px 40px;
+  }
+
+  .review-12 {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin-top: 14px;
+    white-space: nowrap;
+  }
+
+  .review-13 {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Inter, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .review-14 {
+    border-radius: 16px;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    padding: 0 24px 40px;
+  }
+
+  .review-15 {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin-top: 14px;
+    white-space: nowrap;
+  }
+
+  .review-16 {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Inter, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 16px;
+  }
+  .review-17 {
+    border-radius: 16px;
+    box-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0%;
+    flex-direction: column;
+    padding: 0 24px 40px;
+  }
+ 
+  .review-18 {
+    color: #000;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+    margin-top: 14px;
+  }
+  .review-19 {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: Inter, sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 16px;
+  }

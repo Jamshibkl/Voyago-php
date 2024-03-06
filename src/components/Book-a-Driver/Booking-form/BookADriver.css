@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.book-ride-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+}
+.booking-form {
+  padding: 20px;
+}
+.booking-form form {
+  background: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 20px;
+  margin-left: 10px;
+}
+.booking-form h1 {
+  padding: 50px 20px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #011440;
+  margin: 0;
+}
+.booking-form input {
+  padding: 20px 0px 20px 40px;
+  margin: 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(230, 230, 230);
+  box-shadow: 0px 16px 24px -2px #407cff15;
+  font-size: 20px;
+  font-weight: 600;
+}
+.input-with-icon {
+  position: relative;
+  display: inline;
+}
+
+.booking-input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 35px;
+}
+.booking-form input::placeholder {
+  color: #0114409d;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.booking-form select {
+  margin: 20px 0px 20px 20px;
+  padding: 20px 0px 20px 40px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(230, 230, 230);
+  width: 290px;
+  font-weight: bold;
+  color: #0114409d;
+}
+.booking-btn {
+  padding: 15px;
+  text-align: center;
+  margin: 50px 20px;
+  border: none;
+  background: #444bf7;
+  color: #ffffff;
+  border: 2px solid #444bf7;
+  border-radius: 10px;
+  box-shadow: 0px 16px 24px -2px #407cff9f;
+}
+.back-to-home-btn {
+  padding: 15px;
+  background: rgba(32, 110, 178, 0.699);
+  text-align: center;
+  margin: 20px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  box-shadow: 0px 16px 24px -2px #407cff9f;
+}
+.booking-image img {
+  width: 450px;
+}

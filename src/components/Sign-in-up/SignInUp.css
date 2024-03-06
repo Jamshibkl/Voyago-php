@@ -1,0 +1,69 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.user-register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  padding: 20px;
+}
+.register-container {
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.192),
+    0 10px 10px -5px rgba(0, 0, 0, 0.207);
+  border-radius: 10px;
+  width: 500px;
+}
+.register-container .register-container-heading {
+  padding: 5px 0px;
+  color: var(--blue);
+  font-weight: bold;
+}
+.user-register .valid-msg {
+  margin: 0;
+  padding: 10px 0px;
+}
+.user-register .valid-msg .success {
+  color: green;
+}
+.user-register .valid-msg .error {
+  color: red;
+}
+.user-register .register-container label {
+  padding: 5px 0px;
+  font-weight: 600;
+  color: rgb(75, 75, 75);
+}
+.user-register .register-container input[type="text"],
+[type="email"],
+[type="password"] {
+  width: 100%;
+  padding: 10px 0 10px 12px;
+  border: none;
+  background: rgb(238, 238, 238);
+  border-radius: 8px;
+}
+.user-register .register-container input[type="submit"] {
+  width: 100%;
+  padding: 6px;
+  text-align: center;
+  background: var(--blue);
+  color: #ffffff;
+}
+.register-container .form-check-label {
+  margin: 0;
+}
+.register-container .text-center {
+  margin: 0;
+  padding: 5px 0;
+}
+.register-container .form-check {
+  padding: 10px 30px;
+}
+.user-register .register-container input[type="submit"]:hover {
+  background: rgba(15, 74, 223, 0.736);
+}

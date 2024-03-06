@@ -1,0 +1,90 @@
+.driver-verify-page {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 200px;
+  height: 100vh;
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+}
+
+.driver-verify-headings h1 {
+  color: var(--blue);
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.driver-verify-form {
+  display: flex;
+  flex-direction: column; /* Ensures items stack vertically */
+  justify-content: space-evenly;
+  width: 600px;
+  height: 670px;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0px 16px 24px 6px #407cff12;
+}
+
+.driver-verify-form form label {
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.415);
+}
+
+.driver-verify-form form input[type="text"] {
+  padding: 5px 0px;
+  margin: 20px 0px;
+  border: none;
+  border-bottom-color: var(--blue);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-style: solid;
+  background: transparent;
+  box-shadow: 0px 16px 24px -2px #407cff15;
+  font-size: 20px;
+  font-weight: 600;
+  width: 94%;
+}
+.driver-verify-form form input[type="file"] {
+  padding: 5px;
+  margin: 15px 0px;
+  border: none;
+  border-radius: 10px;
+  background: rgb(235, 234, 234);
+}
+
+.driver-verify-form form input[type="file"]::-webkit-file-upload-button {
+  background: #ffffff;
+  color: var(--blue);
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.driver-verify-form form input:focus {
+  outline: none;
+}
+
+.driver-verify-form form input::placeholder {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.driver-verify-form form button {
+  width: 100%;
+  height: 50px;
+  background: var(--blue);
+  color: #ffffff;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  margin: 10px 0px;
+  font-weight: bold;
+  box-shadow: 0px 16px 24px -2px #407cff46;
+}

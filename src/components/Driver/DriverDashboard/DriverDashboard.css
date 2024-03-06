@@ -1,0 +1,43 @@
+.driver-dashboard-section {
+    display: flex;
+}
+.drive-dash-data {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+.drive-dash-data .driver-dash-ride {
+    display: flex;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+.drive-dash-data .weekly-ride {
+    width: 200px;
+    height: 200px;
+    background: rgb(239, 239, 239);
+    margin: 50px 20px;
+    border-radius: 20px;
+    align-items: center;
+}
+.drive-dash-data .weekly-ride p {
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+    color: var(--blue);
+    font-weight: bold;
+}
+.drive-dash-data .weekly-ride span {
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin: 50px;
+    color: rgba(0, 0, 0, 0.636);
+}
+.drive-dash-data img {
+    width: 500px;
+    height: 500px;
+    margin: 50px 20px ;
+}
+/* Rectangle 47 */

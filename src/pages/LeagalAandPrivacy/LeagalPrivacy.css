@@ -1,0 +1,38 @@
+.main-container{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.inner-container {
+    margin: 20px;
+    padding: 20px 100px 20px;
+}
+
+.inner-container h1{
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    padding-bottom: 15px;
+}
+
+.inner-container .para{
+    font-size: 18px;
+    padding: 8px 0 ;
+    margin: 0;
+    width: 100%;
+    font-weight: 100;
+
+}
+
+.sec-heading{
+    font-weight: bold;
+    padding-top: 10px;
+    font-size: 28px;
+}
+
+.therd-heading{
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 12px;
+}

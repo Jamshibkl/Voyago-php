@@ -1,0 +1,293 @@
+:root {
+    --blue: #407bff;
+    --white: #ffffff;
+}
+
+.safety-section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ourSafety {
+    margin: 100px 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.info {
+    width: 800px;
+
+}
+
+.info h1 {
+    color: var(--blue);
+    padding: 0;
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: 25px;
+    font-weight:600;
+}
+
+.info p {
+    padding: 15px 20px 0 0;
+    margin: 0;
+    width: 100%;
+    color: rgba(47, 47, 47, 0.779);
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.safety-img .image {
+    width: 600px;
+    border-radius: 10px;
+}
+
+.passengerSafety {
+    width: 100%;
+}
+
+.passengerSafety h2 {
+    padding: 20px 0 0;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.passengers {
+    margin: 50px 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.driverSafety {
+    margin-top: 50px;
+    width: 100%;
+    margin: 100px 0;
+}
+
+.our-section2 h2 {
+    padding: 20px 0 0;
+    margin: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.passengers-section {
+    margin: 50px 90px 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.safetys {
+    width: 330px;
+    height: 300px;
+    background-color: #f4f4f4;
+    margin-bottom: 40px;
+}
+
+
+.safetys h4 {
+    color: var(--blue);
+    font-size: 22px;
+    font-weight: bold;
+    padding: 25px 0 20px;
+    margin: 0;
+    text-align: center;
+}
+
+.safetys p {
+    width: 330px;
+    padding: 10px 20px;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 19px;
+    color: grey;
+}
+
+.drivers-section {
+    margin: 50px 90px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+/* //////////////////////// */
+
+
+
+.safetyMeasures {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.safetyMeasures h2 {
+    margin: 0;
+    padding: 70px 0 0;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.covid-information {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 80px 100px;
+}
+
+.covid-img img {
+    width: 500px;
+    height: 320px;
+}
+
+.covid-info {
+    width: 600px;
+}
+
+.covid-info p {
+    padding: 10px;
+    margin: 0;
+    width: 550px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: grey;
+}
+
+/* /////////////////// */
+
+
+.covid-safety {
+    margin: 150px 90px 50px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.covid-safety-section {
+    width: 330px;
+    height: 280px;
+    background-color: #f4f4f4;
+    margin-bottom: 40px;
+}
+
+
+.covid-safety-section h4 {
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 20px 0 10px;
+    margin: 0;
+    text-align: center;
+}
+
+.covid-safety-section p {
+    width: 330px;
+    padding: 10px 15px;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 19px;
+    color: grey;
+}
+
+
+/* ////////// */
+
+
+.communitySafety {
+    margin: 150px 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.community-info {
+    width: 800px;
+
+}
+
+.community-info .community-heading {
+    color: var(--blue);
+    padding: 0 30px ;
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.community-info .community-para {
+    padding: 15px 10px 0 30px;
+    margin: 0;
+    width: 100%;
+    font-size: 25px;
+    line-height: 1.2;
+    color: grey;
+}
+
+.community-img {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+}
+
+.community-img .image {
+    width: 500px;
+    border-radius: 10px;
+}
+
+/* //////////// */
+
+
+.safety-features {
+    margin: 150px 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.reporting-Features{
+    width: 500px;
+}
+
+.safety-features .feature-heading{
+    color: var(--blue);
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.safety-features .feature-para{
+    padding: 15px 10px 0 0;
+    margin: 0;
+    width: 500px;
+    font-size: 20px;
+    line-height: 1.2;
+    color: grey;
+}
+
+
+/* /////////// */
+
+
+.contact-team{
+    margin: 150px 200px 70px;
+}
+
+.contact-team .contact-heading{
+    color: var(--blue);
+    font-weight: bold;
+    padding: 10px 0 5px;
+}
+
+.contact-team .team-para{
+    width: auto;
+    padding: 7px 0;
+    margin: 0;
+    font-size: 19px;
+    color: rgb(87, 87, 87);
+}

@@ -1,0 +1,49 @@
+.feature-row {
+  width: 100%;
+  padding: 0 100px;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px 0 30px;
+}
+
+.feature-content {
+  width: 500px;
+  padding: 20px;
+}
+
+.feature-content h2 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+
+.feature-content p {
+  margin: 0;
+  font-size: 22px;
+  width: 100%;
+}
+
+.feature-content .btn {
+  border-radius: 14px;
+  background-color: #407bff;
+  align-self: start;
+  margin-top: 24px;
+  justify-content: center;
+  color: #f4f4f4;
+  white-space: nowrap;
+  padding: 23px 34px;
+  font: 16px/97% Inter, sans-serif;
+}
+
+
+.feature-imgae{
+  width: 450px;
+}
+
+.feature-imgae img{
+  width: 450px;
+  height: 370px;
+}
+
