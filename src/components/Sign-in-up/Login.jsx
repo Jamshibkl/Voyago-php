@@ -21,11 +21,11 @@ function Login() {
             setTimeout(function(){
                 localStorage.clear();
                 window.location.reload();
-            }, 3000);
+            }, 1000);
         }
         setTimeout(function(){
             setMsg("");
-        }, 5000);
+        }, 1000);
     }, [msg]);
  
     const handleInputChange = (e, type) => {
@@ -75,7 +75,7 @@ function Login() {
                         localStorage.setItem("login", true);
                         localStorage.setItem('user', user);
                         naviget("/");
-                    }, 5000);
+                    }, 1000);
                 }
             }).catch((err) => {
                 setError(err);

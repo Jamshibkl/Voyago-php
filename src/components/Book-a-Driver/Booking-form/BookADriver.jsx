@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../NavBar/NavBar";
+import BookingImg from "../../../Assets/book a drive image.jpg";
 // import { Link } from "react-router-dom";
 import "./BookADriver.css";
 const karnatakaCities = [
@@ -13,7 +14,7 @@ const karnatakaCities = [
   "shimoga",
   "udupi",
   "dharwad",
-  "kochi"
+  "kochi",
 ];
 function BookADriver() {
   const [pickupLocation, setPickupLocation] = useState("");
@@ -39,7 +40,7 @@ function BookADriver() {
           e.target.value.toLowerCase()
         );
         if (!isKarnatakaCity) {
-          setError("Driver service is not available in your chosen location.");
+          setError("Sorry service is not available!");
         }
         setPickupLocation(
           type === "pickupLocation" ? e.target.value : pickupLocation
@@ -110,10 +111,10 @@ function BookADriver() {
       <Navbar />
       <section className="user-booking">
         <div className="booikg-container">
-          <div className="register-img">
-            <img src="" alt="" />
+          <div className="booking-img">
+            <img src={BookingImg} alt="" />
           </div>
-          <h2 className="register-container-heading">Conform the Ride</h2>
+
           <p className="valid-msg">
             {msg !== "" ? (
               <span className="success">{msg}</span>
@@ -122,26 +123,26 @@ function BookADriver() {
             )}
           </p>
           <div className="">
-            <label className="form-label">Pickup Location</label>
+            <label className="form-label">Choose Location</label>
             <br />
             <input
               type="text"
               name="pickupLocation"
               className=""
-              // placeholder="Enter Your Username"
+              placeholder="Enter 4 letters to Search Your Pickup Location"
               value={pickupLocation}
               onChange={(e) => handleInputChange(e, "pickupLocation")}
               // onBlur={checkUser}
             />
           </div>
           <div className="form-outline">
-            <label className="form-label">Dropoff Location</label>
-            <br />
+            {/* <label className="form-label">Dropoff Location</label> */}
+            {/* <br /> */}
             <input
               type="text"
               name="dropoffLocation"
               className=""
-              // placeholder="Enter your email"
+              placeholder="Enter 4 letters to Search Your Dropoff Location"
               value={dropoffLocation}
               onChange={(e) => handleInputChange(e, "dropoffLocation")}
               // onBlur={checkEmail}
@@ -197,6 +198,7 @@ function BookADriver() {
               defaultValue="Submit"
               className="btn"
               onClick={handleSubmit}
+              value="Request Driver"
             />
           </div>
         </div>

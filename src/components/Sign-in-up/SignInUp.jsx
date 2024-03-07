@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../NavBar/NavBar";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import "./SignInUp.css";
 
 function SignInUp() {
+
+  const navigate = useNavigate();
+
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [pass1, setPass1] = useState("");
@@ -73,6 +76,20 @@ function SignInUp() {
         .then((response) => response.json())
         .then((response) => {
           setMsg(response[0].result);
+          console.log(response);
+          if (
+            response[0].result === "Invalid username!" ||
+            response[0].result === "Invalid password!"
+          ) {
+            setError(response[0].result);
+          } else {
+            setMsg(response[0].result);
+            setTimeout(function () {
+              localStorage.setItem("login", true);
+              localStorage.setItem("user", user);
+              navigate("/login");
+            }, 100);
+          }
         })
         .catch((err) => {
           setError(err);
