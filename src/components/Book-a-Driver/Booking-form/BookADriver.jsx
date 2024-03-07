@@ -1,113 +1,206 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Navbar from "../../NavBar/NavBar";
+// import { Link } from "react-router-dom";
 import "./BookADriver.css";
-import BookingImage from "../../../Assets/travel-ilustra.jpg";
-import NavBar from "../../../components/NavBar/NavBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationDot,
-  faCircleStop,
-  faCalendar,
-  faClock,
-  faTaxi,
-} from "@fortawesome/free-solid-svg-icons";
-
+const karnatakaCities = [
+  "bangalore",
+  "mysore",
+  "mangalore",
+  "hubli",
+  "gulbarga",
+  "belgaum",
+  "bijapur",
+  "shimoga",
+  "udupi",
+  "dharwad",
+  "kochi"
+];
 function BookADriver() {
+  const [pickupLocation, setPickupLocation] = useState("");
+  const [dropoffLocation, setDropoffLocation] = useState("");
   const [pickupDate, setPickupDate] = useState("");
   const [pickupTime, setPickupTime] = useState("");
+  const [cabType, setCabType] = useState("");
+  const [error, setError] = useState("");
+  const [msg, setMsg] = useState("");
 
-  const handleDateFocus = () => {
-    document.getElementById("pickupDate").type = "date";
-  };
+  useEffect(() => {
+    setTimeout(function () {
+      setMsg("");
+    }, 15000);
+  }, [msg]);
 
-  const handleDateBlur = () => {
-    if (!pickupDate) {
-      document.getElementById("pickupDate").type = "text";
+  const handleInputChange = (e, type) => {
+    switch (type) {
+      case "pickupLocation":
+      case "dropoffLocation":
+        setError("");
+        const isKarnatakaCity = karnatakaCities.includes(
+          e.target.value.toLowerCase()
+        );
+        if (!isKarnatakaCity) {
+          setError("Driver service is not available in your chosen location.");
+        }
+        setPickupLocation(
+          type === "pickupLocation" ? e.target.value : pickupLocation
+        );
+        setDropoffLocation(
+          type === "dropoffLocation" ? e.target.value : dropoffLocation
+        );
+        break;
+      default:
+        setError("");
+        setPickupLocation(
+          type === "pickupLocation" ? e.target.value : pickupLocation
+        );
+        setDropoffLocation(
+          type === "dropoffLocation" ? e.target.value : dropoffLocation
+        );
+        setPickupDate(type === "pickupDate" ? e.target.value : pickupDate);
+        setPickupTime(type === "pickupTime" ? e.target.value : pickupTime);
+        setCabType(type === "cabType" ? e.target.value : cabType);
     }
   };
 
-  const handleTimeFocus = () => {
-    document.getElementById("pickuptime").type = "time";
-  };
-
-  const handleTimeBlur = () => {
-    if (!pickupTime) {
-      document.getElementById("pickuptime").type = "text";
+  function handleSubmit() {
+    if (
+      pickupLocation !== "" &&
+      dropoffLocation !== "" &&
+      pickupDate !== "" &&
+      pickupTime !== "" &&
+      cabType !== ""
+    ) {
+      var url = "http://localhost/devtest/reactjs/booking.php";
+      var headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      };
+      var Data = {
+        pickupLocation: pickupLocation,
+        dropoffLocation: dropoffLocation,
+        pickupDate: pickupDate,
+        pickupTime: pickupTime,
+        cabType: cabType,
+      };
+      fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(Data),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          setMsg(response[0].result);
+        })
+        .catch((err) => {
+          setError(err);
+          console.log(err);
+        });
+      setPickupLocation("");
+      setDropoffLocation("");
+      setPickupDate("");
+      setPickupTime("");
+      setCabType("");
+    } else {
+      setError("All fields are required!");
     }
-  };
+  }
 
   return (
     <>
-      <NavBar />
-      <div className="book-ride-section">
-        <div className="booking-form">
-          <h1>Conform the Ride</h1>
-          <form action="">
-            <div className="input-with-icon">
-              <FontAwesomeIcon
-                icon={faLocationDot}
-                className="booking-input-icon"
-              />
-              <input type="text" placeholder="Pick up Location" />
-            </div>
-            <div className="input-with-icon">
-              <FontAwesomeIcon
-                icon={faCircleStop}
-                className="booking-input-icon"
-              />
-              <input type="text" placeholder="Dropoff Location" />
-            </div>
+      <Navbar />
+      <section className="user-booking">
+        <div className="booikg-container">
+          <div className="register-img">
+            <img src="" alt="" />
+          </div>
+          <h2 className="register-container-heading">Conform the Ride</h2>
+          <p className="valid-msg">
+            {msg !== "" ? (
+              <span className="success">{msg}</span>
+            ) : (
+              <span className="error">{error}</span>
+            )}
+          </p>
+          <div className="">
+            <label className="form-label">Pickup Location</label>
             <br />
-            <div className="input-with-icon">
-              <FontAwesomeIcon
-                icon={faCalendar}
-                className="booking-input-icon"
-              />
+            <input
+              type="text"
+              name="pickupLocation"
+              className=""
+              // placeholder="Enter Your Username"
+              value={pickupLocation}
+              onChange={(e) => handleInputChange(e, "pickupLocation")}
+              // onBlur={checkUser}
+            />
+          </div>
+          <div className="form-outline">
+            <label className="form-label">Dropoff Location</label>
+            <br />
+            <input
+              type="text"
+              name="dropoffLocation"
+              className=""
+              // placeholder="Enter your email"
+              value={dropoffLocation}
+              onChange={(e) => handleInputChange(e, "dropoffLocation")}
+              // onBlur={checkEmail}
+            />
+          </div>
+          <div className="bookig-date-time">
+            <div className="form-outline ">
+              <label className="form-label">Pickup Date</label>
+              <br />
               <input
-                placeholder="Pick up Date"
+                type="date"
                 name="pickupDate"
-                id="pickupDate"
+                className=""
+                // placeholder="Enter your password"
                 value={pickupDate}
-                onFocus={handleDateFocus}
-                onBlur={handleDateBlur}
-                onChange={(e) => setPickupDate(e.target.value)}
+                onChange={(e) => handleInputChange(e, "pickupDate")}
+                // onBlur={checkPassword}
               />
             </div>
-            <div className="input-with-icon">
-              <FontAwesomeIcon icon={faClock} className="booking-input-icon" />
+            <div className="form-outline ">
+              <label className="form-label">Pickup Time</label>
+              <br />
               <input
-                name="pickuptime"
-                id="pickuptime"
+                type="time"
+                name="pickupTime"
+                className=""
+                // placeholder="Repeat your password"
                 value={pickupTime}
-                placeholder="Pick Up Time"
-                onFocus={handleTimeFocus}
-                onBlur={handleTimeBlur}
-                onChange={(e) => setPickupTime(e.target.value)}
+                onChange={(e) => handleInputChange(e, "pickupTime")}
               />
             </div>
+          </div>
+          <div className="form-outline ">
+            <label className="form-label">Cab Type</label>
             <br />
-            <div className="input-with-icon">
-              <FontAwesomeIcon icon={faTaxi} className="booking-input-icon" />
-              <select>
-                <option value="">Cab Type</option>
-                <option value="">Luxury</option>
-                <option value="">SUV</option>
-                <option value="">Innova</option>
-                <option value="">Sedan</option>
-              </select>
-            </div>
-          </form>
-          <Link to="/driver-on-way">
-            <button className="booking-btn">Book a Ride</button>
-          </Link>
-          <Link to="/">
-            <button className="back-to-home-btn">Go Back</button>
-          </Link>
+
+            <select
+              name="cabType"
+              className=""
+              value={cabType}
+              onChange={(e) => handleInputChange(e, "cabType")}>
+              <option value="">Select Cab Type</option>
+              <option value="Luxury">Luxury</option>
+              <option value="SUV">SUV</option>
+              <option value="Innova">Innova</option>
+              <option value="Sedan">Sedan</option>
+            </select>
+          </div>
+          <br />
+          <div className="">
+            <input
+              type="submit"
+              defaultValue="Submit"
+              className="btn"
+              onClick={handleSubmit}
+            />
+          </div>
         </div>
-        <div className="booking-image">
-          <img src={BookingImage} alt="book img" />
-        </div>
-      </div>
+      </section>
     </>
   );
 }

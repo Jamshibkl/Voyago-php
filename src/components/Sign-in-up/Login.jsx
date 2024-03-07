@@ -3,7 +3,7 @@ import React, { useState, useEffect  } from "react";
 import NavBar from '../NavBar/NavBar';
 import { useNavigate, Link  } from 'react-router-dom';
  
-function login() {
+function Login() {
     const naviget = useNavigate();
     const [user, setUser] = useState("");
     const [pass, setPass] = useState("");
@@ -21,11 +21,11 @@ function login() {
             setTimeout(function(){
                 localStorage.clear();
                 window.location.reload();
-            }, 3000);
+            }, 1000);
         }
         setTimeout(function(){
             setMsg("");
-        }, 5000);
+        }, 1000);
     }, [msg]);
  
     const handleInputChange = (e, type) => {
@@ -161,4 +161,4 @@ function login() {
     )
 }
 
-export default login
+export default Login
