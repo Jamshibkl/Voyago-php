@@ -1,77 +1,43 @@
-import React from 'react'
+import { useState } from "react";
+import React from "react";
 
 function FAQ() {
+  const [selected, setSelected] = useState(null);
+
+  const toggle = (i) => {
+    if (selected == i) {
+      return setSelected(null);
+    }
+    setSelected(i);
+  };
   return (
     <>
       <div className="faq">
-        <div className="faq-2">
-          <div className="faq-3">
-            <div className="faq-4">How do I book a ride?</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cc702096ce94e02dd37457fd8c2126f46d09d8ac64a0ac5cd239b76824db412?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
-              className="faq_img"
-            />
+        {data.map((item, i) => (
+          <div className="faq-section-2">
+            <div className="faq-section-3">
+              <div className="faq-section-4 " onClick={() => toggle(i)}>
+                <h5>{item.title}</h5>
+                <div className={selected == i ? "faq-icon" : "faq-icons"} >
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cc702096ce94e02dd37457fd8c2126f46d09d8ac64a0ac5cd239b76824db412?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
+                    className="faq_img"
+                  />
+                </div>
+                {/* <h5 className="h5-icons">{selected == i ? "➖" : "➕"}</h5> */}
+              </div>
+              <div className={selected == i ? "show" : "faq-answer "}>
+                <p>{item.answer}</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="faq-5">
-          <div className="faq-6">
-            <div className="faq-7">What payment methods are accepted?</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7b9be934d018440e8de43ba487233583a7100b4e5991caa22d5bc541843bd9d?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
-              className="faq_img-2"
-            />
-          </div>
-        </div>
-        <div className="faq-8">
-          <div className="faq-9">
-            <div className="faq-10">How are drivers vetted for safety?</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cc702096ce94e02dd37457fd8c2126f46d09d8ac64a0ac5cd239b76824db412?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
-              className="faq_img"
-            />
-          </div>
-        </div>
-        <div className="faq-11">
-          <div className="faq-12">
-            <div className="faq-13">Is Voyago available in my city?</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cc702096ce94e02dd37457fd8c2126f46d09d8ac64a0ac5cd239b76824db412?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
-              className="faq_img-3"
-            />
-          </div>
-        </div>
-        <div className="faq-14">
-          <div className="faq-15">
-            <div className="faq-16">Can I schedule a ride in advance?</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/3cc702096ce94e02dd37457fd8c2126f46d09d8ac64a0ac5cd239b76824db412?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
-              className="faq_img"
-            />
-          </div>
-        </div>
-        <div className="faq-17">
-          <div className="faq-18">
-            <div className="faq-19">How do I contact customer support?</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/d7b9be934d018440e8de43ba487233583a7100b4e5991caa22d5bc541843bd9d?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
-              className="faq_img"
-            />
-          </div>
-        </div>
+        ))}
       </div>
       <style jsx>{`
         .faq {
           background-color: var(--Colors-primary, #fff);
-          display: flex;
-          margin-top: 48px;
-          flex-direction: column;
-          font-size: 20px;
+          margin: 50px 0;
         }
         @media (max-width: 991px) {
           .faq {
@@ -79,224 +45,96 @@ function FAQ() {
             margin-top: 40px;
           }
         }
-        .faq-2 {
+
+        .faq-section-2 {
           border-radius: 16px;
           border: 1px solid rgba(0, 0, 0, 0.2);
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
           padding: 15px;
-          margin:10px 0;
+          margin: 15px 0;
         }
-        @media (max-width: 991px) {
-          .faq-2 {
-            max-width: 100%;
-            padding: 0 20px;
-          }
+
+        .faq-section-3 {
+          margin-bottum: 5px;
+          // padding:10px 0;
         }
-        .faq-3 {
-          justify-content: space-between;
+
+        .faq-section-4 {
           display: flex;
-          gap: 20px;
+          justify-content: space-between;
+          align-items: center;
         }
-        @media (max-width: 991px) {
-          .faq-3 {
-            max-width: 100%;
-            flex-wrap: wrap;
-          }
+        .h5-icons {
+          color: #fff;
         }
-        .faq-4 {
-          font-family: Inter, sans-serif;
-          flex-grow: 1;
-          flex-basis: auto;
-          margin: auto 0;
+        .faq-section-4 h5 {
+          margin: 0;
+          padding: 0;
+        }
+
+        .faq-answer {
+          max-height: 0;
+          overflow: hidden;
+        }
+
+        .show p{
+          color: gray;
+          padding: 0;
+          margin:  0;
+        }
+
+        .faq-answer .show {
+          height: auto;
+          color: gray;
+          max-height: 999px;
+        }
+        .faq-icon {
+          width: 50px;
+          height: 50px;
+          transition: transform 0s;
+        }
+        .faq-icon{
+          transform: rotate(180deg);
+
         }
         .faq_img {
-          aspect-ratio: 0.96;
-          object-fit: auto;
-          object-position: center;
-          width: 48px;
-        }
-        .faq-5 {
-          border-radius: 16px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          display: flex;
-          margin-top: 24px;
-          flex-direction: column;
-          justify-content: center;
-          padding: 15px;
-          margin:10px 0;
-        }
-        @media (max-width: 991px) {
-          .faq-5 {
-            max-width: 100%;
-            padding: 0 20px;
-          }
-        }
-        .faq-6 {
-          justify-content: space-between;
-          display: flex;
-          gap: 20px;
-        }
-        @media (max-width: 991px) {
-          .faq-6 {
-            max-width: 100%;
-            flex-wrap: wrap;
-          }
-        }
-        .faq-7 {
-          font-family: Inter, sans-serif;
-          flex-grow: 1;
-          flex-basis: auto;
-          margin: auto 0;
-        }
-        .faq_img-2 {
-          aspect-ratio: 0.94;
-          object-fit: auto;
-          object-position: center;
-          width: 47px;
-        }
-        .faq-8 {
-          border-radius: 16px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          display: flex;
-          margin-top: 24px;
-          flex-direction: column;
-          justify-content: center;
-          padding: 15px;
-          margin:10px 0;
-        }
-        @media (max-width: 991px) {
-          .faq-8 {
-            max-width: 100%;
-            padding: 0 20px;
-          }
-        }
-        .faq-9 {
-          justify-content: space-between;
-          display: flex;
-          gap: 20px;
-        }
-        @media (max-width: 991px) {
-          .faq-9 {
-            max-width: 100%;
-            flex-wrap: wrap;
-          }
-        }
-        .faq-10 {
-          font-family: Inter, sans-serif;
-          flex-grow: 1;
-          flex-basis: auto;
-          margin: auto 0;
-        }
-        .faq-11 {
-          border-radius: 16px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          display: flex;
-          margin-top: 24px;
-          flex-direction: column;
-          justify-content: center;
-          padding: 15px;
-          margin:10px 0;
-        }
-        @media (max-width: 991px) {
-          .faq-11 {
-            max-width: 100%;
-            padding: 0 20px;
-          }
-        }
-        .faq-12 {
-          justify-content: space-between;
-          display: flex;
-          gap: 20px;
-        }
-        @media (max-width: 991px) {
-          .faq-12 {
-            max-width: 100%;
-            flex-wrap: wrap;
-          }
-        }
-        .faq-13 {
-          font-family: Inter, sans-serif;
-          flex-grow: 1;
-          flex-basis: auto;
-          margin: auto 0;
-        }
-        .faq_img-3 {
-          aspect-ratio: 0.92;
-          object-fit: auto;
-          object-position: center;
-          width: 46px;
-        }
-        .faq-14 {
-          border-radius: 16px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          display: flex;
-          margin-top: 24px;
-          flex-direction: column;
-          justify-content: center;
-          padding: 15px;
-          margin:10px 0;
-        }
-        @media (max-width: 991px) {
-          .faq-14 {
-            max-width: 100%;
-            padding: 0 20px;
-          }
-        }
-        .faq-15 {
-          justify-content: space-between;
-          display: flex;
-          gap: 20px;
-        }
-        @media (max-width: 991px) {
-          .faq-15 {
-            max-width: 100%;
-            flex-wrap: wrap;
-          }
-        }
-        .faq-16 {
-          font-family: Inter, sans-serif;
-          flex-grow: 1;
-          flex-basis: auto;
-          margin: auto 0;
-        }
-        .faq-17 {
-          border-radius: 16px;
-          border: 1px solid rgba(0, 0, 0, 0.2);
-          display: flex;
-          margin-top: 24px;
-          flex-direction: column;
-          justify-content: center;
-          padding: 15px;
-          margin:10px 0;
-        }
-        @media (max-width: 991px) {
-          .faq-17 {
-            max-width: 100%;
-            padding: 0 20px;
-          }
-        }
-        .faq-18 {
-          justify-content: space-between;
-          display: flex;
-          gap: 20px;
-        }
-        @media (max-width: 991px) {
-          .faq-18 {
-            max-width: 100%;
-            flex-wrap: wrap;
-          }
-        }
-        .faq-19 {
-          font-family: Inter, sans-serif;
-          flex-grow: 1;
-          flex-basis: auto;
-          margin: auto 0;
+          width: 50px;
+          height: 50px;
         }
       `}</style>
     </>
-  )
+  );
 }
 
-export default FAQ
+const data = [
+  {
+    title: "How do I book a ride?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde tempore amet voluptatibus voluptates placeat odio harum aliquam quam fugiat! Autem, modi cum doloribus eum nulla asperiores excepturi voluptatum optio?",
+  },
+  {
+    title: "What payment methods are accepted?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde tempore amet voluptatibus voluptates placeat odio harum aliquam quam fugiat! Autem, modi cum doloribus eum nulla asperiores excepturi voluptatum optio?",
+  },
+  {
+    title: "How are drivers vetted for safety?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde tempore amet voluptatibus voluptates placeat odio harum aliquam quam fugiat! Autem, modi cum doloribus eum nulla asperiores excepturi voluptatum optio?",
+  },
+  {
+    title: "Is Voyago available in my city?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde tempore amet voluptatibus voluptates placeat odio harum aliquam quam fugiat! Autem, modi cum doloribus eum nulla asperiores excepturi voluptatum optio?",
+  },
+  {
+    title: "Can I schedule a ride in advance?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde tempore amet voluptatibus voluptates placeat odio harum aliquam quam fugiat! Autem, modi cum doloribus eum nulla asperiores excepturi voluptatum optio?",
+  },
+  {
+    title: "How do I contact customer support?",
+    answer:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, unde tempore amet voluptatibus voluptates placeat odio harum aliquam quam fugiat! Autem, modi cum doloribus eum nulla asperiores excepturi voluptatum optio?",
+  },
+];
+export default FAQ;
