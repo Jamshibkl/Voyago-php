@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes,Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import OurTeam from "./pages/OurTeam/OurTeam";
@@ -37,6 +37,7 @@ import Transactions from "./Admin/Components/Transactions/Transactions";
 import TotalDrivers from "./Admin/Components/Total-Drivers/TotalDrivers";
 import TotalAdmin from "./Admin/Components/total-admins/TotalAdmins";
 function App() {
+  const isLoggedIn = false; 
   return (
     <div className="App">
       <Router>
@@ -70,6 +71,10 @@ function App() {
           <Route path="/driver-notify" element={<DriverNotification />} />
           <Route path="/driver-ride" element={<DriverRide />} />
           <Route path="/admin-dashboard" element={<Dashboard />} />
+          <Route
+          path="/"
+          element={isLoggedIn ? <BookADriver /> : <Navigate to="/login" replace />}
+        />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/transactions" element={<Transactions />} />

@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
+import { NavLink,useNavigate  } from "react-router-dom";
 import CarAnimate from "../../Assets/Car driving-rafiki (2).svg";
 import Feature from "../../components/Features/Feature";
 import HomeBanner from "../../components/banner/HomeBanner";
@@ -11,6 +11,20 @@ import "./Home.css";
 // import NavBar from "../../components/NavBar/NavBar";
 
 function Home() {
+  // const navigate = useNavigate(); // Utilize useNavigate hook
+
+  // const handleButtonClick = () => {
+  //   // Implement your authentication check logic here
+  //   const isLoggedIn = false; // Replace with your actual authentication logic
+
+  //   if (isLoggedIn) {
+  //     navigate("/book-a-driver"); // Navigate to booking page only if logged in
+  //   } else {
+  //     // Redirect to login page or display appropriate message
+  //     // Implement your preferred behavior for non-logged-in users
+  //   }
+  // };
+
   // const user = localStorage.getItem('user');
   
   return (
@@ -128,7 +142,9 @@ function Home() {
             your doorstep, we make owning a car a pleasure.
           </p>
           <NavLink to='/book-a-driver'>
-          <button className="main_btn">Book a Driver</button>
+          <button className="main_btn" >
+      Book a Driver
+    </button>
           </NavLink>
         </div>
         <div className="main-right">
