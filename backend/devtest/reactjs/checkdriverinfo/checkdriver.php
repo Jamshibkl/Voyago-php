@@ -12,12 +12,12 @@
         $eData = file_get_contents("php://input");
         $dData = json_decode($eData, true);
  
-        $user = $dData['user'];
+        $driver = $dData['driver'];
  
         $result = "";
  
-        if($user != ""){
-            $sql = "SELECT * FROM driver WHERE name='$user';";
+        if($driver != ""){
+            $sql = "SELECT * FROM driver WHERE name='$driver';";
             $res = mysqli_query($conn, $sql);
             if(mysqli_num_rows($res) != 0){
                 $result = "Username is already taken!";

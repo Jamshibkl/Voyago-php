@@ -7,7 +7,7 @@ function SignInUp() {
 
   const navigate = useNavigate();
 
-  const [user, setUser] = useState("");
+  const [driver, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [pass1, setPass1] = useState("");
@@ -42,7 +42,7 @@ function SignInUp() {
 
   const handleInputChange = (e, type) => {
     switch (type) {
-      case "user":
+      case "driver":
         setError("");
         setUser(e.target.value);
         if (e.target.value === "") {
@@ -85,7 +85,7 @@ function SignInUp() {
 
   function handleSubmit() {
     if (
-      user !== "" &&
+      driver !== "" &&
       email !== "" &&
       mobile !== "" &&
       pass1 !== "" &&
@@ -97,7 +97,7 @@ function SignInUp() {
         "Content-Type": "application/json",
       };
       var Data = {
-        user: user,
+        driver: driver,
         email: email,
         mobile: mobile,
         pass: pass2,
@@ -119,8 +119,8 @@ function SignInUp() {
           } else {
             setMsg(response[0].result);
             setTimeout(function () {
-              localStorage.setItem("login", true);
-              localStorage.setItem("user", user);
+              localStorage.setItem("driver-login", true);
+              localStorage.setItem("driver", driver);
               navigate("/driver-verify");
             }, 100);
           }
@@ -146,7 +146,7 @@ function SignInUp() {
       "Content-Type": "application/json",
     };
     var Data = {
-      user: user,
+      driver: driver,
     };
     fetch(url, {
       method: "POST",
@@ -237,11 +237,11 @@ function SignInUp() {
             <br />
             <input
               type="text"
-              name="user"
+              name="driver"
               className=""
               placeholder="Enter Your Username"
-              value={user}
-              onChange={(e) => handleInputChange(e, "user")}
+              value={driver}
+              onChange={(e) => handleInputChange(e, "driver")}
               onBlur={checkUser}
             />
           </div>

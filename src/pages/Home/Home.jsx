@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import { NavLink,useNavigate  } from "react-router-dom";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { NavLink, useNavigate } from "react-router-dom";
 import CarAnimate from "../../Assets/Car driving-rafiki (2).svg";
 import Feature from "../../components/Features/Feature";
 import HomeBanner from "../../components/banner/HomeBanner";
@@ -11,7 +11,7 @@ import "./Home.css";
 // import NavBar from "../../components/NavBar/NavBar";
 
 function Home() {
-  // const navigate = useNavigate(); // Utilize useNavigate hook
+  const navigate = useNavigate(); // Utilize useNavigate hook
 
   // const handleButtonClick = () => {
   //   // Implement your authentication check logic here
@@ -24,9 +24,14 @@ function Home() {
   //     // Implement your preferred behavior for non-logged-in users
   //   }
   // };
+  function logoutSubmit() {
+    localStorage.setItem("login", "");
+    localStorage.setItem("loginStatus", "Logged out successfully!");
+    navigate("/login");
+  }
 
-  // const user = localStorage.getItem('user');
-  
+  const user = localStorage.getItem("user");
+
   return (
     <>
       {/* Header */}
@@ -45,82 +50,95 @@ function Home() {
               <NavDropdown
                 title="Company"
                 id="collapsible-nav-dropdown"
-                className="dropdown-btn"
-              >
+                className="dropdown-btn">
                 <NavDropdown.Item
                   as={NavLink}
                   to="/about-us"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   About us
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/how-it-works"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   How it Works
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/our-team"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Our Team
                 </NavDropdown.Item>
                 <NavDropdown.Item
-                as={NavLink}
-                to="/become-a-driver"
-                className="dropdown-items"
-              >
-                Become a Driver
-              </NavDropdown.Item>
+                  as={NavLink}
+                  to="/become-a-driver"
+                  className="dropdown-items">
+                  Become a Driver
+                </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/admin"
-                  className="dropdown-items"
-                >
-                   Admin
-              </NavDropdown.Item>
-              <NavDropdown.Item
-                as={NavLink}
-                to="/service-status"
-                className="dropdown-items"
-              >
+                  className="dropdown-items">
+                  Admin
+                </NavDropdown.Item>
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/service-status"
+                  className="dropdown-items">
                   Service Status
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/legal"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Legal and Privacy
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/book-a-driver"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Book a Driver
                 </NavDropdown.Item>
               </NavDropdown>
-              <Nav.Link as={NavLink} to="/safety" className="nav-link-with-space">
+              <Nav.Link
+                as={NavLink}
+                to="/safety"
+                className="nav-link-with-space">
                 Safety
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/contact" className="nav-link-with-space">
+              <Nav.Link
+                as={NavLink}
+                to="/contact"
+                className="nav-link-with-space">
                 Contact
               </Nav.Link>
             </Nav>
 
             <Nav className="ms-auto">
-              <Nav.Link
-                as={NavLink}
-                to="/login"
-                className="nav-link-with-space text-light "
-              > 
-              Login
-                {/* {user} */}
-              </Nav.Link>
+              <NavDropdown
+                title={user ? user : "Login"}
+                id="home-dropdown"
+                className="nav-link-with-space text-light">
+                {user ? (
+                  <>
+                    <NavDropdown.Item className="dropdown-items">
+                    Rides
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      className="dropdown-items"
+                      onClick={logoutSubmit}>
+                      Logout
+                    </NavDropdown.Item>
+                  </>
+                ) : (
+                  <NavDropdown.Item
+                    as={NavLink}
+                    to="/login"
+                    className="dropdown-items">
+                    Login
+                  </NavDropdown.Item>
+                )}
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -141,10 +159,8 @@ function Home() {
             Voyago transforms the way you travel. Bringing skillful drivers to
             your doorstep, we make owning a car a pleasure.
           </p>
-          <NavLink to='/book-a-driver'>
-          <button className="main_btn" >
-      Book a Driver
-    </button>
+          <NavLink to="/book-a-driver">
+            <button className="main_btn">Book a Driver</button>
           </NavLink>
         </div>
         <div className="main-right">

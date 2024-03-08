@@ -9,7 +9,7 @@ function NavBar() {
   function logoutSubmit() {
     localStorage.setItem("login", "");
     localStorage.setItem("loginStatus", "Logged out successfully!");
-    navigate("/");
+    navigate("/login");
   }
 
   const user = localStorage.getItem('user');
@@ -101,19 +101,23 @@ function NavBar() {
           </Nav>
 
           <Nav className="ms-auto">
-            {user ? (
-              <>
-                <span className="nav-link-with-space">{user}</span>
-                <button className="btn btn-outline-primary" onClick={logoutSubmit}>
-                  Logout
-                </button>
-              </>
-            ) : (
-              <Nav.Link as={NavLink} to="/login" className="nav-link-with-space ">
-                Login
-              </Nav.Link>
-            )}
-          </Nav>
+  <NavDropdown title={user ? user : "Login"} id="user-dropdown"  className="nav-link-with-space">
+    {user ? (
+      <>
+        <NavDropdown.Item className="dropdown-items">
+        Rides
+        </NavDropdown.Item>
+        <NavDropdown.Item className="dropdown-items" onClick={logoutSubmit}>
+          Logout
+        </NavDropdown.Item>
+      </>
+    ) : (
+      <NavDropdown.Item as={NavLink} to="/login" className="dropdown-items">
+        Login
+      </NavDropdown.Item>
+    )}
+  </NavDropdown>
+</Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

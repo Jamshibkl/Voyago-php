@@ -1,7 +1,16 @@
 import React from 'react'
 import './DriverSideBar.css'
-import { NavLink } from 'react-router-dom'
+import { NavLink,useNavigate  } from 'react-router-dom'
 function DriverSideBar() {
+  const navigate = useNavigate();
+
+  function logoutSubmit() {
+    localStorage.setItem("driver-login", "");
+    localStorage.setItem("loginStatus", "Logged out successfully!");
+    navigate("/driver-login");
+  }
+
+  const driver = localStorage.getItem('driver');
   return (
     <>
     {/* <div className="Driver-Dashboard"> */}
@@ -17,7 +26,7 @@ function DriverSideBar() {
         <div className="Driver-dashboard-options">
         <div className="Driver-dashboard-items">
             {/* icons */}
-            <h5 style={{fontSize:'25px'}}>Driver Profile</h5>
+            <h5 style={{fontSize:'25px'}}>{driver}</h5>
           </div>
           <NavLink to='/driver-dashbord' style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-head">
@@ -48,7 +57,7 @@ function DriverSideBar() {
           </div>
            </NavLink>
 
-           <button>Logout</button>
+           <button onClick={logoutSubmit}>Logout</button>
         </div>
       </div>
     </div>
