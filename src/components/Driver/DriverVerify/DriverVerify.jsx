@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./DriverVerify.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 function DriverVerify() {
   const navigate = useNavigate();
   const [adharId, setAdharId] = useState("");
@@ -22,9 +22,13 @@ function DriverVerify() {
     formData.append("profileImg", profileImg);
     formData.append("location", location);
 
-    const responce = await axios.post("http://localhost/devtest/reactjs/DriverVerifyInfo/DriverInfo.php", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
+    const responce = await axios.post(
+      "http://localhost/devtest/reactjs/DriverVerifyInfo/DriverInfo.php",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
 
     if (responce.data.success) {
       setMessage(responce.data.success);
@@ -36,7 +40,13 @@ function DriverVerify() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-    await DriverVerifyInfo();
+    if (adharId !== "" && adharImg !== "" && license !== "" && licenseImg !== ""  &&  profileImg !== "" &&  location !== "") {
+      e.preventDefault();
+      await DriverVerifyInfo();
+    }
+    else{
+      setMessage("All fields are required!");
+    }
   };
 
   return (
@@ -46,7 +56,7 @@ function DriverVerify() {
           <h1>please verify your identification details!</h1>
         </div>
         <div className="driver-verify-form">
-        <p className="text-warning">{ message}</p>
+          <p className="text-warning">{message}</p>
           <form action="" onSubmit={handlesubmit}>
             <div className="verify-input-filed">
               <input
