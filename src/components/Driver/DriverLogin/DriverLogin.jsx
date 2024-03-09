@@ -49,14 +49,15 @@ function DriverLogin() {
     }
   };
 
-  function loginSubmit() {
+  function loginSubmit(e) {
+    e.preventDefault();
     if (driver !== "" && pass !== "") {
       var url = "http://localhost/devtest/reactjs/DriverLogin.php";
       var headers = {
         Accept: "application/json",
         "Content-type": "application/json",
       };
-      var Data = {
+      let Data = {
         driver: driver,
         pass: pass,
       };
