@@ -5,17 +5,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 function DriverLogin() {
-
   const navigate = useNavigate();
-  const [user, setUser] = useState("");
+  const [driver, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
 
   useEffect(() => {
-    let login = localStorage.getItem("login");
+    let login = localStorage.getItem("driver-login");
     if (login) {
-      navigate("/");
+      navigate("/driver-dashbord");
     }
     let loginStatus = localStorage.getItem("loginStatus");
     if (loginStatus) {
@@ -27,12 +26,12 @@ function DriverLogin() {
     }
     setTimeout(function () {
       setMsg("");
-    }, 1000);
+    }, 100);
   }, [msg, navigate]);
 
   const handleInputChange = (e, type) => {
     switch (type) {
-      case "user":
+      case "driver":
         setError("");
         setUser(e.target.value);
         if (e.target.value === "") {
@@ -51,14 +50,14 @@ function DriverLogin() {
   };
 
   function loginSubmit() {
-    if (user !== "" && pass !== "") {
-      var url = "http://localhost/devtest/reactjs/login.php";
+    if (driver !== "" && pass !== "") {
+      var url = "http://localhost/devtest/reactjs/DriverLogin.php";
       var headers = {
         Accept: "application/json",
         "Content-type": "application/json",
       };
       var Data = {
-        user: user,
+        driver: driver,
         pass: pass,
       };
       fetch(url, {
@@ -77,10 +76,10 @@ function DriverLogin() {
           } else {
             setMsg(response[0].result);
             setTimeout(function () {
-              localStorage.setItem("login", true);
-              localStorage.setItem("user", user);
-              navigate("/");
-            }, 1000);
+              localStorage.setItem("driver-login", true);
+              localStorage.setItem("driver", driver);
+              navigate("/driver-dashbord");
+            }, 100);
           }
         })
         .catch((err) => {
@@ -92,7 +91,6 @@ function DriverLogin() {
     }
   }
 
-
   return (
     <>
       <div className="driver-login-page">
@@ -102,14 +100,37 @@ function DriverLogin() {
         </div>
         <div className="driver-login-form">
           <form action="">
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Pasword" />
+            <p>
+              {error !== "" ? (
+                <div style={{ color: "#842029" }}>
+                  <b>{error}</b>
+                </div>
+              ) : (
+                <div style={{ color: "#badbcc" }}>
+                  <b>{msg}</b>
+                </div>
+              )}
+            </p>
+            <input
+              type="text"
+              id="username"
+              value={driver}
+              placeholder="Enter username"
+              onChange={(e) => handleInputChange(e, "driver")}
+            />
+            <input
+              type="password"
+              id="pass"
+              placeholder="Pasword"
+              value={pass}
+              onChange={(e) => handleInputChange(e, "pass")}
+            />
             <br />
             <span>forgot password?</span>
             <br />
-            <Link to='/driver-verify'>
-            <button>login</button>
-            </Link>
+            {/* <Link to='/driver-verify'> */}
+            <button onClick={loginSubmit}>login</button>
+            {/* </Link> */}
             <br />
             <button>
               <FontAwesomeIcon icon={faGoogle} className="google-icon" />

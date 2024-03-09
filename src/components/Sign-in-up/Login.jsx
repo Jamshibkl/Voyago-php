@@ -2,6 +2,8 @@
 import React, { useState, useEffect  } from "react";
 import NavBar from '../NavBar/NavBar';
 import { useNavigate, Link  } from 'react-router-dom';
+import LoginImg from '../../Assets/Computer login-bro.svg'
+import './Login.css'
  
 function Login() {
     const naviget = useNavigate();
@@ -89,14 +91,14 @@ function Login() {
     return(
         <>
         <NavBar />
-        <section className="vh-100" style={{backgroundColor: '#9A616D'}}>
+        <section className="" >
         <div className="container py-5 h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col col-xl-10">
                 <div className="card" style={{borderRadius: '1rem'}}>
                 <div className="row g-0">
-                    <div className="col-md-6 col-lg-5 d-none d-md-block">
-                    <img src="https://images.pexels.com/photos/4348403/pexels-photo-4348403.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="login form" className="img-fluid" style={{borderRadius: '1rem 0 0 1rem'}} />
+                    <div className="col-md-6 col-lg-5 d-none d-md-block back-img" >
+                    <img src={LoginImg} alt="login form" className="img-fluid" style={{borderRadius: '1rem 0 0 1rem'}} />
                     </div>
                     <div className="col-md-6 col-lg-7 d-flex align-items-center">
                     <div className="card-body p-4 p-lg-5 text-black">

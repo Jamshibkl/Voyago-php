@@ -33,7 +33,7 @@ function DriverVerify() {
     if (responce.data.success) {
       setMessage(responce.data.success);
       setTimeout(() => {
-        navigate("/driver-relax");
+        navigate("/driver-login");
       }, 2000);
     }
   };
