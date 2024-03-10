@@ -56,7 +56,7 @@ function DriverLogin() {
         Accept: "application/json",
         "Content-type": "application/json",
       };
-      var Data = {
+      let Data = {
         driver: driver,
         pass: pass,
       };

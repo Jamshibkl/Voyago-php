@@ -15,6 +15,8 @@ const karnatakaCities = [
   "udupi",
   "dharwad",
   "kochi",
+  "kasaragod",
+  "bekal fort"
 ];
 function BookADriver() {
   const [pickupLocation, setPickupLocation] = useState("");
