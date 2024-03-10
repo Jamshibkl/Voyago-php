@@ -1,142 +1,196 @@
-/* .driver-signup-page {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px 200px;
-    height: 100vh;
-    background-color: #e5e5f7;
-    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
-    background-size: 10px 10px; 
-}
-.driver-signup-headings h1{
-    color: var(--blue);
-    font-size: 40px;
-    font-weight: bold;
-    margin: 0;
-    width: 500px;
-}
-.driver-signup-form {
-    width: 500px;
-    height: auto;
-    background: #ffffffff;
-    padding: 50px;
-    border-radius: 20px;
-    border: none;
-    box-shadow: 0px 16px 24px 6px #407cff12;  
-}
-.driver-signup-form form input {
-    padding: 5px 0px;
-    margin: 20px 0px;
-    border: none;
-    border-bottom-color: var(--blue);
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-bottom-style: solid;
-    background: transparent;
-    box-shadow: 0px 16px 24px -2px #407cff15;
-    font-size: 20px;
-    font-weight: 600;
-    width: 94%;
-}
-.driver-signup-form form input:focus {
-    outline: none;
-}
-.driver-signup-form form input::placeholder {
-    color: var(--blue);
-    font-weight: bold;
-}
-.driver-signup-form form button {
-  width: 100%;
-  height: 50px;
-  background: var(--blue);
-  color: #ffffffff;
-  text-align: center;
-  align-items: center;
-  border: none;
-  border-radius: 20px;
-  margin: 10px 0px;
-  font-weight: bold;
-  box-shadow: 0px 16px 24px -2px #407cff46; 
-}
-.driver-signup-form form button .google-icon {
-    margin: 0px 10px;
-}
+@import url('https://fonts.googleapis.com/css2?family=poppins:wght@200;300;400;500;600;700&display=swap');
 
-.valid-msgs{
-    text-align: left;
+* {
     margin: 0;
-    color: red;
-} */
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+}
 
 body {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-  .user-register {
     display: flex;
-    justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    padding: 20px;
-  }
-  .register-container {
-    padding: 20px;
-    background: #ffffff;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.192),
-      0 10px 10px -5px rgba(0, 0, 0, 0.207);
-    border-radius: 10px;
-    width: 500px;
-  }
-  .register-container .register-container-heading {
-    padding: 5px 0px;
-    color: var(--blue);
-    font-weight: bold;
-  }
-  .user-register .valid-msg {
-    margin: 0;
-    padding: 10px 0px;
-  }
-  .user-register .valid-msg .success {
-    color: green;
-  }
-  .user-register .valid-msg .error {
-    color: red;
-  }
-  .user-register .register-container label {
-    padding: 5px 0px;
-    font-weight: 600;
-    color: rgb(75, 75, 75);
-  }
-  .user-register .register-container input[type="text"],
-  [type="email"],
-  [type="number"],
-  [type="password"] {
-    width: 100%;
-    padding: 10px 0 10px 12px;
-    border: none;
-    background: rgb(238, 238, 238);
-    border-radius: 8px;
-  }
-  .user-register .register-container input[type="submit"] {
-    width: 100%;
-    padding: 6px;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;  
+}
+header{
     text-align: center;
-    background: var(--blue);
-    color: #ffffff;
+}
+
+.wrapper {
+    background: #fff;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+        0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+/* Singup Form Css Code */
+.form{
+    padding: 25px 30px;
+}
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.form form{
+    margin: 20px 0;
+}
+
+.form form .error-txt{
+    color: #721c24;
+    background: #f8d7da;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #f5c6cb;
+}
+
+.form form .success-txt{
+    color: #00ff26;
+    background: #f4fdf8;
+    padding: 8px 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #00ff55;
+}
+.form form .name-details{
+    display: flex;
+}
+form .name-details .field:first-child{
+    margin-right: 10px;
+}
+form .name-details .field:last-child{
+    margin-left: 10px;
+}
+/* .form form .button{
+    width: 450px;
+    display: flex;
+    justify-content: right;
+} */
+
+.form form .field{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.form form .field label{
+    margin-bottom: 2px;
+}
+.form form .field input{
+    outline: none;
+}
+
+.form form .input input{
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding: 0 10px;
+    border:  1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form form .image input{
+    font-size: 17px;
+}
+
+.form form .button input{
+    margin-top: 13px;
+    height: 45px;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    background: #407BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form form .field i{
+    position: absolute;
+    right: 15px;
+    color: #ccc;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.form .link{
+    text-align: center;
+    margin: 10px 0;
+    font-size: 17px;
+}
+
+.form .link a{
+    color: #333;
+}
+.form .link a:hover{
+    text-decoration: underline;
+}
+
+/* users area css code */
+
+.users{
+    padding: 25px 30px;
+}
+.users header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+}
+.wrapper img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.users header .content{
+    display: flex;
+}
+.users header .content img{
+    height: 50px;
+    width: 50px;
+}
+.users header .details{
+    margin-left: 15px;
+}
+
+.users header .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.loginsection{
+    display: flex;
+    justify-content: space-around;
+    width: 1220px;
+}
+
+.login-section-left{
+    width: 450px;
+}
+.login-section-right{
+    width: 450px;
+}
+
+.login-section-right  input[type="file"]{
+    width: 100%;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background: #ffffff;
+    width: 50%;
+    height: 100%;
+    color: #407BFF;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 500;
   }
-  .register-container .form-check-label {
-    margin: 0;
-  }
-  .register-container .text-center {
-    margin: 0;
-    padding: 5px 0;
-  }
-  .register-container .form-check {
-    padding: 10px 30px;
-  }
-  .user-register .register-container input[type="submit"]:hover {
-    background: rgba(15, 74, 223, 0.736);
-  }
-  

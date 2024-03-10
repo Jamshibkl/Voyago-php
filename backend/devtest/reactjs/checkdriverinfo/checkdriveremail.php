@@ -18,7 +18,7 @@
         $result = "";
  
         if($email != ""){
-            $sql = "SELECT * FROM driver WHERE email='$email';";
+            $sql = "SELECT * FROM driververifyinfo WHERE email='$email';";
             $res = mysqli_query($conn, $sql);
             if(mysqli_num_rows($res) != 0){
                 $result = "Email is already registered!";
