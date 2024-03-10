@@ -49,7 +49,7 @@ function Drivers() {
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Joined On</th>
+                        <th>Mobile number</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -62,7 +62,7 @@ function Drivers() {
 
                           <td className="btn-td">
                             <div className="request-btn">
-                              <Link to="/driverinfo">
+                              <Link to={`/driverinfo/${driver.id}`}>
                                 <button className="accept-btn">More</button>
                               </Link>
                               <button className="reject-btn">Reject</button>

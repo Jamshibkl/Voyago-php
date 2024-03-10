@@ -85,7 +85,7 @@ function App() {
           />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/customers" element={<Customers />} />
-          <Route path="/driverinfo" element={<DriverInfo />} />
+          <Route path="/driverinfo/:driverId" element={<DriverInfo />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/total-drivers" element={<TotalDrivers />} />
           <Route path="/total-admin" element={<TotalAdmin />} />
