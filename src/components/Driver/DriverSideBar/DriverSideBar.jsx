@@ -10,7 +10,7 @@ function DriverSideBar() {
     navigate("/driver-login");
   }
 
-  const driver = localStorage.getItem('driver');
+  const driver = localStorage.getItem('email');
   return (
     <>
     {/* <div className="Driver-Dashboard"> */}
@@ -26,7 +26,7 @@ function DriverSideBar() {
         <div className="Driver-dashboard-options">
         <div className="Driver-dashboard-items">
             {/* icons */}
-            <h5 style={{fontSize:'25px'}}>{driver}</h5>
+            <h5 style={{fontSize:'15px'}}>{driver}</h5>
           </div>
           <NavLink to='/driver-dashbord' style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-head">

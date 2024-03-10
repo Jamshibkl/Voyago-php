@@ -49,7 +49,11 @@ function Drivers() {
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
+<<<<<<< HEAD
                         <th>Mobile number</th>
+=======
+                        <th>Mobile no</th>
+>>>>>>> c43e51096a0d3b13ff446db02587010519752e5a
                       </tr>
                     </thead>
                     <tbody>
