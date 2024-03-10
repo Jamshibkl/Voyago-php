@@ -10,7 +10,7 @@
     font-family: 'poppins', sans-serif;
 }
 
-body {
+.driver-signup-fom{
     display: flex;
     align-items: center;
     justify-content: center;

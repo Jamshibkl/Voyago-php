@@ -55,8 +55,8 @@ function DriverLogin() {
         Accept: "application/json",
         "Content-type": "application/json",
       };
-      var Data = {
-        driver: driver,
+      let Data = {
+        email: email,
         pass: pass,
       };
       fetch(url, {
@@ -92,9 +92,10 @@ function DriverLogin() {
 
   return (
     <>
+    <div className="driver-signup-fom ">
       <div className="wrapper1">
         <section className="form1 singup">
-          <header>Voyago app</header>
+          <header>Sign into your account</header>
           <form action="#">
           {error !== "" ? (
             <div className="error-txt">{error}</div>
@@ -130,13 +131,14 @@ function DriverLogin() {
             </div>
 
             <div className="field button">
-              <input type="submit" value="Submit" onClick={loginSubmit} />
+              <input type="submit" value="Submit" onClick={loginSubmit} style={{background:"#407BFF"}}/>
             </div>
           </form>
           <div className="link">
-            Create a new account? <Link to="/sign-up">Sign-up</Link>
+            Create a new account? <Link to="/driver-signup">Sign-up</Link>
           </div>
         </section>
+      </div>
       </div>
     </>
   );

@@ -182,9 +182,10 @@ function SignInUp() {
   // };
 
   return (
+    <div className="driver-signup-fom">
     <div className="wrapper">
       <section className="form singup">
-        <header>Voyago app</header>
+        <header>Create Your Driver Account</header>
         <form action="" method="post">
           {msg !== "" ? (
             <div className="error-txt">{msg}</div>
@@ -328,9 +329,10 @@ function SignInUp() {
           </div>
         </form>
         <div className="link">
-          Already signed up? <Link to="/log-in">Login now</Link>
+          Already signed up? <Link to="/driver-login">Login now</Link>
         </div>
       </section>
+    </div>
     </div>
   );
 }

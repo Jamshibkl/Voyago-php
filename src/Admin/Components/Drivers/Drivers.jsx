@@ -49,7 +49,7 @@ function Drivers() {
                         <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Joined On</th>
+                        <th>Mobile no</th>
                       </tr>
                     </thead>
                     <tbody>
