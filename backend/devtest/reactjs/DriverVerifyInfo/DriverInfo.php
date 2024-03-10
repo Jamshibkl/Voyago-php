@@ -22,6 +22,11 @@ switch($method)
     case "POST":
            if(isset($_FILES['adharImg']))
            {
+                $driver = $_POST['driver'];
+                $email = $_POST['email'];
+                $mobile = $_POST['mobile'];
+                $pass = $_POST['pass2'];
+
                 $adharId = $_POST['adharId'];
                 $adharImg = time().$_FILES['adharImg']['name'];
                 $adharImg_temp = $_FILES['adharImg']['tmp_name'];
@@ -39,15 +44,15 @@ switch($method)
                 $destination2= $_SERVER['DOCUMENT_ROOT'].'/devtest/reactjs/DriverVerifyInfo/images/license'."/".$licenseImg;
                 $destination3= $_SERVER['DOCUMENT_ROOT'].'/devtest/reactjs/DriverVerifyInfo/images/New folder'."/".$profileImg;
 
-                $result= mysqli_query($db_conn,"INSERT INTO DriverVerifyInfo (adharId, adharImg, license, licenseImg, profileImg, location )
-                VALUES('$adharId','$adharImg','$license','$licenseImg','$profileImg','$location')");
+                $result= mysqli_query($db_conn,"INSERT INTO DriverVerifyInfo (driver, email, mobile, pass, adharId, adharImg, license, licenseImg, profileImg, location )
+                VALUES('$driver', '$email','$mobile', '$pass','$adharId','$adharImg','$license','$licenseImg','$profileImg','$location')");
 
                 if($result){
                   move_uploaded_file($adharImg_temp,$destination1);
                   move_uploaded_file($licenseImg_temp,$destination2);
                   move_uploaded_file($profileImg_temp,$destination3);
 
-                  echo json_encode(["success"=>"personal documents Inserted!"]);
+                  echo json_encode(["success"=>"You have registered successfully!"]);
                   return;
                 }else{
                   echo json_encode(["success"=>" not Inserted!"]);

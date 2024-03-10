@@ -12,13 +12,13 @@
         $eData = file_get_contents("php://input");
         $dData = json_decode($eData, true);
  
-        $driver = $dData['driver'];
+        $email = $dData['email'];
         $pass = $dData['pass'];
         //$password = md5($pass);
-        $result = "";
- 
-        if($driver != "" and $pass != ""){
-            $sql = "SELECT * FROM driver WHERE driver='$driver';";
+        // $result = "";
+
+        if($email != "" and $pass != ""){
+            $sql = "SELECT * FROM driververifyinfo WHERE email='$email';";
             $res = mysqli_query($conn, $sql);
  
             if(mysqli_num_rows($res) != 0){
@@ -27,7 +27,7 @@
                     $result = "Invalid password!";
                 }
                 else{
-                    $result = "Loggedin successfully! Redirecting...";
+                    $result = "Log-in successfully! Redirecting...";
                 }
             }
             else{

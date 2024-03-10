@@ -38,6 +38,7 @@ import Login from "./components/Sign-in-up/Login";
 import Dashboard from "./Admin/Components/Dashboard/Dashboard";
 import Drivers from "./Admin/Components/Drivers/Drivers";
 import Customers from "./Admin/Components/Customers/Customers";
+import DriverInfo from "./Admin/Components/Driver-Info/DriverInfo";
 import Transactions from "./Admin/Components/Transactions/Transactions";
 import TotalDrivers from "./Admin/Components/Total-Drivers/TotalDrivers";
 import TotalAdmin from "./Admin/Components/total-admins/TotalAdmins";
@@ -84,6 +85,7 @@ function App() {
           />
           <Route path="/drivers" element={<Drivers />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/driverinfo" element={<DriverInfo />} />
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/total-drivers" element={<TotalDrivers />} />
           <Route path="/total-admin" element={<TotalAdmin />} />

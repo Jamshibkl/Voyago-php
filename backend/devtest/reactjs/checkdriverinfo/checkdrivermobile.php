@@ -18,7 +18,7 @@
         $result = "";
  
         if($mobile != ""){
-            $sql = "SELECT * FROM driver WHERE mobile='$mobile';";
+            $sql = "SELECT * FROM driververifyinfo WHERE mobile='$mobile';";
             $res = mysqli_query($conn, $sql);
             if(mysqli_num_rows($res) != 0){
                 $result = "Mobile number is already registered!";

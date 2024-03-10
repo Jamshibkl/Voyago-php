@@ -17,7 +17,7 @@
         $result = "";
  
         if($driver != ""){
-            $sql = "SELECT * FROM driver WHERE driver='$driver';";
+            $sql = "SELECT * FROM driververifyinfo WHERE driver='$driver';";
             $res = mysqli_query($conn, $sql);
             if(mysqli_num_rows($res) != 0){
                 $result = "Username is already taken!";
