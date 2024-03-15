@@ -1,14 +1,15 @@
 .driver-profile-section {
     display: flex;
 }
-.driver-profile-info {
+/* .driver-profile-info {
     margin: 0px 200px;
-}
+} */
 .driver-profile-info .profile {
     display: flex;
-    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px 80px;
     /* align-items: center; */
-    margin: 50px 50px;
+    /* margin: 50px 50px; */
     /* height: 300px; */
 }
 .driver-profile-info .profile .profile-pic {
@@ -16,6 +17,11 @@
     height: 100px;
     border-radius: 50%;
     background: rgb(240, 240, 240);
+}
+.driver-profile-info .profile .profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 .driver-profile-info h3 {
     margin: 0;
@@ -30,6 +36,11 @@
     justify-content: center;
     margin: 0px 50px;
 }
+.driver-profile-section .driver-profile-form img{
+    padding: 10px;
+    height: 150px;
+    margin: 15px;
+}
 .driver-profile-section .driver-profile-form form input[type=text]{
     padding: 20px;
     margin: 15px;
@@ -38,9 +49,12 @@
     border-radius: 20px;
     border: none;
 }
+.driver-profile-section .driver-profile-form form input[type=text]:hover{
+    border: none;
+}
 .driver-profile-section .driver-profile-form form input[type=img]{
     padding: 20px;
-    height: 200px;
+    height: 150px;
     margin: 15px;
     display: inline;
     background: rgb(232, 232, 232);

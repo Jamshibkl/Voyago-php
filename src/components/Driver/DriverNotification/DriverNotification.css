@@ -2,7 +2,7 @@
     display: flex;
 }
 .driver-notification-section .driver-notification h1{
-    padding: 50px;
+    padding: 20px;
     font-size: 40px;
     font-weight: bold;
     color: var(--blue);
@@ -21,6 +21,10 @@
 .driver-notification-section .driver-notification form label {
     font-weight: 600;
     margin-bottom:10px; 
+    color: var(--blue);
+}
+.driver-notification-section .driver-notification form label span {
+    color: black;
 }
 
 .driver-notification-section .driver-notification form .horizontal-line {
@@ -29,7 +33,15 @@
     background: black;
     margin: 10px 20px; 
 }
-
+.driver-notification .booking-details{
+    height: 550px;
+    overflow: hidden;
+    /* overflow-x: hidden; */
+    overflow-y: scroll;
+}
+.driver-notification .booking-details::-webkit-scrollbar{
+    width: 20px;
+}
 .driver-notification-section .driver-notification form .confirm
  {
     padding: 10px;
