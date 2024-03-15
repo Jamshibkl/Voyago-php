@@ -19,6 +19,7 @@ const karnatakaCities = [
   "bekal fort"
 ];
 function BookADriver() {
+  // const name = localStorage.getItem('user');
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropoffLocation, setDropoffLocation] = useState("");
   const [pickupDate, setPickupDate] = useState("");
@@ -124,6 +125,19 @@ function BookADriver() {
               <span className="error">{error}</span>
             )}
           </p>
+          <div className="">
+            <label className="form-label">Enter Your User Name</label>
+            <br />
+            <input
+              type="text"
+              name="name"
+              className=""
+              placeholder="Enter Your User Name "
+              // value={name}
+              onChange={(e) => handleInputChange(e, "name")}
+              // onBlur={checkUser}
+            />
+          </div>
           <div className="">
             <label className="form-label">Choose Location</label>
             <br />
