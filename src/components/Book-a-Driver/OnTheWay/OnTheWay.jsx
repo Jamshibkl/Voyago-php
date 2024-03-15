@@ -1,32 +1,82 @@
-import React from "react";
-import "./OnTheWay.css";
-import NavBar from "../../NavBar/NavBar";
-import { Link } from "react-router-dom";
-import DriverOnWayImg from "../../../Assets/Simple-Location-Picker (1).webp";
-import PhoneImg from "../../../Assets/phone-call.png";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import NavBar from '../../NavBar/NavBar';
+import './OnTheWay.css';
+
 function OnTheWay() {
+  const [bookings, setBookings] = useState([]);
+  const [error, setError] = useState(null); // Track potential errors
+
+  useEffect(() => {
+    const userId = localStorage.getItem('user'); // Get the logged-in user's ID
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost/devtest/reactjs/get_booking.php?user_id=${userId}`); // Modified URL to include user_id parameter
+        setBookings(response.data);
+      } catch (error) {
+        // Handle errors gracefully, e.g., display an error message
+        console.error('Error fetching bookings:', error);
+        setError(error); // Store error for potential display
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <>
-      <NavBar />
-      <div className="driver-on-way">
-        <div className="driver-on-page">
-          <div className="driver-on-headings">
-            <h1>Sit back and relax!</h1>
-            <h1>Your destination is arriving soon.</h1>
+    <div className="rides-Dashboard">
+      <div className="rides-Content">
+        <NavBar />
+        <div className="rides-customers-info">
+          <div className="rides-customers">
+            <div className='rides-table'>
+              <h2>Booking Details</h2>
+              {error ? (
+                // Display error message if available
+                <p>Error fetching bookings: {error.message}</p>
+              ) : (
+                bookings.length > 0 && (
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Pickup Location</th>
+                        <th>Dropoff Location</th>
+                        <th>Pickup Date</th>
+                        <th>Pickup Time</th>
+                        <th>Cab Type</th>
+                        <th>Booked on</th>
+                        <th>Booked Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bookings.map((booking, index) => (
+                        <tr className="user-data" key={index}>
+                          <td>{booking.id}</td>
+                          <td>{booking.pickupLocation}</td>
+                          <td>{booking.dropoffLocation}</td>
+                          <td>{booking.pickupDate}</td>
+                          <td>{booking.pickupTime}</td>
+                          <td>{booking.cabType}</td>
+                          <td>{booking.created_at}</td>
+                          <td>
+                            <div className="edit-btn">
+                              <button className="confirm-btn">Pending</button>
+                              <button className="delete-btn">Cancel</button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )
+              )}
+            </div>
           </div>
-          <img src={DriverOnWayImg} alt="" />
-        </div>
-        <div className="facing-diff">
-          <h3>Facing any difficulties? Feel free to contact!</h3>
-          <Link to="/destination">
-            <span>
-              <img src={PhoneImg} alt="" />
-              +919895033329
-            </span>
-          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -104,7 +104,7 @@ function NavBar() {
   <NavDropdown title={user ? user : "Login"} id="user-dropdown"  className="nav-link-with-space">
     {user ? (
       <>
-        <NavDropdown.Item className="dropdown-items">
+        <NavDropdown.Item className="dropdown-items" as={NavLink} to="/on-the-way">
         Rides
         </NavDropdown.Item>
         <NavDropdown.Item className="dropdown-items" onClick={logoutSubmit}>

@@ -13,17 +13,14 @@ import "./Home.css";
 function Home() {
   const navigate = useNavigate(); // Utilize useNavigate hook
 
-  // const handleButtonClick = () => {
-  //   // Implement your authentication check logic here
-  //   const isLoggedIn = false; // Replace with your actual authentication logic
-
-  //   if (isLoggedIn) {
-  //     navigate("/book-a-driver"); // Navigate to booking page only if logged in
-  //   } else {
-  //     // Redirect to login page or display appropriate message
-  //     // Implement your preferred behavior for non-logged-in users
-  //   }
-  // };
+  const handleBookClick = () => {
+    const isLoggedIn = localStorage.getItem("login");
+    if (isLoggedIn) {
+      navigate("/book-a-driver"); // Navigate to booking page only if logged in
+    } else {
+      navigate("/login"); // Redirect to login page if not logged in
+    }
+  };
   function logoutSubmit() {
     localStorage.setItem("login", "");
     localStorage.setItem("loginStatus", "Logged out successfully!");
@@ -121,7 +118,7 @@ function Home() {
                 className="nav-link-with-space text-light">
                 {user ? (
                   <>
-                    <NavDropdown.Item className="dropdown-items">
+                    <NavDropdown.Item className="dropdown-items" as={NavLink} to="/on-the-way">
                     Rides
                     </NavDropdown.Item>
                     <NavDropdown.Item
@@ -159,9 +156,9 @@ function Home() {
             Voyago transforms the way you travel. Bringing skillful drivers to
             your doorstep, we make owning a car a pleasure.
           </p>
-          <NavLink to="/book-a-driver">
-            <button className="main_btn">Book a Driver</button>
-          </NavLink>
+          {/* <NavLink to="/book-a-driver"> */}
+            <button className="main_btn" onClick={handleBookClick}>Book a Driver</button>
+          {/* </NavLink> */}
         </div>
         <div className="main-right">
           <div className="main_container">

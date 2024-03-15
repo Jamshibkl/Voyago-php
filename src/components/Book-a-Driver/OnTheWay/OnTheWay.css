@@ -1,47 +1,91 @@
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.driver-on-way {
+.rides-customers-info {
   width: 100%;
-}
-.driver-on-page {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+
 }
-.driver-on-headings h1 {
-  font-size: 40px;
+
+
+.rides-customers {
+  margin: 30px 50px 0;
+  width: 1055.8px;
+
+}
+
+.rides-customers h2 {
+  color: black;
   font-weight: bold;
-  align-items: center;
-  color: #171923;
   margin: 0;
-  padding: 20px;
+  padding: 10px 0px;
 }
-.driver-on-page img {
-  width: 450px;
+
+.rides-table {
+  width: 100%;
   height: 450px;
+  margin-top: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.rides-table::-webkit-scrollbar {
+  display: none;
+}
+
+.rides-table table {
+  color: black;
+  width: 100%;
+  text-align: center;
+  border: 1px solid black;
   padding: 50px;
 }
-.facing-diff {
-  padding: 50px;
+
+.rides-customers-info table td {
+  height: 45px;
+  text-align: center;
+  background: white;
+  border: 1px solid black;
 }
-.facing-diff h3 {
-  font-size: 30px;
+.rides-customers-info table th {
+  height: 45px;
+  text-align: center;
+  background: white;
+  border: 1px solid black;
+  
+}
+
+.rides-customers-info .user-data {
+  background-color: black;
+  border-radius: 10px;
+}
+
+
+.rides-customers-info .edit-btn {
+  height: 45px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  /* width: 120px; */
+}
+
+.rides-customers-info .edit-btn button {
+  margin: 3.5px 0;
+  width: 100px;
+  height: 37px;
+  border-radius: 50px;
   font-weight: bold;
-  color: var(--blue);
-  padding: 20px;
+  border: none;
 }
-.facing-diff span {
-  padding: 15px;
-  background: var(--blue);
-  border-radius: 20px;
+
+.rides-customers-info .edit-btn button:hover {
+  font-size: large;
+}
+
+.rides-customers .delete-btn {
+  background-color: rgb(202, 30, 3);
   color: white;
-  margin-left: 20px;
 }
-.facing-diff span img {
-  width: 20px;
-  height: 20px;
-  padding: 5px;
+.rides-customers .confirm-btn{
+  background-color: yellow;
+  color: black;
 }
