@@ -12,7 +12,7 @@ function NavBar() {
     navigate("/login");
   }
 
-  const user = localStorage.getItem('user');
+  const user = localStorage.getItem("user");
 
   return (
     <Navbar
@@ -34,90 +34,109 @@ function NavBar() {
               id="collapsible-nav-dropdown"
               className="dropdown-btn"
             >
-               <NavDropdown.Item
-                  as={NavLink}
-                  to="/about-us"
-                  className="dropdown-items"
-                >
-                  About us
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/how-it-works"
-                  className="dropdown-items"
-                >
-                  How it Works
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/our-team"
-                  className="dropdown-items"
-                >
-                  Our Team
-                </NavDropdown.Item>
-                <NavDropdown.Item
+              <NavDropdown.Item
+                as={NavLink}
+                to="/about-us"
+                className="dropdown-items"
+              >
+                About us
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/how-it-works"
+                className="dropdown-items"
+              >
+                How it Works
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/our-team"
+                className="dropdown-items"
+              >
+                Our Team
+              </NavDropdown.Item>
+              <NavDropdown.Item
                 as={NavLink}
                 to="/become-a-driver"
                 className="dropdown-items"
               >
                 Become a Driver
               </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/admin"
-                  className="dropdown-items"
-                >
-                   Admin
+              <NavDropdown.Item
+                as={NavLink}
+                to="/admin"
+                className="dropdown-items"
+              >
+                Admin
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
                 to="/service-status"
                 className="dropdown-items"
               >
-                  Service Status
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/legal"
-                  className="dropdown-items"
-                >
-                  Legal and Privacy
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  as={NavLink}
-                  to="/book-a-driver"
-                  className="dropdown-items"
-                >
-                  Book a Driver
-                </NavDropdown.Item>
+                Service Status
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/legal"
+                className="dropdown-items"
+              >
+                Legal and Privacy
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={NavLink}
+                to="/book-a-driver"
+                className="dropdown-items"
+              >
+                Book a Driver
+              </NavDropdown.Item>
               {/* Dropdown items */}
             </NavDropdown>
             <Nav.Link as={NavLink} to="/safety" className="nav-link-with-space">
               Safety
             </Nav.Link>
-            <Nav.Link as={NavLink} to="/contact" className="nav-link-with-space">
+            <Nav.Link
+              as={NavLink}
+              to="/contact"
+              className="nav-link-with-space"
+            >
               Contact
             </Nav.Link>
           </Nav>
 
           <Nav className="ms-auto">
-  <NavDropdown title={user ? user : "Login"} id="user-dropdown"  className="nav-link-with-space">
-    {user ? (
-      <>
-        <NavDropdown.Item className="dropdown-items" as={NavLink} to="/on-the-way">
-        Rides
-        </NavDropdown.Item>
-        <NavDropdown.Item className="dropdown-items" onClick={logoutSubmit}>
-          Logout
-        </NavDropdown.Item>
-      </>
-    ) : (
-      <NavDropdown.Item as={NavLink} to="/login" className="dropdown-items">
-        Login
-      </NavDropdown.Item>
-    )}
-  </NavDropdown>
-</Nav>
+            <NavDropdown
+              title={user ? user : "Login"}
+              id="user-dropdown"
+              className="nav-link-with-space"
+            >
+              {user ? (
+                <>
+                  <NavDropdown.Item
+                    className="dropdown-items"
+                    as={NavLink}
+                    to={`/on-the-way/${user}`}
+                  >
+                    Rides
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    className="dropdown-items"
+                    onClick={logoutSubmit}
+                  >
+                    Logout
+                  </NavDropdown.Item>
+                </>
+              ) : (
+                <NavDropdown.Item
+                  as={NavLink}
+                  to="/login"
+                  className="dropdown-items"
+                >
+                  Login
+                </NavDropdown.Item>
+              )}
+            </NavDropdown>
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

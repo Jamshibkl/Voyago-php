@@ -36,7 +36,7 @@ body {
 }
 .user-booking .valid-msg {
   margin: 0;
-  padding: 10px 0px;
+  padding: 10px 0px 0px;
 }
 .user-booking .valid-msg .success {
   color: green;
@@ -48,7 +48,21 @@ body {
   padding: 5px 0px;
   font-weight: 600;
   color: rgba(75, 75, 75, 0.842);
+  margin: 0;
 }
+
+.form-username{
+  height: 65.44px;
+  display: none;
+}
+.form-picup{
+  height: 65.44px;
+}
+
+.form-outline{
+  height: 65.44px;
+}
+
 .user-booking .booikg-container input[type="text"] {
   width: 100%;
   padding: 10px 0 10px 12px;
@@ -61,17 +75,25 @@ body {
 [type="time"] {
   padding: 10px;
   width: 150px;
-  height: 50px;
+  height: 45px;
   border: 1px solid black;
   /* background: rgb(238, 238, 238); */
   border-radius: 8px;
 }
-.user-booking .booikg-container select {
+.user-booking .booikg-container .form-cabtype  {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  /* background: rgb(238, 238, 238); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user-booking .booikg-container select  {
   width: 100%;
   padding: 10px 0 10px 12px;
-  border: 1px solid black;
-  /* background: rgb(238, 238, 238); */
   border-radius: 8px;
+  display: flex;
 }
 .user-booking .booikg-container input[type="submit"] {
   width: 100%;
@@ -98,4 +120,9 @@ body {
   display: flex;
   /* justify-content: space-between; */
   gap: 50px;
+  height: 90px;
+}
+
+.form-picup-info{
+  height: 33px;
 }

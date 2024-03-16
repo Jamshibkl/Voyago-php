@@ -19,7 +19,8 @@ const karnatakaCities = [
   "bekal fort"
 ];
 function BookADriver() {
-  // const name = localStorage.getItem('user');
+  const name = localStorage.getItem('user');
+  const [username, setUsername] = useState("");
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropoffLocation, setDropoffLocation] = useState("");
   const [pickupDate, setPickupDate] = useState("");
@@ -28,10 +29,13 @@ function BookADriver() {
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
 
+  const userId = localStorage.getItem("user"); // Get the logged-in user's ID
+  console.log(userId);
+
   useEffect(() => {
     setTimeout(function () {
       setMsg("");
-    }, 15000);
+    }, 1000);
   }, [msg]);
 
   const handleInputChange = (e, type) => {
@@ -54,6 +58,7 @@ function BookADriver() {
         break;
       default:
         setError("");
+        setUsername(type === "username" ? e.target.value : userId);
         setPickupLocation(
           type === "pickupLocation" ? e.target.value : pickupLocation
         );
@@ -67,7 +72,9 @@ function BookADriver() {
   };
 
   function handleSubmit() {
+    console.log(name);
     if (
+      username !== "" &&
       pickupLocation !== "" &&
       dropoffLocation !== "" &&
       pickupDate !== "" &&
@@ -80,6 +87,7 @@ function BookADriver() {
         "Content-Type": "application/json",
       };
       var Data = {
+        username: username,
         pickupLocation: pickupLocation,
         dropoffLocation: dropoffLocation,
         pickupDate: pickupDate,
@@ -99,6 +107,7 @@ function BookADriver() {
           setError(err);
           console.log(err);
         });
+      setUsername("");
       setPickupLocation("");
       setDropoffLocation("");
       setPickupDate("");
@@ -125,22 +134,22 @@ function BookADriver() {
               <span className="error">{error}</span>
             )}
           </p>
-          <div className="">
-            <label className="form-label">Enter Your User Name</label>
-            <br />
+          <div className="form-username">
+            {/* <label className="form-label">Enter Your User Name</label> */}
+            {/* <br /> */}
             <input
               type="text"
-              name="name"
+              name="username"
               className=""
               placeholder="Enter Your User Name "
-              // value={name}
-              onChange={(e) => handleInputChange(e, "name")}
+              value={username}
+              onChange={(e) => handleInputChange(e, "username")}
               // onBlur={checkUser}
             />
           </div>
-          <div className="">
-            <label className="form-label">Choose Location</label>
-            <br />
+          <div className="form-picup">
+            {/* <label className="form-label">Choose Location</label> */}
+            {/* <br /> */}
             <input
               type="text"
               name="pickupLocation"
@@ -165,7 +174,7 @@ function BookADriver() {
             />
           </div>
           <div className="bookig-date-time">
-            <div className="form-outline ">
+            <div className="form-picup-info ">
               <label className="form-label">Pickup Date</label>
               <br />
               <input
@@ -178,7 +187,7 @@ function BookADriver() {
                 // onBlur={checkPassword}
               />
             </div>
-            <div className="form-outline ">
+            <div className="form-picup-info ">
               <label className="form-label">Pickup Time</label>
               <br />
               <input
@@ -191,8 +200,8 @@ function BookADriver() {
               />
             </div>
           </div>
-          <div className="form-outline ">
-            <label className="form-label">Cab Type</label>
+          <div className="form-cabtype ">
+            {/* <label className="form-label">Cab Type</label> */}
             <br />
 
             <select
@@ -207,7 +216,7 @@ function BookADriver() {
               <option value="Sedan">Sedan</option>
             </select>
           </div>
-          <br />
+          {/* <br /> */}
           <div className="">
             <input
               type="submit"

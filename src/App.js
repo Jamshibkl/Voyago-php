@@ -61,7 +61,7 @@ function App() {
           <Route path="/driver-on-way" element={<DriverOnWay />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/sign-in" element={<SignInUp />} />
-          <Route path="/on-the-way" element={<OnTheWay />} />
+          <Route path="/on-the-way/:bookingUser" element={<OnTheWay />} />
           <Route path="/destination" element={<Destination />} />
           <Route path="/payment-section" element={<PaymentSection />} />
           <Route path="/admin" element={<Admin />} />
