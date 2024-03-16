@@ -25,16 +25,16 @@ if (mysqli_connect_error()) {
         if ($res) {
             $result = "You have booked successfully!";
 
-            // Optionally retrieve user details for specific use cases (sanitize data before sending)
-            // $userDetails = array(
-            //     "id" => mysqli_insert_id($conn),
-            //     "pickupLocation" => $pickupLocation,
-            //     "dropoffLocation" => $dropoffLocation,
-            //     "pickupDate" => $pickupDate,
-            //     "pickupTime" => $pickupTime,
-            //     "cabType" => $cabType
-            // );
-            // $response[] = $userDetails;
+            Optionally retrieve user details for specific use cases (sanitize data before sending)
+            $userDetails = array(
+                "id" => mysqli_insert_id($conn),
+                "pickupLocation" => $pickupLocation,
+                "dropoffLocation" => $dropoffLocation,
+                "pickupDate" => $pickupDate,
+                "pickupTime" => $pickupTime,
+                "cabType" => $cabType
+            );
+            $response[] = $userDetails;
         } else {
             $result = "Booking failed: " . mysqli_error($conn); // Capture specific error for debugging
         }
