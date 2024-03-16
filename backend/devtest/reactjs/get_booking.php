@@ -10,7 +10,7 @@ if (mysqli_connect_error()) {
     exit();
 }
 
-$sql = "SELECT id, pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType, created_at FROM booking";
+$sql = "SELECT id, username, pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType, created_at FROM booking";
 $result = mysqli_query($conn, $sql);
 
 if ($result && mysqli_num_rows($result) > 0) {
