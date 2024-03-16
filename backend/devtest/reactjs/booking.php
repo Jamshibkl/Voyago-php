@@ -11,6 +11,7 @@ if (mysqli_connect_error()) {
     $eData = file_get_contents("php://input");
     $dData = json_decode($eData, true);
 
+    $username = isset($dData['username']) ? htmlspecialchars($dData['username']) : "";
     $pickupLocation = isset($dData['pickupLocation']) ? htmlspecialchars($dData['pickupLocation']) : "";
     $dropoffLocation = isset($dData['dropoffLocation']) ? htmlspecialchars($dData['dropoffLocation']) : "";
     $pickupDate = isset($dData['pickupDate']) ? htmlspecialchars($dData['pickupDate']) : "";
@@ -19,8 +20,8 @@ if (mysqli_connect_error()) {
 
     $result = "";
 
-    if ($pickupLocation != "" && $dropoffLocation != "" && $pickupDate != "" && $pickupTime != "" && $cabType != "") {
-        $sql = "INSERT INTO booking(pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType) VALUES('$pickupLocation', '$dropoffLocation', '$pickupDate', '$pickupTime', '$cabType')";
+    if ($username != "" && $pickupLocation != "" && $dropoffLocation != "" && $pickupDate != "" && $pickupTime != "" && $cabType != "") {
+        $sql = "INSERT INTO booking(username, pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType) VALUES('$username','$pickupLocation', '$dropoffLocation', '$pickupDate', '$pickupTime', '$cabType')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
             $result = "You have booked successfully!";
