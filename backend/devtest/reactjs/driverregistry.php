@@ -24,14 +24,14 @@ if(mysqli_connect_error()){
         if($res){
             $result = "You have registered successfully!";
             // Retrieve the user details and return them in the response
-            $userDetails = array(
-                "id" => mysqli_insert_id($conn),
-                "driver" => $driver,
-                "email" => $email,
-                "mobile" => $mobile,
-                "password" => $pass
-            );
-            $response[] = $userDetails;
+            // $userDetails = array(
+            //     "id" => mysqli_insert_id($conn),
+            //     "driver" => $driver,
+            //     "email" => $email,
+            //     "mobile" => $mobile,
+            //     "password" => $pass
+            // );
+            // $response[] = $userDetails;
         } else {
             $result = "";
         }

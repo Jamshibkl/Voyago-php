@@ -47,8 +47,8 @@ function OnTheWay() {
                     <table>
                       <thead>
                         <tr>
-                          <th>ID</th>
-                          <th>Username</th>
+                          {/* <th>ID</th> */}
+                          {/* <th>Username</th> */}
                           <th>Pickup Location</th>
                           <th>Dropoff Location</th>
                           <th>Pickup Date</th>
@@ -63,8 +63,8 @@ function OnTheWay() {
                           <tr className="user-data" key={index}>
                             {booking.username === bookingUser && (
                               <>
-                                <td>{booking.id}</td>
-                                <td>{booking.username}</td>
+                                {/* <td>{booking.id}</td> */}
+                                {/* <td>{booking.username}</td> */}
                                 <td>{booking.pickupLocation}</td>
                                 <td>{booking.dropoffLocation}</td>
                                 <td>{booking.pickupDate}</td>

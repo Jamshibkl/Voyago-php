@@ -24,7 +24,7 @@ if (mysqli_connect_error()) {
         $sql = "INSERT INTO booking(username, pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType) VALUES('$username','$pickupLocation', '$dropoffLocation', '$pickupDate', '$pickupTime', '$cabType')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
-            $result = "You have booked successfully!";
+            $result = "You have Requested successfully!";
 
             // Optionally retrieve user details for specific use cases (sanitize data before sending)
             // $userDetails = array(
