@@ -3,6 +3,7 @@ import Navbar from "../../NavBar/NavBar";
 import BookingImg from "../../../Assets/book a drive image.jpg";
 // import { Link } from "react-router-dom";
 import "./BookADriver.css";
+import { useNavigate } from "react-router-dom";
 const karnatakaCities = [
   "bangalore",
   "mysore",
@@ -16,10 +17,10 @@ const karnatakaCities = [
   "dharwad",
   "kochi",
   "kasaragod",
-  "bekal fort"
+  "bekal fort",
 ];
 function BookADriver() {
-  const name = localStorage.getItem('user');
+  const name = localStorage.getItem("user");
   const [username, setUsername] = useState("");
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropoffLocation, setDropoffLocation] = useState("");
@@ -28,6 +29,8 @@ function BookADriver() {
   const [cabType, setCabType] = useState("");
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
+
+  const navigate = useNavigate();
 
   const userId = localStorage.getItem("user"); // Get the logged-in user's ID
   console.log(userId);
@@ -107,6 +110,7 @@ function BookADriver() {
           setError(err);
           console.log(err);
         });
+      navigate("/find-a-driver");
       setUsername("");
       setPickupLocation("");
       setDropoffLocation("");
@@ -208,7 +212,8 @@ function BookADriver() {
               name="cabType"
               className=""
               value={cabType}
-              onChange={(e) => handleInputChange(e, "cabType")}>
+              onChange={(e) => handleInputChange(e, "cabType")}
+            >
               <option value="">Select Cab Type</option>
               <option value="Luxury">Luxury</option>
               <option value="SUV">SUV</option>
@@ -232,4 +237,4 @@ function BookADriver() {
   );
 }
 
-export default BookADriver; 
+export default BookADriver;
