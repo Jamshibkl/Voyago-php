@@ -24,18 +24,18 @@ if (mysqli_connect_error()) {
         $sql = "INSERT INTO booking(username, pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType) VALUES('$username','$pickupLocation', '$dropoffLocation', '$pickupDate', '$pickupTime', '$cabType')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
-            $result = "You have booked successfully!";
+            $result = "You have Requested successfully!";
 
-            Optionally retrieve user details for specific use cases (sanitize data before sending)
-            $userDetails = array(
-                "id" => mysqli_insert_id($conn),
-                "pickupLocation" => $pickupLocation,
-                "dropoffLocation" => $dropoffLocation,
-                "pickupDate" => $pickupDate,
-                "pickupTime" => $pickupTime,
-                "cabType" => $cabType
-            );
-            $response[] = $userDetails;
+            // Optionally retrieve user details for specific use cases (sanitize data before sending)
+            // $userDetails = array(
+            //     "id" => mysqli_insert_id($conn),
+            //     "pickupLocation" => $pickupLocation,
+            //     "dropoffLocation" => $dropoffLocation,
+            //     "pickupDate" => $pickupDate,
+            //     "pickupTime" => $pickupTime,
+            //     "cabType" => $cabType
+            // );
+            // $response[] = $userDetails;
         } else {
             $result = "Booking failed: " . mysqli_error($conn); // Capture specific error for debugging
         }

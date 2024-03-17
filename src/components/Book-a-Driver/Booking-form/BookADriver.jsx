@@ -134,22 +134,22 @@ function BookADriver() {
               <span className="error">{error}</span>
             )}
           </p>
-          <div className="">
-            <label className="form-label">Enter Your User Name</label>
-            <br />
+          <div className="form-username">
+            {/* <label className="form-label">Enter Your User Name</label> */}
+            {/* <br /> */}
             <input
               type="text"
-              name="name"
+              name="username"
               className=""
               placeholder="Enter Your User Name "
-              // value={name}
-              onChange={(e) => handleInputChange(e, "name")}
+              value={username}
+              onChange={(e) => handleInputChange(e, "username")}
               // onBlur={checkUser}
             />
           </div>
-          <div className="">
-            <label className="form-label">Choose Location</label>
-            <br />
+          <div className="form-picup">
+            {/* <label className="form-label">Choose Location</label> */}
+            {/* <br /> */}
             <input
               type="text"
               name="pickupLocation"

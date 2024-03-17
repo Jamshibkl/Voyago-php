@@ -309,12 +309,25 @@ function SignInUp() {
                 <i className="bi bi-eye"></i>
               </div>
               <div className="field input">
-                <input
-                  type="text"
-                  placeholder="Location"
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                />
+              <select
+              className=""
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}>
+              <option value="">Select Location</option>
+              <option value="bangalore">bangalore</option>
+              <option value="mysore">mysore</option>
+              <option value="mangalore">mangalore</option>
+              <option value="gulbarga">gulbarga</option>
+              <option value="belgaum">belgaum</option>
+              <option value="bijapur">bijapur</option>
+              <option value="hubli">hubli</option>
+              <option value="udupi">udupi</option>
+              <option value="dharwad">dharwad</option>
+              <option value="shimoga">shimoga</option>
+              <option value="kochi">kochi</option>
+              <option value="kasaragod">kasaragod</option>
+              <option value="bekal fort">bekal fort</option>
+            </select>
                 <i className="bi bi-eye"></i>
               </div>
               <div className="field button">
