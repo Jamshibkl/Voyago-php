@@ -56,7 +56,7 @@ function LoadingPage() {
             <div>
               {product.map((driver, index) => (
                 <div key={index}>
-                  {index === 0 ? (
+                  {index !== 2 ? (
                     <div className="driver-table-info">
                       <h2>Driver details</h2>
                       {/* {console.log(index)} */}
