@@ -7,6 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/Home/Home";
+import NotFound from "./NotFound";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import OurTeam from "./pages/OurTeam/OurTeam";
 import BecomeaDriver from "./pages/BecomeaDriver/BecomeaDriver";
@@ -90,6 +91,7 @@ function App() {
           <Route path="/total-drivers" element={<TotalDrivers />} />
           <Route path="/total-admin" element={<TotalAdmin />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>
