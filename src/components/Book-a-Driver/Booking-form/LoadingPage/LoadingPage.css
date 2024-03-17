@@ -37,7 +37,9 @@
     background-color: #ffffff;
     
 }
-
+.finding-page .driver-container {
+    margin: 350px 0px 0px 0px;
+}
 .loading-text {
     text-align: center;
     color: #407bff;
