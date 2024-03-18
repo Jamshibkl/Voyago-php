@@ -7,7 +7,7 @@
     font-weight: bold;
     color: var(--blue);
 }
-.driver-notification-section .driver-notification form {
+.driver-notification-section .driver-notification .booking-info-form {
     width: 900px;
     background: rgb(237, 237, 237);
     margin: 30px 0px 0px 100px;
@@ -42,22 +42,34 @@
 .driver-notification .booking-details::-webkit-scrollbar{
     width: 20px;
 }
+/* 
+.driver-notification .booking-conform{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 .driver-notification-section .driver-notification form .confirm
  {
-    padding: 10px;
+    width: 100px;
+    height: 45px;
+    padding: 0px;
     background: var(--blue);
     border-radius: 20px;
     border: none;
     color: #ffffff;
+    font-size: 20px;
     margin-left: auto; 
-    margin-top: -100px; 
+    margin-right: 10px;
+    /* margin-top: -100px;  */
 }
 .driver-notification-section .driver-notification form .cancel {
-    width: 80px;
+    width: 100px;
     height: 45px;
     background: rgba(255, 0, 0, 0.642);
+    font-size: 20px;
     border-radius: 20px;
     border: none;
     color: #ffffff;
-    margin-left: auto; 
+    margin-left: 10px; 
 }

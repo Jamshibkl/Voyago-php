@@ -1,15 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import "./LoadingPage.css";
 
 function LoadingPage() {
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(null);
-  const [driverId, setDriverId] = useState("");  
+  const [driverId, setDriverId] = useState("");
   const [driverName, setDriverName] = useState("");
   const [driverEmail, setDriverEmail] = useState("");
   const [driverMobile, setDriverMobile] = useState("");
+  const [randomNum, setRandomNum] = useState("");
+
+  const [message, setMessage] = useState("");
+  const [msg, setMsg] = useState("");
 
   const pickup = localStorage.getItem("pickup");
+  // console.log(pickup);
+
+  const generateRandomNumber = () => {
+    return Math.floor(100000 + Math.random() * 900000);
+  };
+
+  // Generate a random 6-digit number
+  // console.log(randomNum);
 
   const findingADriver = (e) => {
     if (loading !== e) {
@@ -46,6 +60,51 @@ function LoadingPage() {
     getProduct();
   }, []);
 
+  //post the all data
+
+  const DriverVerifyInfo = async () => {
+    const formData = new FormData();
+    formData.append("driverId", driverId);
+    formData.append("driverName", driverName);
+    formData.append("driverEmail", driverEmail);
+    formData.append("driverMobile", driverMobile);
+    formData.append("randomNum", randomNum);
+
+    const responce = await axios.post(
+      "http://localhost/devtest/reactjs/bookinginformation/booking_info.php",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+
+    if (responce.data.success) {
+      setMessage(responce.data.success);
+      setTimeout(() => {
+        navigate("/ride-started");
+      }, 500);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setRandomNum(generateRandomNumber());
+
+    localStorage.setItem("randomNum", randomNum);
+
+    if (
+      driverId !== "" &&
+      driverName !== "" &&
+      driverEmail !== "" &&
+      driverMobile !== "" &&
+      randomNum !== ""
+    ) {
+      await DriverVerifyInfo();
+    } else {
+      setMsg("All fields are required!");
+    }
+  };
+
   return (
     <div className="main-loading">
       <div className="fixed-section">
@@ -69,7 +128,7 @@ function LoadingPage() {
                               alt="njsnu"
                               className="driver-profile img"
                             />
-                            <h5 className="driver-name">{driver.driver}</h5>
+                            <h5 className="driver-name">{driver.driver} </h5>
                           </div>
                           <div className="driver-profile-tables">
                             <table>
@@ -95,9 +154,7 @@ function LoadingPage() {
                                   </th>
                                 </tr>
                                 <tr>
-                                  <th className="profile-tableth">
-                                    Driver Id
-                                  </th>
+                                  <th className="profile-tableth">Driver Id</th>
                                   <th className="profile-table-th-info">
                                     <input
                                       type="text"
@@ -105,7 +162,9 @@ function LoadingPage() {
                                       className=""
                                       placeholder="Enter Your User Name "
                                       value={driverId}
-                                      onChange={(e) => setDriverId(e.target.value)}
+                                      onChange={(e) =>
+                                        setDriverId(e.target.value)
+                                      }
                                     />
                                   </th>
                                 </tr>
@@ -115,9 +174,14 @@ function LoadingPage() {
                               {/* <Link to={`/ride-started/${driverId}`}>
                                 <button className="accept-btn">Accept</button>
                               </Link> */}
-                                <Link to='/ride-started'>
-                                <button className="accept-btn">Accept</button>
-                              </Link>
+                              {/* <Link to='/ride-started'> */}
+                              <button
+                                className="accept-btn"
+                                onClick={handleSubmit}
+                              >
+                                Accept
+                              </button>
+                              {/* </Link> */}
                               <button className="reject-btn">Reject</button>
                             </div>
                           </div>

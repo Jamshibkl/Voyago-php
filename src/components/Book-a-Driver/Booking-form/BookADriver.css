@@ -63,7 +63,7 @@ body {
   height: 65.44px;
 }
 
-.user-booking .booikg-container input[type="text"] {
+.user-booking .booikg-container input[type="text"],[type="number"] {
   width: 100%;
   padding: 10px 0 10px 12px;
   border: 1px solid black;

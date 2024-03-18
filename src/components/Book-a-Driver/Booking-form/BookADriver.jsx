@@ -44,7 +44,7 @@ function BookADriver() {
   const handleInputChange = (e, type) => {
     switch (type) {
       case "pickupLocation":
-      case "dropoffLocation":
+      // case "dropoffLocation":
         setError("");
         const isKarnatakaCity = karnatakaCities.includes(
           e.target.value.toLowerCase()
@@ -111,6 +111,9 @@ function BookADriver() {
           console.log(err);
         });
         localStorage.setItem("pickup",pickupLocation)
+        localStorage.setItem("username",username)
+        localStorage.setItem("pickupTime",pickupTime)
+        localStorage.setItem("pickupDate",pickupDate)
         navigate("/find-a-driver");
       setUsername("");
       setPickupLocation("");
@@ -169,10 +172,10 @@ function BookADriver() {
             {/* <label className="form-label">Dropoff Location</label> */}
             {/* <br /> */}
             <input
-              type="text"
+              type="number"
               name="dropoffLocation"
               className=""
-              placeholder="Enter 4 letters to Search Your Dropoff Location"
+              placeholder="Mobile number"
               value={dropoffLocation}
               onChange={(e) => handleInputChange(e, "dropoffLocation")}
               // onBlur={checkEmail}

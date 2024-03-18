@@ -50,7 +50,7 @@ function OnTheWay() {
                           {/* <th>ID</th> */}
                           {/* <th>Username</th> */}
                           <th>Pickup Location</th>
-                          <th>Dropoff Location</th>
+                          <th>Mobile</th>
                           <th>Pickup Date</th>
                           <th>Pickup Time</th>
                           <th>Cab Type</th>
@@ -66,7 +66,7 @@ function OnTheWay() {
                                 {/* <td>{booking.id}</td> */}
                                 {/* <td>{booking.username}</td> */}
                                 <td>{booking.pickupLocation}</td>
-                                <td>{booking.dropoffLocation}</td>
+                                <td>{booking.mobile}</td>
                                 <td>{booking.pickupDate}</td>
                                 <td>{booking.pickupTime}</td>
                                 <td>{booking.cabType}</td>
