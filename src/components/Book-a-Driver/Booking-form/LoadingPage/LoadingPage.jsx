@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./LoadingPage.css";
 
 function LoadingPage() {
   const [loading, setLoading] = useState(null);
+  const [driverId, setDriverId] = useState("");  
+  const [driverName, setDriverName] = useState("");
+  const [driverEmail, setDriverEmail] = useState("");
+  const [driverMobile, setDriverMobile] = useState("");
+
   //   const [randomNumber, setRandomNumber] = useState(null);
   const pickup = localStorage.getItem("pickup");
   //   console.log(pickup);
@@ -58,7 +64,7 @@ function LoadingPage() {
             <div className="driver-container">
               {product.map(
                 (driver, index) =>
-                  index <=1 && (
+                  index <= 1 && (
                     <div key={index}>
                       {driver.location === pickup ? (
                         <div className="driver-table-info">
@@ -80,12 +86,14 @@ function LoadingPage() {
                                   <th className="profile-tableth">Name</th>
                                   <th className="profile-table-th-info">
                                     {driver.driver}
+                                    {setDriverName(driver.driver)}
                                   </th>
                                 </tr>
                                 <tr>
                                   <th className="profile-tableth">Email</th>
                                   <th className="profile-table-th-info">
                                     {driver.email}
+                                    {setDriverEmail(driver.email)}
                                   </th>
                                 </tr>
                                 <tr>
@@ -94,12 +102,30 @@ function LoadingPage() {
                                   </th>
                                   <th className="profile-table-th-info">
                                     {driver.mobile}
+                                    {setDriverMobile(driver.mobile)}
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <th className="profile-tableth">
+                                    Driver Id
+                                  </th>
+                                  <th className="profile-table-th-info">
+                                    <input
+                                      type="text"
+                                      name="username"
+                                      className=""
+                                      placeholder="Enter Your User Name "
+                                      value={driver.id}
+                                      onChange={() => setDriverId(driver.id)}
+                                    />
                                   </th>
                                 </tr>
                               </thead>
                             </table>
                             <div className="request-btns">
-                              <button className="accept-btn">Accept</button>
+                              <Link to={`/ride-started/${driverId}`}>
+                                <button className="accept-btn">Accept</button>
+                              </Link>
                               <button className="reject-btn">Reject</button>
                             </div>
                           </div>

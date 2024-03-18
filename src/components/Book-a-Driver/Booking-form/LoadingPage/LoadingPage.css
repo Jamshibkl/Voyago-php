@@ -78,6 +78,14 @@
     color: #000;
 }
 
+.profile-table-th-info input{
+    width: 100%;
+    /* height: 100%; */
+    border: none;
+    text-align: center;
+    font-weight: bold;
+}
+
 .driver-profile-sec {
     margin: 10px 0;
 
