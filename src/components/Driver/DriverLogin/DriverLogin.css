@@ -93,6 +93,7 @@ form .name-details .field:last-child{
     padding: 0 10px;
     border:  1px solid #ccc;
     border-radius: 5px;
+    background: white;
 }
 
 .form1 form .image input{
@@ -110,7 +111,7 @@ form .name-details .field:last-child{
     border-radius: 5px;
     cursor: pointer;
 }
-.form1 form .field i{
+.form1 form .field .icon{
     position: absolute;
     right: 15px;
     color: #ccc;

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../NavBar/NavBar";
-import { Link ,useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./SignInUp.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEye
+} from "@fortawesome/free-solid-svg-icons";
 
 function SignInUp() {
-
   const navigate = useNavigate();
 
   const [user, setUser] = useState("");
@@ -161,103 +164,98 @@ function SignInUp() {
   return (
     <>
       <Navbar />
-      <section className="user-register">
-        <div className="register-container">
-          <div className="register-img">
-            <img src="" alt="" />
-          </div>
-          <h2 className="register-container-heading">Create an account</h2>
-          <p className="valid-msg">
-            {msg !== "" ? (
-              <span className="success">{msg}</span>
-            ) : (
-              <span className="error">{error}</span>
-            )}
-          </p>
-          <div className="">
-            {/* <label className="form-label">Your User Name</label> */}
-            <br />
-            <input
-              type="text"
-              name="user"
-              className=""
-              placeholder="Enter Your Username"
-              value={user}
-              onChange={(e) => handleInputChange(e, "user")}
-              onBlur={checkUser}
-            />
-          </div>
-          <div className="form-outline">
-            {/* <label className="form-label">Your Email</label> */}
-            <br />
-            <input
-              type="email"
-              name="email"
-              className=""
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => handleInputChange(e, "email")}
-              onBlur={checkEmail}
-            />
-          </div>
-          <div className="form-outline ">
-            {/* <label className="form-label">Password</label> */}
-            <br />
-            <input
-              type="password"
-              name="pass1"
-              className=""
-              placeholder="Enter your password"
-              value={pass1}
-              onChange={(e) => handleInputChange(e, "pass1")}
-              onBlur={checkPassword}
-            />
-          </div>
-          <div className="form-outline ">
-            {/* <label className="form-label">Repeat your password</label> */}
-            <br />
-            <input
-              type="password"
-              name="pass2"
-              className=""
-              placeholder="Repeat your password"
-              value={pass2}
-              onChange={(e) => handleInputChange(e, "pass2")}
-            />
-          </div>
-          <br />
-          <div className="form-check ">
-            <input
-              className="form-check-input "
-              type="checkbox"
-              defaultValue
-              id="form2Example3cg"
-            />
-            <p className="form-check-label" htmlFor="form2Example3g">
-              I agree all statements in{" "}
-              <a href="#!" className="text-body">
-                <u>Terms of service</u>
-              </a>
-            </p>
-          </div>
-          <div className="">
-            <input
-              type="submit"
-              defaultValue="Submit"
-              className="btn"
-              onClick={handleSubmit}
-            />
-          </div>
-          <p className="text-center">
-            Have already an account?{" "}
-            <a href="#!" className="">
-              <Link to="/login">
-                <u>Login here</u>
-              </Link>
-            </a>
-          </p>
+      <div className="driver-signup-fom ">
+        <div className="wrapper1">
+          <section className="form1 singup">
+            <header>Create an account</header>
+            <form>
+              {error !== "" ? (
+                <div className="error-txt">{error}</div>
+              ) : (
+                <div className="">{error}</div>
+              )}
+              {msg !== "" ? (
+                <div className="success-msg">{msg}</div>
+              ) : (
+                <div className="">{msg}</div>
+              )}
+
+              <div className="field input">
+                <label>Username</label>
+                <input
+                  type="text"
+                  name="user"
+                  placeholder="Enter Username"
+                  value={user}
+                  onChange={(e) => handleInputChange(e, "user")}
+                  onBlur={checkUser}
+                />
+              </div>
+              <div className="field input">
+                <label>Your Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => handleInputChange(e, "email")}
+                  onBlur={checkEmail}
+                />
+              </div>
+              <div className="field input">
+                <label>Password</label>
+                <input
+                  type="password"
+                  name="pass1"
+                  placeholder="Pasword"
+                  value={pass1}
+                  onChange={(e) => handleInputChange(e, "pass1")}
+                  onBlur={checkPassword}
+                />
+                <FontAwesomeIcon icon={faEye} className="icon"/>
+              </div>
+              <div className="field input">
+                <label>Repeat your password</label>
+                <input
+                  type="password"
+                  name="pass2"
+                  placeholder="Repeat your password"
+                  value={pass2}
+                  onChange={(e) => handleInputChange(e, "pass2")}
+                />
+                <FontAwesomeIcon icon={faEye} className="icon"/>
+              </div>
+              <br />
+              <div className="form-check ">
+                <input
+                  className="form-check-input "
+                  type="checkbox"
+                  defaultValue
+                  id="form2Example3cg"
+                />
+                <p className="form-check-label" htmlFor="form2Example3g" style={{margin:"0px"}}>
+                  I agree all statements in{" "}
+                  <a href="#!" className="text-body">
+                    <u>Terms of service</u>
+                  </a>
+                </p>
+              </div>
+
+              <div className="field button">
+                <input
+                  type="submit"
+                  defaultValue="Submit"
+                  onClick={handleSubmit}
+                  style={{ background: "#407BFF" }}
+                />
+              </div>
+            </form>
+            <div className="link">
+              Have already an account? <Link to="/login">Login here</Link>
+            </div>
+          </section>
         </div>
-      </section>
+      </div>
     </>
   );
 }

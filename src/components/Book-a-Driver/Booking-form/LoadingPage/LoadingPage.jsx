@@ -18,6 +18,8 @@ function LoadingPage() {
     }, 2000);
   }, []);
 
+
+
   const [product, setProduct] = useState([]);
   //   const [driver, setDriver] = useState([]);
 
@@ -53,7 +55,7 @@ function LoadingPage() {
             <h1>Your driver is arriving soon.</h1>
           </div>
           <div className={loading == true ? "loading-text" : "loading-false"}>
-            <div>
+            <div className="driver-container"> 
               {product.map((driver, index) => (
                 <div key={index}>
                   {index !== 2 ? (
@@ -86,7 +88,7 @@ function LoadingPage() {
                             <tr>
                               <th className="profile-tableth">Mobile Number</th>
                               <th className="profile-table-th-info">
-                                {driver.mobile}
+                              {driver.mobile}
                               </th>
                             </tr>
                           </thead>
