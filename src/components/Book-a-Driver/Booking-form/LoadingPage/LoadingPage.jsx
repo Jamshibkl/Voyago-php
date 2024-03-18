@@ -9,34 +9,35 @@ function LoadingPage() {
   const [driverEmail, setDriverEmail] = useState("");
   const [driverMobile, setDriverMobile] = useState("");
 
-  //   const [randomNumber, setRandomNumber] = useState(null);
   const pickup = localStorage.getItem("pickup");
-  //   console.log(pickup);
 
   const findingADriver = (e) => {
-    if (loading != e) {
-      return setLoading(true);
+    if (loading !== e) {
+      setLoading(true);
     }
   };
 
   useEffect(() => {
-    setTimeout(function () {
+    setTimeout(() => {
       findingADriver(true);
-      //   generateRandomNumber();
     }, 2000);
   }, []);
 
   const [product, setProduct] = useState([]);
-  //   const [driver, setDriver] = useState([]);
 
   useEffect(() => {
     const getProduct = () => {
       fetch("http://localhost/devtest/reactjs/DriverVerifyInfo/DriverInfo.php")
-        .then((res) => {
-          return res.json();
-        })
+        .then((res) => res.json())
         .then((data) => {
           setProduct(data);
+          if (data.length > 0) {
+            const driver = data[0];
+            setDriverName(driver.driver);
+            setDriverEmail(driver.email);
+            setDriverMobile(driver.mobile);
+            setDriverId(driver.id);
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -44,13 +45,6 @@ function LoadingPage() {
     };
     getProduct();
   }, []);
-
-  //   let newRandomNumber=0;
-  //   const generateRandomNumber = () => {
-  //     newRandomNumber = Math.floor(Math.random() * 1); // Generates a random number between 1 and 100
-  //     setRandomNumber(newRandomNumber);
-  //     // console.log(newRandomNumber);
-  //   };
 
   return (
     <div className="main-loading">
@@ -69,8 +63,6 @@ function LoadingPage() {
                       {driver.location === pickup ? (
                         <div className="driver-table-info">
                           <h2>Driver details</h2>
-                          {/* <h2>{driver.location}</h2> */}
-                          {/* {console.log(index)} */}
                           <div className="driver-profile-sec">
                             <img
                               src={`http://localhost/devtest/reactjs/DriverVerifyInfo/images/Profile/${driver.profileImg}`}
@@ -85,15 +77,13 @@ function LoadingPage() {
                                 <tr>
                                   <th className="profile-tableth">Name</th>
                                   <th className="profile-table-th-info">
-                                    {driver.driver}
-                                    {setDriverName(driver.driver)}
+                                    {driverName}
                                   </th>
                                 </tr>
                                 <tr>
                                   <th className="profile-tableth">Email</th>
                                   <th className="profile-table-th-info">
-                                    {driver.email}
-                                    {setDriverEmail(driver.email)}
+                                    {driverEmail}
                                   </th>
                                 </tr>
                                 <tr>
@@ -101,8 +91,7 @@ function LoadingPage() {
                                     Mobile Number
                                   </th>
                                   <th className="profile-table-th-info">
-                                    {driver.mobile}
-                                    {setDriverMobile(driver.mobile)}
+                                    {driverMobile}
                                   </th>
                                 </tr>
                                 <tr>
@@ -115,15 +104,18 @@ function LoadingPage() {
                                       name="username"
                                       className=""
                                       placeholder="Enter Your User Name "
-                                      value={driver.id}
-                                      onChange={() => setDriverId(driver.id)}
+                                      value={driverId}
+                                      onChange={(e) => setDriverId(e.target.value)}
                                     />
                                   </th>
                                 </tr>
                               </thead>
                             </table>
                             <div className="request-btns">
-                              <Link to={`/ride-started/${driverId}`}>
+                              {/* <Link to={`/ride-started/${driverId}`}>
+                                <button className="accept-btn">Accept</button>
+                              </Link> */}
+                                <Link to='/ride-started'>
                                 <button className="accept-btn">Accept</button>
                               </Link>
                               <button className="reject-btn">Reject</button>
@@ -133,7 +125,6 @@ function LoadingPage() {
                       ) : (
                         <div></div>
                       )}
-                      {/* <hr /> */}
                     </div>
                   )
               )}
