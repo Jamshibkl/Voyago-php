@@ -17,6 +17,7 @@ import ServiceStatus from "./pages/ServiceStatus/ServiceStatus";
 import LeagalPrivacy from "./pages/LeagalAandPrivacy/LeagalPrivacy";
 import BookADriver from "./components/Book-a-Driver/Booking-form/BookADriver";
 import LoadingPage from "./components/Book-a-Driver/Booking-form/LoadingPage/LoadingPage";
+import RideTime from "./components/Book-a-Driver/Booking-form/Ride-time/RideTime";
 import DriverOnWay from "./components/Book-a-Driver/Driver-on-way/DriverOnWay";
 import Destination from "./components/Book-a-Driver/Destination/Destination";
 import OnTheWay from "./components/Book-a-Driver/OnTheWay/OnTheWay";
@@ -60,6 +61,7 @@ function App() {
           <Route path="/leagal-privacy" element={<LeagalPrivacy />} />
           <Route path="/book-a-driver" element={<BookADriver />} />
           <Route path="/find-a-driver" element={<LoadingPage />} />
+          <Route path="/ride-started" element={<RideTime />} />
           <Route path="/driver-confirm" element={<DriverConform />} />
           <Route path="/driver-on-way" element={<DriverOnWay />} />
           <Route path="/contact" element={<ContactUs />} />
