@@ -111,7 +111,8 @@ function BookADriver() {
           setError(err);
           console.log(err);
         });
-      navigate("/find-a-driver");
+        localStorage.setItem("pickup",pickupLocation)
+        navigate("/find-a-driver");
       setUsername("");
       setPickupLocation("");
       setDropoffLocation("");

@@ -3,7 +3,9 @@ import "./LoadingPage.css";
 
 function LoadingPage() {
   const [loading, setLoading] = useState(null);
-  const [randomNumber, setRandomNumber] = useState(null);
+  //   const [randomNumber, setRandomNumber] = useState(null);
+  const pickup = localStorage.getItem("pickup");
+  //   console.log(pickup);
 
   const findingADriver = (e) => {
     if (loading != e) {
@@ -14,7 +16,7 @@ function LoadingPage() {
   useEffect(() => {
     setTimeout(function () {
       findingADriver(true);
-    //   generateRandomNumber();
+      //   generateRandomNumber();
     }, 2000);
   }, []);
 
@@ -39,12 +41,12 @@ function LoadingPage() {
     getProduct();
   }, []);
 
-//   let newRandomNumber=0;
-//   const generateRandomNumber = () => {
-//     newRandomNumber = Math.floor(Math.random() * 1); // Generates a random number between 1 and 100
-//     setRandomNumber(newRandomNumber);
-//     // console.log(newRandomNumber);
-//   };
+  //   let newRandomNumber=0;
+  //   const generateRandomNumber = () => {
+  //     newRandomNumber = Math.floor(Math.random() * 1); // Generates a random number between 1 and 100
+  //     setRandomNumber(newRandomNumber);
+  //     // console.log(newRandomNumber);
+  //   };
 
   return (
     <div className="main-loading">
