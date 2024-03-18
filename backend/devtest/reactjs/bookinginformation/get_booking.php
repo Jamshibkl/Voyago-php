@@ -10,7 +10,7 @@ if (mysqli_connect_error()) {
     exit();
 }
 
-$sql = "SELECT id, username, pickupLocation, mobile, pickupDate, pickupTime, cabType, created_at FROM booking";
+$sql = "SELECT id,driverId, driverName, driverEmail, driverMobile, randomNum FROM bookingInfo";
 $result = mysqli_query($conn, $sql);
 
 if ($result && mysqli_num_rows($result) > 0) {
