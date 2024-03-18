@@ -12,26 +12,11 @@ function DriverSideBar() {
   }
 
   const user = localStorage.getItem('email');
+  const userId = localStorage.getItem("driver");
   const [driver, setDriver] = useState([]);
   const [error, setError] = useState(null); // Track potential errors
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "http://localhost/devtest/reactjs/DriverVerifyInfo/get_driverinfo.php"
-        ); // Modified URL
-        setDriver(response.data);
-      } catch (error) {
-        // Handle errors gracefully, e.g., display an error message
-        console.error("Error fetching driver:", error);
-        setError(error); // Store error for potential display
-      }
-    };
-
-    fetchData();
-  }, []);
-
+ 
   return (
     <>
     {/* <div className="Driver-Dashboard"> */}
@@ -56,14 +41,13 @@ function DriverSideBar() {
           </div>
          
           </NavLink >
-          {driver.map((driver, index) => (
           
-         <NavLink to={`/driver-profile/${driver.id}`} key={index} style={{textDecoration: 'none'}}>
+          
+         <NavLink to={`/driver-profile/${userId}`} style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-items">
             <h5>driver info</h5>
           </div>
           </NavLink>
-              ))}
 
            <NavLink to='/driver-notify' style={{textDecoration: 'none'}}>
            <div className="Driver-dashboard-items">

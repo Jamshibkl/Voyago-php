@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import Navbar from "../../NavBar/NavBar";
 import BookingImg from "../../../Assets/book a drive image.jpg";
