@@ -3,7 +3,9 @@ import "./LoadingPage.css";
 
 function LoadingPage() {
   const [loading, setLoading] = useState(null);
-  const [randomNumber, setRandomNumber] = useState(null);
+  //   const [randomNumber, setRandomNumber] = useState(null);
+  const pickup = localStorage.getItem("pickup");
+  //   console.log(pickup);
 
   const findingADriver = (e) => {
     if (loading != e) {
@@ -14,7 +16,7 @@ function LoadingPage() {
   useEffect(() => {
     setTimeout(function () {
       findingADriver(true);
-    //   generateRandomNumber();
+      //   generateRandomNumber();
     }, 2000);
   }, []);
 
@@ -37,12 +39,12 @@ function LoadingPage() {
     getProduct();
   }, []);
 
-//   let newRandomNumber=0;
-//   const generateRandomNumber = () => {
-//     newRandomNumber = Math.floor(Math.random() * 1); // Generates a random number between 1 and 100
-//     setRandomNumber(newRandomNumber);
-//     // console.log(newRandomNumber);
-//   };
+  //   let newRandomNumber=0;
+  //   const generateRandomNumber = () => {
+  //     newRandomNumber = Math.floor(Math.random() * 1); // Generates a random number between 1 and 100
+  //     setRandomNumber(newRandomNumber);
+  //     // console.log(newRandomNumber);
+  //   };
 
   return (
     <div className="main-loading">
@@ -53,55 +55,62 @@ function LoadingPage() {
             <h1>Your driver is arriving soon.</h1>
           </div>
           <div className={loading == true ? "loading-text" : "loading-false"}>
-            <div>
-              {product.map((driver, index) => (
-                <div key={index}>
-                  {index !== 2 ? (
-                    <div className="driver-table-info">
-                      <h2>Driver details</h2>
-                      {/* {console.log(index)} */}
-                      <div className="driver-profile-sec">
-                        <img
-                          src={`http://localhost/devtest/reactjs/DriverVerifyInfo/images/Profile/${driver.profileImg}`}
-                          alt="njsnu"
-                          className="driver-profile img"
-                        />
-                        <h5 className="driver-name">{driver.driver}</h5>
-                      </div>
-                      <div className="driver-profile-tables">
-                        <table>
-                          <thead>
-                            <tr>
-                              <th className="profile-tableth">Name</th>
-                              <th className="profile-table-th-info">
-                                {driver.driver}
-                              </th>
-                            </tr>
-                            <tr>
-                              <th className="profile-tableth">Email</th>
-                              <th className="profile-table-th-info">
-                                {driver.email}
-                              </th>
-                            </tr>
-                            <tr>
-                              <th className="profile-tableth">Mobile Number</th>
-                              <th className="profile-table-th-info">
-                                {driver.mobile}
-                              </th>
-                            </tr>
-                          </thead>
-                        </table>
-                        <div className="request-btns">
-                          <button className="accept-btn">Accept</button>
-                          <button className="reject-btn">Reject</button>
+            <div className="driver-container">
+              {product.map(
+                (driver, index) =>
+                  index <=1 && (
+                    <div key={index}>
+                      {driver.location === pickup ? (
+                        <div className="driver-table-info">
+                          <h2>Driver details</h2>
+                          {/* <h2>{driver.location}</h2> */}
+                          {/* {console.log(index)} */}
+                          <div className="driver-profile-sec">
+                            <img
+                              src={`http://localhost/devtest/reactjs/DriverVerifyInfo/images/Profile/${driver.profileImg}`}
+                              alt="njsnu"
+                              className="driver-profile img"
+                            />
+                            <h5 className="driver-name">{driver.driver}</h5>
+                          </div>
+                          <div className="driver-profile-tables">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th className="profile-tableth">Name</th>
+                                  <th className="profile-table-th-info">
+                                    {driver.driver}
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <th className="profile-tableth">Email</th>
+                                  <th className="profile-table-th-info">
+                                    {driver.email}
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <th className="profile-tableth">
+                                    Mobile Number
+                                  </th>
+                                  <th className="profile-table-th-info">
+                                    {driver.mobile}
+                                  </th>
+                                </tr>
+                              </thead>
+                            </table>
+                            <div className="request-btns">
+                              <button className="accept-btn">Accept</button>
+                              <button className="reject-btn">Reject</button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
+                      ) : (
+                        <div></div>
+                      )}
+                      {/* <hr /> */}
                     </div>
-                  ) : (
-                    <div></div>
-                  )}
-                </div>
-              ))}
+                  )
+              )}
             </div>
           </div>
         </div>
