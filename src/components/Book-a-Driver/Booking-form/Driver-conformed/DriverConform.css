@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.confirme-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0px 100px;
+}
+.driver-conform-headings {
+  padding: 30px;
+  margin: 0;
+}
+.driver-conform-headings .booking-details {
+  margin: 20px 0px;
+}
+.driver-conform-headings h3 {
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--blue);
+  padding: 10px 0px;
+}
+.driver-conform-headings table tr td {
+  border: 1px solid black;
+  background: white;
+}
+.driver-conform-headings table th {
+  border: 1px solid black;
+  background: white;
+  padding: 10px;
+}
+.driver-info-section {
+  width: 300px;
+  height: auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  color: black;
+  background: white;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.195),
+    0 10px 10px -5px rgba(0, 0, 0, 0.122);
+}
+.driver-info-section h3 {
+  color: var(--blue);
+  font-weight: bold;
+}
+.driver-info-section img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.driver-info-section table tr td {
+  background: white;
+}
+.driver-info-section table tr th {
+  background: white;
+  color: var(--blue);
+}
+.driver-conform-headings button {
+  padding: 12px;
+  background: var(--blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px 0px;
+}

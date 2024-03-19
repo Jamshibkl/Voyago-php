@@ -81,7 +81,7 @@ function LoadingPage() {
     if (responce.data.success) {
       setMessage(responce.data.success);
       setTimeout(() => {
-        navigate("/ride-started");
+        navigate("/driver-confirm");
       }, 500);
     }
   };

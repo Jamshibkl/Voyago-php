@@ -22,7 +22,7 @@ import DriverOnWay from "./components/Book-a-Driver/Driver-on-way/DriverOnWay";
 import Destination from "./components/Book-a-Driver/Destination/Destination";
 import OnTheWay from "./components/Book-a-Driver/OnTheWay/OnTheWay";
 import PaymentSection from "./components/Book-a-Driver/PaymentSection/PaymentSection";
-import DriverConform from "./components/Book-a-Driver/Driver-conformed/DriverConform";
+import DriverConform from "./components/Book-a-Driver/Booking-form/Driver-conformed/DriverConform";
 
 import ContactUs from "./pages/ContactUS/ContactUs";
 import SignInUp from "./components/Sign-in-up/SignInUp";
