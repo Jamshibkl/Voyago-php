@@ -17,7 +17,7 @@ function OnTheWay() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost/devtest/reactjs/get_booking.php?user_id=${userId}`
+          `http://localhost/devtest/reactjs/get_booking.php`
         ); // Modified URL to include user_id parameter
         setBookings(response.data);
       } catch (error) {

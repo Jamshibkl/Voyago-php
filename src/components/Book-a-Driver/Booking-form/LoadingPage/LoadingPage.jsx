@@ -113,11 +113,11 @@ function LoadingPage() {
             <h1>Sit back and relax!</h1>
             <h1>Your driver is arriving soon.</h1>
           </div>
-          <div className={loading == true ? "loading-text" : "loading-false"}>
+          <div className={loading == true ? "loading-text2" : "loading-false"}>
             <div className="driver-container">
               {product.map(
                 (driver, index) =>
-                  index <= 1 && (
+                  index <= 100 && (
                     <div key={index}>
                       {driver.location === pickup ? (
                         <div className="driver-table-info">
@@ -171,19 +171,15 @@ function LoadingPage() {
                               </thead>
                             </table>
                             <div className="request-btns">
-                              {/* <Link to={`/ride-started/${driverId}`}>
-                                <button className="accept-btn">Accept</button>
-                              </Link> */}
-                              {/* <Link to='/ride-started'> */}
                               <button
                                 className="accept-btn"
                                 onClick={handleSubmit}
                               >
                                 Accept
                               </button>
-                              {/* </Link> */}
                               <button className="reject-btn">Reject</button>
                             </div>
+                          <div className="profile-hr-line"></div>
                           </div>
                         </div>
                       ) : (
@@ -195,6 +191,7 @@ function LoadingPage() {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );

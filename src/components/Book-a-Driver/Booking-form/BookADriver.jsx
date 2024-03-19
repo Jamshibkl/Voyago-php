@@ -32,8 +32,8 @@ function BookADriver() {
 
   const navigate = useNavigate();
 
-  const userId = localStorage.getItem("user"); // Get the logged-in user's ID
-  console.log(userId);
+  // const userId = localStorage.getItem("user"); // Get the logged-in user's ID
+  // console.log(userId);
 
   useEffect(() => {
     setTimeout(function () {
@@ -61,7 +61,7 @@ function BookADriver() {
         break;
       default:
         setError("");
-        setUsername(type === "username" ? e.target.value : userId);
+        setUsername(type === "username" ? name : name);
         setPickupLocation(
           type === "pickupLocation" ? e.target.value : pickupLocation
         );
@@ -75,7 +75,7 @@ function BookADriver() {
   };
 
   function handleSubmit() {
-    console.log(name);
+    // console.log(name);
     if (
       username !== "" &&
       pickupLocation !== "" &&
