@@ -101,7 +101,7 @@ function DriverConform() {
           </div>
           <div className="otp-section">
             <h3>Given Otp To Confirm The Driver</h3>
-            <span>213232</span>
+            <input type="text" placeholder="67688"/>
             <Link to="/ride-started">
               <button>Confirm Driver</button>
             </Link>

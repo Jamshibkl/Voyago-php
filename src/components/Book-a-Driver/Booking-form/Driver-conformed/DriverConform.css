@@ -14,7 +14,7 @@ body {
   padding: 20px;
   margin: 0;
 }
-.confirme-section .dirver-info span {
+.confirme-section .dirver-info input {
   background: white;
   color: var(--blue);
   padding: 10px;
