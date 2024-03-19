@@ -3,9 +3,7 @@ import Navbar from "../NavBar/NavBar";
 import { Link, useNavigate } from "react-router-dom";
 import "./SignInUp.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEye
-} from "@fortawesome/free-solid-svg-icons";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 function SignInUp() {
   const navigate = useNavigate();
@@ -164,11 +162,11 @@ function SignInUp() {
   return (
     <>
       <Navbar />
-      <div className="driver-signup-fom ">
-        <div className="wrapper1">
-          <section className="form1 singup">
+      <div className="driver-reg-form">
+        <div className="wrapper2">
+          <section className="form3 login">
             <header>Create an account</header>
-            <form>
+            <div className="form">
               {error !== "" ? (
                 <div className="error-txt">{error}</div>
               ) : (
@@ -212,7 +210,7 @@ function SignInUp() {
                   onChange={(e) => handleInputChange(e, "pass1")}
                   onBlur={checkPassword}
                 />
-                <FontAwesomeIcon icon={faEye} className="icon"/>
+                <FontAwesomeIcon icon={faEye} className="icon" />
               </div>
               <div className="field input">
                 <label>Repeat your password</label>
@@ -223,7 +221,7 @@ function SignInUp() {
                   value={pass2}
                   onChange={(e) => handleInputChange(e, "pass2")}
                 />
-                <FontAwesomeIcon icon={faEye} className="icon"/>
+                <FontAwesomeIcon icon={faEye} className="icon" />
               </div>
               <br />
               <div className="form-check ">
@@ -233,7 +231,10 @@ function SignInUp() {
                   defaultValue
                   id="form2Example3cg"
                 />
-                <p className="form-check-label" htmlFor="form2Example3g" style={{margin:"0px"}}>
+                <p
+                  className="form-check-label"
+                  htmlFor="form2Example3g"
+                  style={{ margin: "0px" }}>
                   I agree all statements in{" "}
                   <a href="#!" className="text-body">
                     <u>Terms of service</u>
@@ -249,9 +250,9 @@ function SignInUp() {
                   style={{ background: "#407BFF" }}
                 />
               </div>
-            </form>
-            <div className="link">
-              Have already an account? <Link to="/login">Login here</Link>
+              <div className="link">
+                Have already an account? <Link to="/login">Login here</Link>
+              </div>
             </div>
           </section>
         </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./DriverConform.css";
 import NavBar from "../../../NavBar/NavBar";
-import DriverImage from "../../../../Assets/driver_profile-5.jpg";
+import DriverImage from "../../../../Assets/comvecteezy420553.jpg";
 import { Link } from "react-router-dom";
 function DriverConform() {
   const pickup = localStorage.getItem("pickup");
@@ -21,6 +21,13 @@ function DriverConform() {
       <NavBar />
       <div className="confirme-section">
         <div className="driver-conform-headings">
+        <div className="otp-section">
+            <h3>Given Otp To Confirm The Driver</h3>
+            <span>213232</span>
+            <Link to="/ride-started">
+            <button>Confirm Driver</button>
+          </Link>
+          </div>
           <h3>Your Booking Details</h3>
           <table className="booking-details">
             <tr>
@@ -69,14 +76,12 @@ function DriverConform() {
               <td>Rs.1000₹</td>
             </tr>
           </table>
-          <Link to="/ride-started">
-            <button>Submit</button>
-          </Link>
+         
         </div>
-
+         
         <div className="driver-info-section">
           <h3>Driver Details</h3>
-          {/* <img src={DriverImage} alt="" /> */}
+          <img src={DriverImage} alt="" />
           <table className="driver-info">
             <tr></tr>
             <tr>

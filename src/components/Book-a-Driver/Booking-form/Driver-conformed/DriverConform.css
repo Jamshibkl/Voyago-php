@@ -11,14 +11,24 @@ body {
   padding: 0px 100px;
 }
 .driver-conform-headings {
-  padding: 30px;
+  padding: 20px;
   margin: 0;
+}
+.driver-conform-headings .otp-section span{
+  
+  background:white;
+  color: var(--blue);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid var(--blue);
+
 }
 .driver-conform-headings .booking-details {
   margin: 20px 0px;
 }
 .driver-conform-headings h3 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
   color: var(--blue);
   padding: 10px 0px;
@@ -30,13 +40,13 @@ body {
 .driver-conform-headings table th {
   border: 1px solid black;
   background: white;
-  padding: 10px;
+  padding: 5px;
 }
 .driver-info-section {
   width: 300px;
   height: auto;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   border-radius: 20px;
   color: black;
   background: white;
@@ -61,11 +71,11 @@ body {
   color: var(--blue);
 }
 .driver-conform-headings button {
-  padding: 12px;
+  padding: 10px;
   background: var(--blue);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
-  margin: 5px 0px;
+  margin: 0px 10px;
 }

@@ -26,7 +26,7 @@ function Login() {
     }
     setTimeout(function () {
       setMsg("");
-    }, 1000);
+    }, 500);
   }, [msg]);
 
   const handleInputChange = (e, type) => {
@@ -56,7 +56,7 @@ function Login() {
         Accept: "application/json",
         "Content-type": "application/json",
       };
-      let Data = {
+      var Data = {
         user: user,
         pass: pass,
       };
@@ -93,11 +93,11 @@ function Login() {
   return (
     <>
       <NavBar />
-      <div className="driver-signup-fom ">
-        <div className="wrapper1">
-          <section className="form1 singup">
+      <div className="driver-login-form">
+        <div className="wrapper2">
+          <section className="form2 login">
             <header>Sign into your account</header>
-            <form action="#">
+            <div className="form">
               {error !== "" ? (
                 <div className="error-txt">{error}</div>
               ) : (
@@ -139,7 +139,7 @@ function Login() {
                   style={{ background: "#407BFF" }}
                 />
               </div>
-            </form>
+            </div>
             <div className="link">
               Create a new account? <Link to="/sign-in">Sign-up</Link>
             </div>

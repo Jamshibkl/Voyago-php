@@ -1,69 +1,171 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
   padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  font-family: "poppins", sans-serif;
 }
-.user-register {
+
+.driver-reg-form {
   display: flex;
-  justify-content: center;
   align-items: center;
-  /* height: 100vh; */
-  padding: 20px;
+  justify-content: center;
+  /* min-height: 100vh; */
+  height: 500px;
+  background: #f7f7f7;
 }
-.register-container {
-  padding: 20px;
-  background: #ffffff;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.192),
-    0 10px 10px -5px rgba(0, 0, 0, 0.207);
-  border-radius: 10px;
-  width: 500px;
-}
-.register-container .register-container-heading {
-  padding: 5px 0px;
-  color: var(--blue);
-  font-weight: bold;
-}
-.user-register .valid-msg {
-  margin: 0;
-  padding: 10px 0px;
-}
-.user-register .valid-msg .success {
-  color: green;
-}
-.user-register .valid-msg .error {
-  color: red;
-}
-.user-register .register-container label {
-  padding: 5px 0px;
-  font-weight: 600;
-  color: rgb(75, 75, 75);
-}
-.user-register .register-container input[type="text"],
-[type="email"],
-[type="password"] {
-  width: 100%;
-  padding: 10px 0 10px 12px;
-  border: none;
-  background: rgb(238, 238, 238);
-  border-radius: 8px;
-}
-.user-register .register-container input[type="submit"] {
-  width: 100%;
-  padding: 6px;
+
+header {
   text-align: center;
-  background: var(--blue);
-  color: #ffffff;
 }
-.register-container .form-check-label {
+
+.wrapper2 {
+  background: #fff;
+  width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+/* Singup Form Css Code */
+.form3 {
+  padding: 25px 30px;
+}
+.form3 header {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e6e6e6;
+  color: var(--blue);
+}
+
+.form3 .form {
+  margin: 20px 0;
+}
+.form3 .form {
+  /* margin: 20px 0; */
   margin: 0;
 }
-.register-container .text-center {
-  margin: 0;
-  padding: 5px 0;
+
+.form3 .form .error-txt {
+  color: #721c24;
+  background: #f8d7da;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #f5c6cb;
 }
-.register-container .form-check {
-  padding: 10px 30px;
+
+.form3 .form .success-msg {
+  color: #00ff26;
+  background: #f4fdf8;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #00ff55;
 }
-.user-register .register-container input[type="submit"]:hover {
-  background: rgba(15, 74, 223, 0.736);
+
+.form3 .form .name-details {
+  display: flex;
+}
+.form .name-details .field:first-child {
+  margin-right: 10px;
+}
+.form .name-details .field:last-child {
+  margin-left: 10px;
+}
+.form3 .form .field {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.form3 .form .field label {
+  margin-bottom: 2px;
+}
+.form3 .form .field input {
+  outline: none;
+}
+
+.form3 .form .input input {
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+}
+
+.form3 .form .image input {
+  font-size: 17px;
+}
+
+.form3 .form .button input {
+  margin-top: 13px;
+  height: 45px;
+  border: none;
+  font-size: 17px;
+  font-weight: 400;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.form3 .form .field .icon {
+  position: absolute;
+  right: 15px;
+  color: #ccc;
+  top: 70%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.form3 .link {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+.form3 .link a {
+  color: #333;
+}
+.form3 .link a:hover {
+  text-decoration: underline;
+}
+
+/* users area css code */
+
+.driver-reg-form .users {
+  padding: 25px 30px;
+}
+.driver-reg-form .users header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+}
+.driver-reg-form .wrapper2 img {
+  object-fit: cover;
+  border-radius: 50%;
+}
+.driver-reg-form .users header .content {
+  display: flex;
+}
+.driver-reg-form .users header .content img {
+  height: 50px;
+  width: 50px;
+}
+.driver-reg-form .users header .details {
+  margin-left: 15px;
+}
+
+.driver-reg-form .users header .details span {
+  font-size: 18px;
+  font-weight: 500;
 }
