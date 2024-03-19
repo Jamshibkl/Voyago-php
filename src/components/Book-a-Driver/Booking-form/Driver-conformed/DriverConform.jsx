@@ -21,13 +21,6 @@ function DriverConform() {
       <NavBar />
       <div className="confirme-section">
         <div className="driver-conform-headings">
-        <div className="otp-section">
-            <h3>Given Otp To Confirm The Driver</h3>
-            <span>213232</span>
-            <Link to="/ride-started">
-            <button>Confirm Driver</button>
-          </Link>
-          </div>
           <h3>Your Booking Details</h3>
           <table className="booking-details">
             <tr>
@@ -44,7 +37,7 @@ function DriverConform() {
               <td>{mobile}</td>
               <td>{pickupDate}</td>
               <td>{pickupTime}</td>
-              <td>{cabType  }</td>
+              <td>{cabType}</td>
             </tr>
           </table>
 
@@ -76,32 +69,45 @@ function DriverConform() {
               <td>Rs.1000₹</td>
             </tr>
           </table>
-         
         </div>
-         
-        <div className="driver-info-section">
+
+        <div className="dirver-info">
           <h3>Driver Details</h3>
-          <img src={DriverImage} alt="" />
-          <table className="driver-info">
-            <tr></tr>
-            <tr>
-              <th>Driver ID:</th>
-              <td>{drid}</td>
-            </tr>
-            <tr>
-              <th>Name:</th>
-              <td>{drName}</td>
-            </tr>
-            <tr>
-              <th>Email:</th>
-              <td>{drEmail}</td>
-            </tr>
-            <tr>
-              <th>Mobile:</th>
-              <td>{drMobile}</td>
-            </tr>
-          </table>
+          <div className="driver-info-section">
+            <div>
+              <img src={DriverImage} alt="" />
+            </div>
+            <div>
+              <table className="driver-info">
+                <tr></tr>
+                <tr>
+                  <th>Driver ID:</th>
+                  <td>{drid}</td>
+                </tr>
+                <tr>
+                  <th>Name:</th>
+                  <td>{drName}</td>
+                </tr>
+                <tr>
+                  <th>Email:</th>
+                  <td>{drEmail}</td>
+                </tr>
+                <tr>
+                  <th>Mobile:</th>
+                  <td>{drMobile}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div className="otp-section">
+            <h3>Given Otp To Confirm The Driver</h3>
+            <span>213232</span>
+            <Link to="/ride-started">
+              <button>Confirm Driver</button>
+            </Link>
+          </div>
         </div>
+        <br />
       </div>
     </>
   );
