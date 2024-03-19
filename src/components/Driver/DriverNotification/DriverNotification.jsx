@@ -29,6 +29,18 @@ function DriverNotification() {
 
     fetchData();
   }, []);
+
+  const generateRandomNumber = () => {
+    return Math.floor(100000 + Math.random() * 900000);
+  };
+  const RandomOTP = generateRandomNumber();
+  // localStorage.getItem("RandomOTP");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem("RandomOTP", RandomOTP);
+  };
+
   return (
     <div className="driver-notification-section">
       <DriverSideBar />
@@ -58,15 +70,17 @@ function DriverNotification() {
                         <label htmlFor="">
                           Pickup Time: <span>{pickupTime}</span>
                         </label>
-                        <label htmlFor="">
-                          Pickup Date: <span>{pickupDate}</span>
-                        </label>
                       </>
+                      <label htmlFor="">
+                        OTP : <span>{RandomOTP}</span>
+                      </label>
 
                       <div className="horizontal-line"></div>
                       <div>
                         <div className="booking-conform">
-                          <button className="confirm">Confirm</button>
+                          <button className="confirm" onClick={handleSubmit}>
+                           Start
+                          </button>
                           <button className="cancel">cancel</button>
                         </div>
                       </div>

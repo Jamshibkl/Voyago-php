@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DriverConform.css";
 import NavBar from "../../../NavBar/NavBar";
 import DriverImage from "../../../../Assets/comvecteezy420553.jpg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function DriverConform() {
+
+  const navigate = useNavigate();
+
   const pickup = localStorage.getItem("pickup");
   const userName = localStorage.getItem("username");
   const pickupTime = localStorage.getItem("pickupTime");
@@ -15,6 +18,29 @@ function DriverConform() {
   const drName = localStorage.getItem("drName");
   const drEmail = localStorage.getItem("drEmail");
   const drMobile = localStorage.getItem("drMobile");
+
+  const RandomOTP = localStorage.getItem("RandomOTP");
+
+  const [otp, setOtp] = useState("");
+
+  const handleInputChange = (e, type) => {
+    switch (type) {
+      case "OTP":
+        // setError("");
+        setOtp(e.target.value);
+        // if (e.target.value === "") {
+        //   setError("Username has left blank!");
+        // }
+        break;
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (RandomOTP === otp) {
+      navigate("/ride-started");
+    }
+  };
 
   return (
     <>
@@ -101,10 +127,16 @@ function DriverConform() {
           </div>
           <div className="otp-section">
             <h3>Given Otp To Confirm The Driver</h3>
-            <input type="text" placeholder="67688"/>
-            <Link to="/ride-started">
-              <button>Confirm Driver</button>
-            </Link>
+            <input
+              type="text"
+              placeholder="67688"
+              name="OTP"
+              value={otp}
+              onChange={(e) => handleInputChange(e, "OTP")}
+            />
+            {/* <Link to="/ride-started"> */}
+            <button onClick={handleSubmit}>Confirm Driver</button>
+            {/* </Link> */}
           </div>
         </div>
         <br />
