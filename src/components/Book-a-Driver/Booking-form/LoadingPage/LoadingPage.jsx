@@ -91,6 +91,10 @@ function LoadingPage() {
     setRandomNum(generateRandomNumber());
 
     localStorage.setItem("randomNum", randomNum);
+    localStorage.setItem("drId", driverId);
+    localStorage.setItem("drName", driverName);
+    localStorage.setItem("drEmail", driverEmail);
+    localStorage.setItem("drMobile", driverMobile);
 
     if (
       driverId !== "" &&

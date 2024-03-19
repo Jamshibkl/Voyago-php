@@ -114,6 +114,8 @@ function BookADriver() {
         localStorage.setItem("username",username)
         localStorage.setItem("pickupTime",pickupTime)
         localStorage.setItem("pickupDate",pickupDate)
+        localStorage.setItem("cabType",cabType)
+        localStorage.setItem("mobile",dropoffLocation)
         navigate("/find-a-driver");
       setUsername("");
       setPickupLocation("");
