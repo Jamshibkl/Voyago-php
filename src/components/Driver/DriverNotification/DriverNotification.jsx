@@ -5,6 +5,8 @@ import DriverSideBar from "../DriverSideBar/DriverSideBar";
 function DriverNotification() {
   const [bookings, SetBookings] = useState([]);
   const [error, setError] = useState(null); // Track potential errors
+  const [conform, setConform] = useState(null);
+
 
   const pickup = localStorage.getItem("pickup");
   const username = localStorage.getItem("username");
@@ -30,15 +32,22 @@ function DriverNotification() {
     fetchData();
   }, []);
 
+  const findingADriver = (e) => {
+    if (conform !== e) {
+      setConform(true);
+    }
+  };
+
   const generateRandomNumber = () => {
     return Math.floor(100000 + Math.random() * 900000);
   };
   const RandomOTP = generateRandomNumber();
+  localStorage.setItem("RandomOTP", RandomOTP);
   // localStorage.getItem("RandomOTP");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("RandomOTP", RandomOTP);
+    findingADriver(true);
   };
 
   return (
@@ -68,10 +77,13 @@ function DriverNotification() {
                           Mobile: <span>{mobile}</span>
                         </label>
                         <label htmlFor="">
+                          Pickup Date: <span>{pickupDate}</span>
+                        </label>
+                        <label htmlFor="">
                           Pickup Time: <span>{pickupTime}</span>
                         </label>
                       </>
-                      <label htmlFor="">
+                      <label htmlFor="" className={conform == null ? "conform-false" : "conform-OTP"}>
                         OTP : <span>{RandomOTP}</span>
                       </label>
 

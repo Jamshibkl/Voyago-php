@@ -73,3 +73,11 @@
     color: #ffffff;
     margin-left: 10px; 
 }
+
+.conform-false{
+    display: none;
+}
+
+.conform-OTP{
+    display: inline;
+}

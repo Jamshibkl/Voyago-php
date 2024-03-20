@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./DriverConform.css";
 import NavBar from "../../../NavBar/NavBar";
 import DriverImage from "../../../../Assets/comvecteezy420553.jpg";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 function DriverConform() {
+  const { driverId } = useParams();
 
   const navigate = useNavigate();
 
@@ -19,6 +22,8 @@ function DriverConform() {
   const drEmail = localStorage.getItem("drEmail");
   const drMobile = localStorage.getItem("drMobile");
 
+  const [driverInfo, setDriverInfo] = useState([]);
+
   const RandomOTP = localStorage.getItem("RandomOTP");
 
   const [error, setError] = useState("");
@@ -26,14 +31,28 @@ function DriverConform() {
 
   const [otp, setOtp] = useState("");
 
+  useEffect(() => {
+    const getDriver = () => {
+      fetch("http://localhost/devtest/reactjs/DriverVerifyInfo/DriverInfo.php")
+        .then((res) => res.json())
+        .then((data) => {
+          setDriverInfo(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
+    getDriver();
+  }, []);
+
   const handleInputChange = (e, type) => {
     switch (type) {
       case "OTP":
-        setError("");
+        // setError("");
         setOtp(e.target.value);
-        if (e.target.value === "") {
-          setError("OTP has left blank!");
-        }
+        // if (e.target.value === "") {
+        //   setError("Username has left blank!");
+        // }
         break;
     }
   };
@@ -111,25 +130,43 @@ function DriverConform() {
               <img src={DriverImage} alt="" />
             </div>
             <div>
-              <table className="driver-info">
-                <tr></tr>
-                <tr>
-                  <th>Driver ID:</th>
-                  <td>{drid}</td>
-                </tr>
-                <tr>
-                  <th>Name:</th>
-                  <td>{drName}</td>
-                </tr>
-                <tr>
-                  <th>Email:</th>
-                  <td>{drEmail}</td>
-                </tr>
-                <tr>
-                  <th>Mobile:</th>
-                  <td>{drMobile}</td>
-                </tr>
-              </table>
+              {driverInfo.map((driver, index) => (
+                <table className="driver-info" key={index}>
+                  {driver.id === driverId && (
+                    <div>
+                      <tr></tr>
+                      <tr>
+                        <th>Driver ID:</th>
+                        <td>
+                          {driver.id}
+                          {localStorage.setItem("driverid", driver.id)}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Name:</th>
+                        <td>
+                          {driver.driver}
+                          {localStorage.setItem("drivername", driver.driver)}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Email:</th>
+                        <td>
+                          {driver.email}
+                          {localStorage.setItem("driveremail", driver.email)}
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>Mobile:</th>
+                        <td>
+                          {driver.mobile}
+                          {localStorage.setItem("drivermobile", driver.mobile)}
+                        </td>
+                      </tr>
+                    </div>
+                  )}
+                </table>
+              ))}
             </div>
           </div>
           <div className="otp-section">
