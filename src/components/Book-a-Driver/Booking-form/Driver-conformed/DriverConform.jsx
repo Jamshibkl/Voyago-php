@@ -22,12 +22,12 @@ function DriverConform() {
   const drEmail = localStorage.getItem("drEmail");
   const drMobile = localStorage.getItem("drMobile");
 
+  const [error, setError] = useState("");
+  const [msg, setMsg] = useState("");
+
   const [driverInfo, setDriverInfo] = useState([]);
 
   const RandomOTP = localStorage.getItem("RandomOTP");
-
-  const [error, setError] = useState("");
-  const [msg, setMsg] = useState("");
 
   const [otp, setOtp] = useState("");
 
@@ -48,11 +48,11 @@ function DriverConform() {
   const handleInputChange = (e, type) => {
     switch (type) {
       case "OTP":
-        // setError("");
+        setError("");
         setOtp(e.target.value);
-        // if (e.target.value === "") {
-        //   setError("Username has left blank!");
-        // }
+        if (e.target.value === "") {
+          setError("OTP has left blank!");
+        }
         break;
     }
   };
@@ -170,8 +170,7 @@ function DriverConform() {
             </div>
           </div>
           <div className="otp-section">
-          
-            <h3>Enter the OTP to confirm the driver.</h3>
+          <h3>Enter the OTP to confirm the driver.</h3>
             
             <p className="valid-msg">
               <span className="otp-heading">The driver will reach you within 10 minutes!</span>
@@ -184,7 +183,7 @@ function DriverConform() {
           </p>
             <input
               type="text"
-              placeholder="Enter Your OTP"
+              placeholder="Enter The OTP"
               name="OTP"
               value={otp}
               onChange={(e) => handleInputChange(e, "OTP")}
