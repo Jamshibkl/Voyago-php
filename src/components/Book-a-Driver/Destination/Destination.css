@@ -3,7 +3,7 @@
   justify-content: space-evenly;
   align-items: center;
   background-color: #e5e5f7;
-  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  height: 100vh;
   background-size: 10px 10px;
 }
 .destination-left {
@@ -33,32 +33,14 @@
   padding: 20px;
   width: 500px;
 }
-.destination-left form input[type="text"] {
-  padding: 20px 0px;
-  border-bottom-style: solid;
-  border-bottom-color: var(--blue);
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  font-size: 15px;
-  margin: 0px 20px 0px 0px;
-}
-.destination-left input:focus {
-  outline: none;
-}
-.destination-left input:after {
-  border: none;
-}
-.destination-left input::placeholder {
-  color:#011440;
-  font-weight: bold;
-  font-size: 15px;
+.destination-details span {
+  color: var(--blue);
 }
 .destination-left h3 {
   font-size: 30px;
   font-weight: 600;
-  color: #171923;
-  padding: 50px 0px 0px 0px;
+  color: #171923bc;
+  padding: 20px;
 }
 .destination-left h3 span {
   color: var(--blue);
@@ -82,5 +64,6 @@
 }
 .destination-img img {
   width: 500px;
-  height: 600px;
+  height: 500px;
+  box-shadow: 0px 16px 24px -2px #407cff31;
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./RideTime.css";
-
+import { Link } from 'react-router-dom';
 function RideTime() {
     const [displayTime, setDisplayTime] = useState('00:00:00:00');
     const [timer, setTimer] = useState(null);
@@ -75,7 +75,9 @@ function RideTime() {
           <div id="display">{displayTime}</div>
           <div id="controls">
             <button id="startBtn" onClick={start}>Start</button>
+            <Link to='/reached-destination'>
             <button id="stopBtn" onClick={stop}>Stop</button>
+            </Link>
             {/* <button id="resetBtn" onClick={reset}>Reset</button> */}
           </div>
         </div>

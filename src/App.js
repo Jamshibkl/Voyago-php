@@ -31,6 +31,7 @@ import DriverLogin from "./components/Driver/DriverLogin/DriverLogin";
 import DriverRegister from "./components/Driver/DriverRegister/DriverRegister";
 import DriverVerify from "./components/Driver/DriverVerify/DriverVerify";
 import DriverRelax from "./components/Driver/DriverRelax/DriverRelax";
+import PaymentCheckout from './components/Book-a-Driver/PaymentCheckout/Chekout'
 import DriverDashboard from "./components/Driver/DriverDashboard/DriverDashboard";
 import DriverSideBar from "./components/Driver/DriverSideBar/DriverSideBar";
 import DriverProfile from "./components/Driver/DriverProfile/DriverProfile";
@@ -67,8 +68,9 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/sign-in" element={<SignInUp />} />
           <Route path="/on-the-way/:bookingUser" element={<OnTheWay />} />
-          <Route path="/destination" element={<Destination />} />
+          <Route path="/reached-destination" element={<Destination />} />
           <Route path="/payment-section" element={<PaymentSection />} />
+          <Route path="/payment-checkout" element={<PaymentCheckout />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/driver-login" element={<DriverLogin />} />
 

@@ -22,6 +22,12 @@ body {
   font-weight: bold;
   border: 1px solid var(--blue);
 }
+.confirme-section .valid-msg .success {
+  color: green;
+}
+.confirme-section .valid-msg .error {
+  color: red;
+}
 .driver-conform-headings .booking-details {
   margin: 20px 0px;
 }
@@ -50,7 +56,6 @@ body {
   background: #ffffff;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  margin: 20px 0px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -88,4 +93,13 @@ body {
   font-weight: bold;
   color: var(--blue);
   padding: 20px 0px;
+}
+.confirme-section .otp-section .otp-heading{
+   color: var(--blue);
+   font-size: 20px;
+   font-weight: 600;
+}
+.confirme-section .otp-section p {
+  margin: 0;
+  padding: 5px;
 }
