@@ -1,43 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./LoadingPage.css";
 
 function LoadingPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(null);
-  const [driverId, setDriverId] = useState("");
-  const [driverName, setDriverName] = useState("");
-  const [driverEmail, setDriverEmail] = useState("");
-  const [driverMobile, setDriverMobile] = useState("");
-  const [randomNum, setRandomNum] = useState("");
-
-  const [message, setMessage] = useState("");
-  const [msg, setMsg] = useState("");
+  const [product, setProduct] = useState([]);
 
   const pickup = localStorage.getItem("pickup");
-  // console.log(pickup);
-
-  const generateRandomNumber = () => {
-    return Math.floor(100000 + Math.random() * 900000);
-  };
-
-  // Generate a random 6-digit number
-  // console.log(randomNum);
-
-  const findingADriver = (e) => {
-    if (loading !== e) {
-      setLoading(true);
-    }
-  };
 
   useEffect(() => {
     setTimeout(() => {
-      findingADriver(true);
+      setLoading(true);
     }, 2000);
   }, []);
-
-  const [product, setProduct] = useState([]);
 
   useEffect(() => {
     const getProduct = () => {
@@ -45,13 +22,6 @@ function LoadingPage() {
         .then((res) => res.json())
         .then((data) => {
           setProduct(data);
-          if (data.length > 0) {
-            const driver = data[0];
-            setDriverName(driver.driver);
-            setDriverEmail(driver.email);
-            setDriverMobile(driver.mobile);
-            setDriverId(driver.id);
-          }
         })
         .catch((error) => {
           console.log(error);
@@ -60,17 +30,15 @@ function LoadingPage() {
     getProduct();
   }, []);
 
-  //post the all data
-
-  const DriverVerifyInfo = async () => {
+  const DriverVerifyInfo = async (driver) => {
     const formData = new FormData();
-    formData.append("driverId", driverId);
-    formData.append("driverName", driverName);
-    formData.append("driverEmail", driverEmail);
-    formData.append("driverMobile", driverMobile);
+    formData.append("driverId", driver.id);
+    formData.append("driverName", driver.driver);
+    formData.append("driverEmail", driver.email);
+    formData.append("driverMobile", driver.mobile);
     formData.append("randomNum", randomNum);
 
-    const responce = await axios.post(
+    const response = await axios.post(
       "http://localhost/devtest/reactjs/bookinginformation/booking_info.php",
       formData,
       {
@@ -78,35 +46,19 @@ function LoadingPage() {
       }
     );
 
-    if (responce.data.success) {
-      setMessage(responce.data.success);
-      setTimeout(() => {
-        navigate("/driver-confirm");
-      }, 500);
+    if (response.data.success) {
+      navigate(`/driver-confirm/${driver.id}`); // navigate to next page with driver id as parameter
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setRandomNum(generateRandomNumber());
+  const generateRandomNumber = () => {
+    return Math.floor(100000 + Math.random() * 900000);
+  };
+  const randomNum = generateRandomNumber();
 
+  const handleSubmit = async (driver) => {
+    DriverVerifyInfo(driver);
     localStorage.setItem("randomNum", randomNum);
-    localStorage.setItem("drId", driverId);
-    localStorage.setItem("drName", driverName);
-    localStorage.setItem("drEmail", driverEmail);
-    localStorage.setItem("drMobile", driverMobile);
-
-    if (
-      driverId !== "" &&
-      driverName !== "" &&
-      driverEmail !== "" &&
-      driverMobile !== "" &&
-      randomNum !== ""
-    ) {
-      await DriverVerifyInfo();
-    } else {
-      setMsg("All fields are required!");
-    }
   };
 
   return (
@@ -122,8 +74,8 @@ function LoadingPage() {
               {product.map(
                 (driver, index) =>
                   index <= 100 && (
-                    <div key={index}>
-                      {driver.location === pickup ? (
+                    <div key={index} setDriverId={driver.id}>
+                      {driver.location === pickup && (
                         <div className="driver-table-info">
                           <h2>Driver details</h2>
                           <div className="driver-profile-sec">
@@ -140,13 +92,13 @@ function LoadingPage() {
                                 <tr>
                                   <th className="profile-tableth">Name</th>
                                   <th className="profile-table-th-info">
-                                    {driverName}
+                                    {driver.driver}
                                   </th>
                                 </tr>
                                 <tr>
                                   <th className="profile-tableth">Email</th>
                                   <th className="profile-table-th-info">
-                                    {driverEmail}
+                                    {driver.email}
                                   </th>
                                 </tr>
                                 <tr>
@@ -154,22 +106,13 @@ function LoadingPage() {
                                     Mobile Number
                                   </th>
                                   <th className="profile-table-th-info">
-                                    {driverMobile}
+                                    {driver.mobile}
                                   </th>
                                 </tr>
                                 <tr>
                                   <th className="profile-tableth">Driver Id</th>
                                   <th className="profile-table-th-info">
-                                    <input
-                                      type="text"
-                                      name="username"
-                                      className=""
-                                      placeholder="Enter Your User Name "
-                                      value={driverId}
-                                      onChange={(e) =>
-                                        setDriverId(e.target.value)
-                                      }
-                                    />
+                                    {driver.id}
                                   </th>
                                 </tr>
                               </thead>
@@ -177,17 +120,15 @@ function LoadingPage() {
                             <div className="request-btns">
                               <button
                                 className="accept-btn"
-                                onClick={handleSubmit}
+                                onClick={() => handleSubmit(driver)}
                               >
                                 Accept
                               </button>
                               <button className="reject-btn">Reject</button>
                             </div>
-                          <div className="profile-hr-line"></div>
+                            <div className="profile-hr-line"></div>
                           </div>
                         </div>
-                      ) : (
-                        <div></div>
                       )}
                     </div>
                   )
@@ -195,10 +136,8 @@ function LoadingPage() {
             </div>
           </div>
         </div>
-        
       </div>
     </div>
   );
 }
-
 export default LoadingPage;

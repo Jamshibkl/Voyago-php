@@ -62,7 +62,7 @@ function App() {
           <Route path="/book-a-driver" element={<BookADriver />} />
           <Route path="/find-a-driver" element={<LoadingPage />} />
           <Route path="/ride-started" element={<RideTime />} />
-          <Route path="/driver-confirm" element={<DriverConform />} />
+          <Route path="/driver-confirm/:driverId" element={<DriverConform />} />
           <Route path="/driver-on-way" element={<DriverOnWay />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/sign-in" element={<SignInUp />} />
