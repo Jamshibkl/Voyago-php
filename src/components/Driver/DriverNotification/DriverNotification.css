@@ -63,6 +63,20 @@
     margin-right: 10px;
     /* margin-top: -100px;  */
 }
+.driver-notification-section .driver-notification form .confirm-btn
+ {
+    width: 100px;
+    height: 45px;
+    padding: 0px;
+    background: rgb(17, 213, 20);
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 0; 
+    margin-right: 10px;
+    /* margin-top: -100px;  */
+}
 .driver-notification-section .driver-notification form .cancel {
     width: 100px;
     height: 45px;
@@ -79,5 +93,7 @@
 }
 
 .conform-OTP{
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }

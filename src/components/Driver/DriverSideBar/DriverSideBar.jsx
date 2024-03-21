@@ -11,7 +11,7 @@ function DriverSideBar() {
     navigate("/driver-login");
   }
 
-  const user = localStorage.getItem('email');
+  const driveremail = localStorage.getItem('email');
   const userId = localStorage.getItem("driver");
   const [driver, setDriver] = useState([]);
   const [error, setError] = useState(null); // Track potential errors
@@ -32,7 +32,7 @@ function DriverSideBar() {
         <div className="Driver-dashboard-options">
         <div className="Driver-dashboard-items">
             {/* icons */}
-            <h5 style={{fontSize:'15px'}}>{user}</h5>
+            <h5 style={{fontSize:'15px'}}>{driveremail}</h5>
           </div>
           <NavLink to='/driver-dashbord' style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-head">
@@ -43,7 +43,7 @@ function DriverSideBar() {
           </NavLink >
           
           
-         <NavLink to={`/driver-profile/${userId}`} style={{textDecoration: 'none'}}>
+         <NavLink to="/driver-profile" style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-items">
             <h5>driver info</h5>
           </div>

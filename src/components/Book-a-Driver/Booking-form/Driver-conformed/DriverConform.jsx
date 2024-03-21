@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./DriverConform.css";
 import NavBar from "../../../NavBar/NavBar";
 import DriverImage from "../../../../Assets/comvecteezy420553.jpg";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function DriverConform() {
@@ -17,10 +17,10 @@ function DriverConform() {
   const cabType = localStorage.getItem("cabType");
   const mobile = localStorage.getItem("mobile");
 
-  const drid = localStorage.getItem("drId");
-  const drName = localStorage.getItem("drName");
-  const drEmail = localStorage.getItem("drEmail");
-  const drMobile = localStorage.getItem("drMobile");
+  // const drid = localStorage.getItem("drId");
+  // const drName = localStorage.getItem("drName");
+  // const drEmail = localStorage.getItem("drEmail");
+  // const drMobile = localStorage.getItem("drMobile");
 
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
@@ -61,11 +61,9 @@ function DriverConform() {
     e.preventDefault();
     if (RandomOTP === otp) {
       navigate("/ride-started");
-    }
-    else {
+    } else {
       setError("You Entred OTP is Wrong!");
     }
-    
   };
 
   return (
@@ -170,17 +168,19 @@ function DriverConform() {
             </div>
           </div>
           <div className="otp-section">
-          <h3>Enter the OTP to confirm the driver.</h3>
-            
+            <h3>Enter the OTP to confirm the driver.</h3>
+
             <p className="valid-msg">
-              <span className="otp-heading">The driver will reach you within 10 minutes!</span>
-           <br/>
-            {msg !== "" ? (
-              <span className="success">{msg}</span>
-            ) : (
-              <span className="error">{error}</span>
-            )}
-          </p>
+              <span className="otp-heading">
+                The driver will reach you within 10 minutes!
+              </span>
+              <br />
+              {msg !== "" ? (
+                <span className="success">{msg}</span>
+              ) : (
+                <span className="error">{error}</span>
+              )}
+            </p>
             <input
               type="text"
               placeholder="Enter The OTP"

@@ -1,66 +1,115 @@
 .driver-profile-section {
     display: flex;
+    /* width: 100%; */
 }
-/* .driver-profile-info {
-    margin: 0px 200px;
-} */
+.dr-info {
+    width: 82%;
+}
+
 .driver-profile-info .profile {
     display: flex;
     gap: 20px;
     padding: 20px 80px;
-    /* align-items: center; */
+    align-items: center;
+    justify-content: center;
     /* margin: 50px 50px; */
     /* height: 300px; */
 }
+
 .driver-profile-info .profile .profile-pic {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     background: rgb(240, 240, 240);
 }
+
 .driver-profile-info .profile .profile-pic img {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
 }
+
 .driver-profile-info h3 {
     margin: 0;
 }
+
 .driver-profile-info p {
     margin: 0;
     font-size: 15px;
     padding: 10px;
 }
+
 .driver-profile-section .driver-profile-form {
     display: flex;
     justify-content: center;
-    margin: 0px 50px;
+    margin: 0px 0px;
 }
-.driver-profile-section .driver-profile-form img{
+
+.driver-profile-form p {
+    color: rgb(255, 204, 0);
+}
+
+.dr-profile-info {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.dr-personal-info {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    align-items: center;
+}
+
+.dr-personal-id {
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+}
+
+ .dr-profile-info img {
     padding: 10px;
-    height: 150px;
-    margin: 15px;
+    height: 160px;
+    width: 100%;
+    border-radius: 20px;
+    /* margin: 15px; */
 }
-.driver-profile-section .driver-profile-form form input[type=text]{
+
+.driver-profile-section .driver-profile-form form input[type=text] {
+    padding: 15px;
+    margin: 5px;
+    width: 90%;
+    display: inline;
+    background: rgb(232, 232, 232);
+    border-radius: 20px;
+    border: none;
+    text-align: center;
+    font-weight: 700;
+}
+
+.dr-personal-info label {
+    font-weight: bolder;
+}
+
+.driver-profile-section .driver-profile-form form input[type=text]:hover {
+    border: none;
+}
+
+.driver-profile-section .driver-profile-form form input[type=img] {
     padding: 20px;
+    height: 150px;
     margin: 15px;
     display: inline;
     background: rgb(232, 232, 232);
     border-radius: 20px;
     border: none;
 }
-.driver-profile-section .driver-profile-form form input[type=text]:hover{
-    border: none;
-}
-.driver-profile-section .driver-profile-form form input[type=img]{
-    padding: 20px;
-    height: 150px;
-    margin: 15px;
-    display: inline;
-    background: rgb(232, 232, 232);
-    border-radius: 20px;
-    border: none;
-}
+
 .driver-profile-section .driver-profile-form form button {
     padding: 10px;
     background: var(--blue);
@@ -69,6 +118,7 @@
     border: none;
     color: #ffffff;
 }
+
 .driver-profile-section .driver-profile-form form input::placeholder {
     font-size: 16px;
     font-weight: bold;

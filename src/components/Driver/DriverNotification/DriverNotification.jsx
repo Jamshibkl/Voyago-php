@@ -7,7 +7,6 @@ function DriverNotification() {
   const [error, setError] = useState(null); // Track potential errors
   const [conform, setConform] = useState(null);
 
-
   const pickup = localStorage.getItem("pickup");
   const username = localStorage.getItem("username");
   const pickupTime = localStorage.getItem("pickupTime");
@@ -38,12 +37,32 @@ function DriverNotification() {
     }
   };
 
+  function conformationCode() {
+    return Math.floor(100000 + Math.random() * 900000);
+  }
+
+  function RideFinishCode() {
+    return Math.floor(100000 + Math.random() * 900000);
+  }
+
   const generateRandomNumber = () => {
     return Math.floor(100000 + Math.random() * 900000);
   };
   const RandomOTP = generateRandomNumber();
   localStorage.setItem("RandomOTP", RandomOTP);
   // localStorage.getItem("RandomOTP");
+
+  const handleConform = (e) => {
+    e.preventDefault();
+    const StartOtp = conformationCode();
+    localStorage.setItem("StartOtp", StartOtp);
+  };
+
+  const handleFinish = (e) => {
+    e.preventDefault();
+    const FinishCode = RideFinishCode();
+    localStorage.setItem("FinishCode", FinishCode);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,17 +102,46 @@ function DriverNotification() {
                           Pickup Time: <span>{pickupTime}</span>
                         </label>
                       </>
-                      <label htmlFor="" className={conform == null ? "conform-false" : "conform-OTP"}>
-                        OTP : <span>{RandomOTP}</span>
-                      </label>
-
-                      <div className="horizontal-line"></div>
-                      <div>
-                        <div className="booking-conform">
-                          <button className="confirm" onClick={handleSubmit}>
-                           Start
+                      <div
+                        htmlFor=""
+                        className={
+                          conform == null ? "conform-false" : "conform-OTP"
+                        }
+                      >
+                        <label>
+                          {" "}
+                          OTP : <span>{RandomOTP}</span>
+                        </label>
+                        <div className="horizontal-line"></div>
+                        <div>
+                          <button
+                            className="confirm-btn"
+                            onClick={handleConform}
+                          >
+                            Start
                           </button>
-                          <button className="cancel">cancel</button>
+                          <button className="cancel" onClick={handleFinish}>
+                            Finish
+                          </button>
+                        </div>
+                      </div>
+                      <div
+                        className={
+                          conform == true ? "conform-false" : "horizontal-line"
+                        }
+                      ></div>
+
+                      <div>
+                        <div
+                          className={
+                            conform == true
+                              ? "conform-false"
+                              : "booking-conform"
+                          }
+                        >
+                          <button className="confirm" onClick={handleSubmit}>
+                            Conform
+                          </button>
                         </div>
                       </div>
                     </div>

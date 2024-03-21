@@ -80,7 +80,7 @@ function App() {
           <Route path="/driver-relax" element={<DriverRelax />} />
           <Route path="/driver-side" element={<DriverSideBar />} />
           <Route path="/driver-dashbord" element={<DriverDashboard />} />
-          <Route path="/driver-profile/:driverId" element={<DriverProfile />} />
+          <Route path="/driver-profile" element={<DriverProfile />} />
           <Route path="/driver-notify" element={<DriverNotification />} />
           <Route path="/driver-ride" element={<DriverRide />} />
           <Route path="/admin-dashboard" element={<Dashboard />} />

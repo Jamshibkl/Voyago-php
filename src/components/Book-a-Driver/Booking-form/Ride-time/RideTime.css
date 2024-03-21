@@ -82,3 +82,9 @@
 #resetBtn:hover {
     background-color: hsl(206, 90%, 40%);
 }
+
+.diver-conformation{
+    color: red;
+    padding: 0;
+    margin: 10px;
+}
