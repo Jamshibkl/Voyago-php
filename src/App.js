@@ -46,6 +46,7 @@ import DriverInfo from "./Admin/Components/Driver-Info/DriverInfo";
 import Transactions from "./Admin/Components/Transactions/Transactions";
 import TotalDrivers from "./Admin/Components/Total-Drivers/TotalDrivers";
 import TotalAdmin from "./Admin/Components/total-admins/TotalAdmins";
+import Booking from './Admin/Components/Total-booking/Booking'
 function App() {
   const isLoggedIn = false;
   return (
@@ -96,6 +97,7 @@ function App() {
           <Route path="/transactions" element={<Transactions />} />
           <Route path="/total-drivers" element={<TotalDrivers />} />
           <Route path="/total-admin" element={<TotalAdmin />} />
+          <Route path="/total-booking" element={<Booking />} />
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

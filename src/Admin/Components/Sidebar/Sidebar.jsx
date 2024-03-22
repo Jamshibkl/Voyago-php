@@ -62,7 +62,7 @@ function Dashboard() {
                 </h5>
               </div>
             </NavLink>
-            <NavLink to="/transactions">
+            <NavLink to="/total-booking">
               <div className="dashboard-items">
                 {/* icons */}
                 <h5>
