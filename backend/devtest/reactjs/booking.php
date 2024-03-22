@@ -21,7 +21,7 @@ if (mysqli_connect_error()) {
     $result = "";
 
     if ($username != "" && $pickupLocation != "" && $dropoffLocation != "" && $pickupDate != "" && $pickupTime != "" && $cabType != "") {
-        $sql = "INSERT INTO booking(username, pickupLocation, dropoffLocation, pickupDate, pickupTime, cabType) VALUES('$username','$pickupLocation', '$dropoffLocation', '$pickupDate', '$pickupTime', '$cabType')";
+        $sql = "INSERT INTO booking(username, pickupLocation, mobile, pickupDate, pickupTime, cabType) VALUES('$username','$pickupLocation', '$dropoffLocation', '$pickupDate', '$pickupTime', '$cabType')";
         $res = mysqli_query($conn, $sql);
         if ($res) {
             $result = "You have booked successfully!";
