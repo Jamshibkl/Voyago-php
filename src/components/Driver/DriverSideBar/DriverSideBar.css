@@ -86,6 +86,9 @@
     color: var(--blue);
 
 }
+.Driver-dashboard-options .Driver-dashboard-head h5 span {
+    margin: 0px 10px;
+}
 
  /* .Driver-dashboard-head:hover{
     
@@ -129,6 +132,11 @@
     font-weight: 600;
     color: var(--blue);
 }
+.Driver-dashboard-options .Driver-dashboard-items h5 span {
+    margin: 0px 10px;
+    
+}
+
 .Driver-dashboard-options button {
     padding: 15px 0;
     color: #ffffff;

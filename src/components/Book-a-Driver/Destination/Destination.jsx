@@ -74,7 +74,7 @@ function Destination() {
               <input type="radio" name="paymentMethod" /> Offline Payment
             </label>
             <br />
-            <Link to="/payment-section">
+            <Link to="/payment-checkout">
               <button className="Confirm-payment">Confirm payment</button>
             </Link>
           </form>

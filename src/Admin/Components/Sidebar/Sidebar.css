@@ -74,6 +74,12 @@
     color: #fff;
 
 }
+.dashboard-options .dashboard-head h5 span{
+    margin: 0px 6px;
+    font-size: 18px;
+   
+
+}
 
 .dashboard-head1:hover {
     background-color: hsla(222, 37%, 36%, 0.302);
@@ -101,7 +107,7 @@
     text-align: center;
     height: 50px;
     padding: 16px 0;
-    margin: 0;
+    margin: 10px 0px;
 }
 
 .dashboard-items:hover {
@@ -115,6 +121,11 @@
     font-size: 14px;
     font-weight: 600;
     color: #fff;
+}
+.dashboard-options .dashboard-items h5 span{
+    margin: 0px 6px;
+    font-size: 18px;
+  
 }
 
 

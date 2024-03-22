@@ -1,13 +1,23 @@
 import React from "react";
 import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faUserNurse,
+  faUser,
+  faFileInvoiceDollar,
+  faLock,
+  faCarSide,
+} from "@fortawesome/free-solid-svg-icons";
 function Dashboard() {
   return (
     <div className="admin-Dashboard">
       <div className="admin-SideBar">
         <div className="admin-brand">
-          <h3>VOYAGO</h3>
+          <NavLink to="/" style={{ textDecoration: "none" }}>
+            <h3>VOYAGO</h3>
+          </NavLink>
         </div>
 
         <div className="dashboard-section">
@@ -15,7 +25,13 @@ function Dashboard() {
             <NavLink to="/admin-dashboard">
               <div className="dashboard-head dashboard-head1">
                 {/* icons */}
-                <h5>Dashboard</h5>
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faHouse} />
+                  </span>
+                  Dashboard
+                </h5>
               </div>
             </NavLink>
 
@@ -25,20 +41,50 @@ function Dashboard() {
             <NavLink to="/drivers">
               <div className="dashboard-items">
                 {/* icons */}
-                <h5>Drivers</h5>
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faUserNurse} />
+                  </span>
+                  Drivers
+                </h5>
               </div>
             </NavLink>
             <NavLink to="/customers">
               <div className="dashboard-items">
                 {/* icons */}
-                <h5> Customers</h5>
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faUser} />
+                  </span>{" "}
+                  Customers
+                </h5>
+              </div>
+            </NavLink>
+            <NavLink to="/transactions">
+              <div className="dashboard-items">
+                {/* icons */}
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faCarSide} />
+                  </span>{" "}
+                  Total Booking
+                </h5>
               </div>
             </NavLink>
 
             <NavLink to="/transactions">
               <div className="dashboard-items">
                 {/* icons */}
-                <h5>Transactions</h5>
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faFileInvoiceDollar} />
+                  </span>
+                  Transactions
+                </h5>
               </div>
             </NavLink>
 
@@ -46,10 +92,16 @@ function Dashboard() {
               {" "}
               <div className="dashboard-items">
                 {/* icons */}
-                <h5>Total Drivers</h5>
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faUserNurse} />
+                  </span>
+                  Total Drivers
+                </h5>
               </div>
             </NavLink>
-{/* 
+            {/* 
             <div className="dashboard-span">
               <span>Sales</span>
             </div>
@@ -65,10 +117,16 @@ function Dashboard() {
             <NavLink to="/total-admin">
               <div className="dashboard-items">
                 {/* icons */}
-                <h5>Admins</h5>
+                <h5>
+                  {" "}
+                  <span>
+                    <FontAwesomeIcon icon={faLock} />
+                  </span>
+                  Admins
+                </h5>
               </div>
             </NavLink>
-
+            {/* 
             <div className="profile-section">
               <div className="profile-content">
                 <div className="admin-profile">
@@ -79,7 +137,7 @@ function Dashboard() {
                   <h3>❄️</h3>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

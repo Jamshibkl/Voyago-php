@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import './DriverSideBar.css'
 import { NavLink,useNavigate  } from 'react-router-dom'
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faHouse,
+  faUser,
+  faBell,
+  faCar
+} from "@fortawesome/free-solid-svg-icons";
 function DriverSideBar() {
   const navigate = useNavigate();
 
@@ -36,8 +43,8 @@ function DriverSideBar() {
           </div>
           <NavLink to='/driver-dashbord' style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-head">
-            {/* icons */}
-            <h5>Dashboard</h5>
+        
+            <h5> <span> <FontAwesomeIcon icon={faHouse} /></span>Dashboard</h5>
           </div>
          
           </NavLink >
@@ -45,14 +52,14 @@ function DriverSideBar() {
           
          <NavLink to="/driver-profile" style={{textDecoration: 'none'}}>
           <div className="Driver-dashboard-items">
-            <h5>driver info</h5>
+            <h5> <span><FontAwesomeIcon icon={faUser} /></span>driver info</h5>
           </div>
           </NavLink>
 
            <NavLink to='/driver-notify' style={{textDecoration: 'none'}}>
            <div className="Driver-dashboard-items">
             {/* icons */}
-            <h5>Notifications</h5>
+            <h5> <span><FontAwesomeIcon icon={faBell} /></span>Notifications</h5>
           </div>
            </NavLink>
           
@@ -60,7 +67,7 @@ function DriverSideBar() {
            <NavLink to='/driver-ride' style={{textDecoration: 'none'}}>
            <div className="Driver-dashboard-items">
             {/* icons */}
-            <h5>Rides</h5>
+            <h5> <span><FontAwesomeIcon icon={faCar} /></span>Rides</h5>
           </div>
            </NavLink>
 

@@ -82,6 +82,16 @@ function DriverInfo() {
                             </th>
                           </tr>
                           <tr>
+                            <th className="profile-table-th">License ID</th>
+                            <th className="profile-table-th">{driver.license}</th>
+                          </tr>
+                          <tr>
+                            <th className="profile-table-th">adhar ID</th>
+                            <th className="profile-table-th">
+                              {driver.adharId}
+                            </th>
+                          </tr>
+                          <tr>
                             <th className="profile-table-th">adhar photo</th>
                             <th className="profile-table-th">
                               <img
@@ -104,7 +114,7 @@ function DriverInfo() {
                         </thead>
                       </table>
                       <div className="request-btns">
-                        <button className="accept-btn">Accept</button>
+                        {/* <button className="accept-btn">Accept</button> */}
                         <button className="reject-btn">Reject</button>
                       </div>
                     </div>
