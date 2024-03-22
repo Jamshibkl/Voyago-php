@@ -1,9 +1,83 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
 import Sidebar from "../Sidebar/Sidebar";
 import Navbar from "../admin-navbar/Navbar";
 
 function Dashboard() {
+  const [totalUser, setTotalUser] = useState();
+  const [totaldriver, setTotalDriver] = useState();
+  const [totalAmount, setTotalAmount] = useState();
+  const [totalBooking, setTotalBooking] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/devtest/reactjs/dashboard/totalcostomer.php"
+        );
+        const data = await response.json();
+        setTotalUser(data[0].totalUser); // Set totalUser state with fetched data
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/devtest/reactjs/dashboard/totalbooking.php"
+        );
+        const data = await response.json();
+        setTotalBooking(data[0].totalBooking); // Set totalBooking state with fetched data
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/devtest/reactjs/dashboard/totaldriver.php"
+        );
+        const data = await response.json();
+        setTotalDriver(data[0].totalDrivers); // Set totalDrivers state with fetched data
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost/devtest/reactjs/dashboard/totalrevenue.php"
+        );
+        const data = await response.json();
+        let totalAmount = 0;
+        data.forEach((item) => {
+          totalAmount += parseInt(item.amount);
+          setTotalAmount(totalAmount)
+        });
+
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="admin-Dashboard">
       <div className="admin-SideBar">
@@ -21,14 +95,14 @@ function Dashboard() {
                 <div className="dash-information">
                   <h5>Total Customers</h5>
                   <br />
-                  <h4>1765</h4>
+                  <h4>{totalUser}</h4>
                   <br />
                   <h6>Since last month</h6>
                 </div>
                 <div className="dash-information">
                   <h5>Total Drivers</h5>
                   <br />
-                  <h4>106</h4>
+                  <h4>{totaldriver}</h4>
                   <br />
                   <h6>Since last month</h6>
                 </div>
@@ -36,16 +110,16 @@ function Dashboard() {
 
               <div className="dash-info-container2">
                 <div className="dash-information">
-                  <h5>Monthly Sales</h5>
+                  <h5>Total Revenue</h5>
                   <br />
-                  <h4>55476</h4>
+                  <h4>{totalAmount}</h4>
                   <br />
                   <h6>Since last month</h6>
                 </div>
                 <div className="dash-information">
-                  <h5>Active Drivers</h5>
+                  <h5>Total Booking</h5>
                   <br />
-                  <h4>78</h4>
+                  <h4>{totalBooking}</h4>
                   <br />
                   <h6>Since last month</h6>
                 </div>
