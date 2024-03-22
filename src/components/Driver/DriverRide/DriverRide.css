@@ -16,6 +16,7 @@
 }
 .Driver-ride-section .current-ride td {
     padding: 20px;
+    background: white;
 }
 .Driver-ride-section .current-ride table tr:nth-child(2) {
     background-color: rgb(238, 238, 238); /* Set your desired background color */
