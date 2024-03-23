@@ -16,7 +16,7 @@ function Chekout() {
   const navigate = useNavigate();
   const { amount } = useParams();
   const driverId = localStorage.getItem("driverid");
-
+  const user = localStorage.getItem("user");
 
   const [userName, setUserName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
@@ -85,7 +85,7 @@ function Chekout() {
     if (response.data.success) {
     }
   };
-  
+
   const generateRandomNumber = (
     length,
     incluseLowercase,
@@ -123,12 +123,15 @@ function Chekout() {
     incluseLowercase,
     incluseUppercase,
     incluseNumbers
-    );
-    
-    const handleSubmit = async () => {
+  );
+  const handleSubmit = async () => {
+    const RandomOTP =null;
+    localStorage.setItem("RandomOTP", RandomOTP);
+    if (userName != "" && cardNumber != "" && expiryDate != "" && cvv != "") {
       DriverVerifyInfo();
-      navigate(`/payment-section`); 
-    };
+      navigate(`/payment-section/${Trid}/${driverId}/${amount}/${user}`);
+    }
+  };
   return (
     <div>
       <div className="modal">
