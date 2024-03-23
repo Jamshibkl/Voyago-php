@@ -70,7 +70,7 @@ function App() {
           <Route path="/sign-in" element={<SignInUp />} />
           <Route path="/on-the-way/:bookingUser" element={<OnTheWay />} />
           <Route path="/reached-destination" element={<Destination />} />
-          <Route path="/payment-section" element={<PaymentSection />} />
+          <Route path="/payment-section/:driverId" element={<PaymentSection />} />
           <Route path="/payment-checkout/:amount" element={<PaymentCheckout />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/driver-login" element={<DriverLogin />} />
