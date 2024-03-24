@@ -10,24 +10,8 @@ function DriverInfo() {
   const { driverId } = useParams();
   console.log(driverId);
 
-  //const [data, setData] = useState({ key: "value" }); // Your data to send
-  //  setData = DId;
-  // const sendDataToPHP = () => {
-  //   axios
-  //     .get(
-  //       "http://localhost/devtest/reactjs/DriverVerifyInfo/DriverInfo.php",
-  //       DId
-  //     )
-  //     .then((response) => {
-  //       console.log("Response from PHP:", response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error sending data to PHP:", error);
-  //     });
-  // };
-  // sendDataToPHP();
-
   const [product, setProduct] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const getProduct = () => {
@@ -44,6 +28,24 @@ function DriverInfo() {
     };
     getProduct();
   }, []);
+
+  const handleReject = async () => {
+    const confirmReject = window.confirm(
+      "Are you sure you want to reject this driver?"
+    );
+    if (confirmReject) {
+      try {
+        await axios.delete(
+          `http://localhost/devtest/reactjs/DriverVerifyInfo/delete_driver.php?id=${driverId}`
+        );
+        // After rejection, you may redirect the user to another page or perform any other action
+        console.log("Driver rejected successfully!");
+      } catch (error) {
+        console.error("Error rejecting driver:", error);
+        setError(error);
+      }
+    }
+  };
 
   return (
     <div className="admin-Dashboard">
@@ -83,7 +85,9 @@ function DriverInfo() {
                           </tr>
                           <tr>
                             <th className="profile-table-th">License ID</th>
-                            <th className="profile-table-th">{driver.license}</th>
+                            <th className="profile-table-th">
+                              {driver.license}
+                            </th>
                           </tr>
                           <tr>
                             <th className="profile-table-th">adhar ID</th>
@@ -115,7 +119,11 @@ function DriverInfo() {
                       </table>
                       <div className="request-btns">
                         {/* <button className="accept-btn">Accept</button> */}
-                        <button className="reject-btn">Reject</button>
+                        <button
+                          className="reject-btn"
+                          onClick={() => handleReject(driver.id)}>
+                          Reject
+                        </button>
                       </div>
                     </div>
                   </div>

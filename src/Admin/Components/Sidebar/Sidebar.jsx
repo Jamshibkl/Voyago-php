@@ -97,7 +97,7 @@ function Dashboard() {
                   <span>
                     <FontAwesomeIcon icon={faUserNurse} />
                   </span>
-                  Total Drivers
+                  Feedbacks
                 </h5>
               </div>
             </NavLink>

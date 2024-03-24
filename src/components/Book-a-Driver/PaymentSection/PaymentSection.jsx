@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./PaymentSection.css";
 import NavBar from "../../NavBar/NavBar";
-// import PaymentBro from "../../../Assets/Payment Information-rafiki.svg";
-import DriverImage from "../../../Assets/driver_profile-5.jpg";
 import PaymentSucsessIcon from "../../../Assets/payment-sucssesfull.png";
 import { useParams } from "react-router-dom";
-function PaymentSection() {
-  const { transactionId } = useParams();
-  const { driverId } = useParams();
-  const { amount } = useParams();
-  const { user } = useParams();
+import { useNavigate } from "react-router-dom";
 
+function PaymentSection() {
+  const { transactionId, driverId, amount, user } = useParams();
   const [driver, setDriver] = useState(null);
+  const [feedback, setFeedback] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,6 +27,56 @@ function PaymentSection() {
     };
     fetchData();
   }, [driverId]);
+
+  const handleInputChange = (e, type) => {
+    switch (type) {
+      case "feedback":
+        setError("");
+        setFeedback(e.target.value);
+        if (e.target.value === "") {
+          setError("Feedback has been left blank!");
+        }
+        break;
+      default:
+        break;
+    }
+  };
+
+  function handleSubmit() {
+    if (feedback) {
+      var url = "http://localhost/devtest/reactjs/feedback.php";
+      var headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      };
+      var Data = {
+        feedback: feedback,
+        userName: user ? user : "Anonymous",
+        driverName: driver ? driver.driver : "Unknown Driver",
+        driver_id: driverId ? driverId : "Anonymous",
+      };
+      fetch(url, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(Data),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          setError(err);
+          console.log(err);
+        });
+      setFeedback("");
+      setTimeout(function () {
+        alert("Thank you for your feedback!");
+        navigate("/");
+      }, 100);
+    } else {
+      setError("Feedback is required!");
+    }
+  }
 
   return (
     <>
@@ -83,17 +132,22 @@ function PaymentSection() {
           )}
         </div>
         <div className="payment-feedback">
-          <h3>Give a feedback about the driver.</h3>
+          <h3>Give feedback about the driver.</h3>
           <br />
-          <input type="textarea" />
-          {/* <h4>Add Star Rating : </h4>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span> */}
+          <textarea
+            type=""
+            rows="6"
+            cols="54"
+            value={feedback}
+            onChange={(e) => handleInputChange(e, "feedback")}
+          />
           <br />
-          <button className="feedback-submit">Submit</button>
+          <button
+            className="feedback-submit"
+            onClick={handleSubmit}
+            type="submit">
+            Submit
+          </button>
         </div>
       </div>
     </>
