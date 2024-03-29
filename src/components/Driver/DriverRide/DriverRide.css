@@ -1,10 +1,11 @@
 .Driver-ride-section {
     display: flex;
+    background: #e7f2fd;
 }
 
 .Driver-ride-section .ride-information {
     padding: 50px;
-    width: 82%;
+    width: 80%;
 }
 
 .Driver-ride-section .current-ride h2 {

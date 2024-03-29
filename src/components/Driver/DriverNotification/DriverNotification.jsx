@@ -140,7 +140,10 @@ function DriverNotification() {
                           }
                         >
                           <button className="confirm" onClick={handleSubmit}>
-                            Conform
+                            Confirm
+                          </button>
+                          <button className="cancel" >
+                           Cancel
                           </button>
                         </div>
                       </div>

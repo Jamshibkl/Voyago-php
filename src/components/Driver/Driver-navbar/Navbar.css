@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.driver-nav {
+  width: 1229px;
+  height: 80px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+.driver-nav ul li {
+  list-style-type: none;
+  text-align: center;
+  font-size: 16px;
+}
+.driver-nav .driver-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+.driver-nav .driver-profile img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0px 10px;
+}
+
+.driver-nav .driver-profile span .icon {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #b1b1b1;
+}

@@ -1,9 +1,10 @@
 .driver-profile-section {
     display: flex;
     /* width: 100%; */
+    background: #e7f2fd;
 }
 .dr-info {
-    width: 82%;
+    width: 80%;
 }
 
 .driver-profile-info .profile {
@@ -46,7 +47,7 @@
 }
 
 .driver-profile-form p {
-    color: rgb(255, 204, 0);
+    color: green;
 }
 
 .dr-profile-info {
@@ -85,7 +86,7 @@
     margin: 5px;
     width: 90%;
     display: inline;
-    background: rgb(232, 232, 232);
+    background: #ffffff;
     border-radius: 20px;
     border: none;
     text-align: center;

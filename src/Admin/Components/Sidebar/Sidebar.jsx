@@ -9,6 +9,7 @@ import {
   faFileInvoiceDollar,
   faLock,
   faCarSide,
+  faMessage
 } from "@fortawesome/free-solid-svg-icons";
 function Dashboard() {
   return (
@@ -84,6 +85,18 @@ function Dashboard() {
                     <FontAwesomeIcon icon={faFileInvoiceDollar} />
                   </span>
                   Transactions
+                </h5>
+              </div>
+            </NavLink>
+            <NavLink to="/total-contact">
+              <div className="dashboard-items">
+                {/* icons */}
+                <h5>
+                  {" "}
+                  <span>
+                  <FontAwesomeIcon icon={faMessage} />
+                  </span>
+                  Contacts
                 </h5>
               </div>
             </NavLink>
