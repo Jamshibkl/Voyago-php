@@ -39,6 +39,8 @@ import DriverNotification from "./components/Driver/DriverNotification/DriverNot
 import DriverRide from "./components/Driver/DriverRide/DriverRide";
 import Admin from "./Admin/Admin";
 import Login from "./components/Sign-in-up/Login";
+import ForPass from "./components/Sign-in-up/ForgotPass/ForPass";
+import ResetPass from "./components/Sign-in-up/ForgotPass/ResetPass";
 import Dashboard from "./Admin/Components/Dashboard/Dashboard";
 import Drivers from "./Admin/Components/Drivers/Drivers";
 import Customers from "./Admin/Components/Customers/Customers";
@@ -69,6 +71,8 @@ function App() {
           <Route path="/driver-on-way" element={<DriverOnWay />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/sign-in" element={<SignInUp />} />
+          <Route path="/forgot-password" element={<ForPass />} />
+          <Route path="/reset-password" element={<ResetPass />} />
           <Route path="/on-the-way/:bookingUser" element={<OnTheWay />} />
           <Route path="/reached-destination" element={<Destination />} />
           <Route path="/payment-section/:transactionId/:driverId/:amount/:user" element={<PaymentSection />} />

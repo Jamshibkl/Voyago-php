@@ -110,7 +110,7 @@ function Login() {
               )}
 
               <div className="field input">
-                <label>Enter Username</label>
+                <label>Username</label>
                 <input
                   type="text"
                   id="username"
@@ -139,10 +139,13 @@ function Login() {
                   style={{ background: "#407BFF" }}
                 />
               </div>
-            </div>
-            <div className="link">
+              <div className="link">
+              <Link to="/forgot-password"><p>forgot password?</p></Link>
+              <br />
               Create a new account? <Link to="/sign-in">Sign-up</Link>
             </div>
+            </div>
+           
           </section>
         </div>
       </div>

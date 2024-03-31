@@ -95,7 +95,7 @@ header {
   margin-bottom: 10px;
 }
 .form2 .form .field label {
-  margin-bottom: 2px;
+  margin-bottom: 10px;
 }
 .form2 .form .field input {
   outline: none;
@@ -137,12 +137,17 @@ header {
 
 .form2 .link {
   text-align: center;
-  margin: 10px 0;
   font-size: 17px;
+}
+.form2 .link p{
+  margin: 0;
+  text-align: start;
+  color: var(--blue);
 }
 
 .form2 .link a {
   color: #333;
+  color: var(--blue);
 }
 .form2 .link a:hover {
   text-decoration: underline;
