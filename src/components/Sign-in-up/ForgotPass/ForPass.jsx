@@ -1,93 +1,150 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function ForPass() {
-  // const [user, setUser] = useState("");
-  // const [error, setError] = useState("");
-  // const [msg, setMsg] = useState("");
-  // const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate();
 
-  // const handleInputChange = (e) => {
-  //   setUser(e.target.value);
-  //   setError("");
-  // };
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [pass2, setPass2] = useState("");
+  const [error, setError] = useState("");
+  const [msg, setMessage] = useState("");
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
+  const handleInputChange = (e, type) => {
+    switch (type) {
+      case "email":
+        setError("");
+        setEmail(e.target.value);
+        if (e.target.value === "") {
+          setError("Username has left blank");
+        }
+        break;
+      case "pass":
+        setError("");
+        setPass(e.target.value);
+        if (e.target.value === "") {
+          setError("Password has left blank");
+        }
+        break;
+      case "pass2":
+        setError("");
+        setPass2(e.target.value);
+        if (e.target.value === "") {
+          setError("Password has left blank");
+        } else if (e.target.value !== pass) {
+          setError("Confirm password does not match!");
+        }
+        break;
+      default:
+    }
+  };
 
-  //   try {
-  //     const response = await fetch('http://localhost/devtest/reactjs/ForgotPass/user_reset_pass_request.php', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ user }),
-  //     });
-  //     const data = await response.json();
+  const DriverVerifyInfo = async () => {
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("pass2", pass2);
 
-  //     if (data.success) {
-  //       setMsg(data.success);
-  //       // Delay the navigation by 2 seconds
-  //       setTimeout(() => {
-  //         navigate("/reset-password"); // Navigate to the reset password page
-  //       }, 1000); // 2000 milliseconds = 2 seconds
-  //     } else {
-  //       setError(data.error);
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error);
-  //   }
-  // };
+    const responce = await axios.post(
+      "http://localhost/devtest/reactjs/forgotPass/forgotuser.php",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+
+    console.log(responce.data);
+    if (responce.data.success) {
+      setTimeout(() => {
+        navigate("/login")
+      });
+    }
+  };
+
+  const forgotPass = async (e) => {
+    e.preventDefault();
+    if (email !== "" && pass !== "" && pass2 !== "") {
+      await DriverVerifyInfo();
+    }
+  };
+
+  function checkEmail() {
+    var url = "http://localhost/devtest/reactjs/forgotPass/validuser.php";
+    var headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+    var Data = {
+      email: email,
+    };
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(Data),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setError(response[0].result);
+      })
+      .catch((err) => {
+        setError(err);
+        console.log(err);
+      });
+  }
 
   return (
     <div className="driver-login-form">
-       <div className="wrapper2">
-      <section className="form2 login">
-        <header>Reset Password</header>
-        <div className="form">
-          {/* {error && <div className="error-txt">{error}</div>}
-          {msg && <div className="success-msg">{msg}</div>} */}
+      <div className="wrapper2">
+        <section className="form2 login">
+          <header>Reset Password</header>
+          <div className="form">
+            {error && <div className="error-txt">{error}</div>}
+            {msg && <div className="success-msg">{msg}</div>}
 
-          <div className="field input">
-            <label>Enter Username</label>
-            <input
-              type="text"
-              placeholder="Enter Your Username"
-              // value={user}
-              // onChange={handleInputChange}
-            />
-          </div>
-          <div className="field input">
-            <label>New Password</label>
-            <input
-              type="password"
-              placeholder="Enter New Password"
-              // value={pass}
-              // onChange={(e) => handleInputChange(e, "pass")}
-            />
-          </div>
-          <div className="field input">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              placeholder="Confirm Password"
-              // value={confirmPassword}
-              // onChange={(e) => handleInputChange(e, "confirm")}
-            />
-          </div>
+            <div className="field input">
+              <label>Enter Email</label>
+              <input
+                type="text"
+                name="email"
+                placeholder="Enter Your email"
+                value={email}
+                onChange={(e) => handleInputChange(e, "email")}
+                onBlur={checkEmail}
+              />
+            </div>
+            <div className="field input">
+              <label>New Password</label>
+              <input
+                type="password"
+                name="pass"
+                placeholder="Enter New Password"
+                value={pass}
+                onChange={(e) => handleInputChange(e, "pass")}
+              />
+            </div>
+            <div className="field input">
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                name="pass2"
+                placeholder="Confirm Password"
+                value={pass2}
+                onChange={(e) => handleInputChange(e, "pass2")}
+              />
+            </div>
 
-
-          <div className="field button">
-                <input
-                  type="submit"
-                  style={{ background: "#407BFF" }}
-                />
-              </div>
-          <div>
-            <Link to="/login">Back to Login</Link>
+            <div className="field button">
+              <input
+                type="submit"
+                onClick={forgotPass}
+                style={{ background: "#407BFF" }}
+              />
+            </div>
+            <div>
+              <Link to="/login">Back to Login</Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       </div>
     </div>
   );
