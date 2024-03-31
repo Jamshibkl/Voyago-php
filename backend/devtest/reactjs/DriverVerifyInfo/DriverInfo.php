@@ -38,7 +38,8 @@ switch($method)
            "adharImg"=>$row["adharImg"],
            "licenseImg"=>$row["licenseImg"],
            "license"=>$row["license"],
-           "location"=>$row["location"]
+           "location"=>$row["location"],
+           "rideStatus"=>$row["rideStatus"]
           );
           }
           echo json_encode($json_array["productdata"]);
