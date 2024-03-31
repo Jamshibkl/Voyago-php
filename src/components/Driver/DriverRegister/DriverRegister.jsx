@@ -4,14 +4,13 @@ import axios from "axios";
 import "./DriverRegister.css";
 
 function SignInUp() {
-
   const navigate = useNavigate();
   const [driver, setDriver] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
   const [pass1, setPass1] = useState("");
   const [pass2, setPass2] = useState("");
-  
+
   const [adharId, setAdharId] = useState("");
   const [adharImg, setAdharImg] = useState("");
   const [license, setLicense] = useState("");
@@ -21,8 +20,6 @@ function SignInUp() {
 
   const [message, setMessage] = useState("");
   const [msg, setMsg] = useState("");
-
-
 
   const DriverVerifyInfo = async () => {
     const formData = new FormData();
@@ -183,169 +180,170 @@ function SignInUp() {
 
   return (
     <div className="driver-signup-fom">
-    <div className="wrapper">
-      <section className="form singup">
-        <header>Create Your Driver Account</header>
-        <form action="" method="post">
-          {msg !== "" ? (
-            <div className="error-txt">{msg}</div>
-          ) : (
-            <div className="">{msg}</div>
-          )}
-          {message !== "" ? (
-            <div className="success-txt">{message}</div>
-          ) : (
-            <div className="">{message}</div>
-          )}
-          <div className="loginsection">
-            <div className="login-section-left">
-              <div className="field input">
-                <label>Username</label>
-                <input
-                  type="text"
-                  placeholder="Enter your username"
-                  name="driver"
-                  value={driver}
-                  onChange={(e) => setDriver(e.target.value)}
-                  onBlur={checkUser}
-                />
-              </div>
-
-              <div className="field input">
-                <label>Email Address</label>
-                <input
-                  type="text"
-                  placeholder="Enter your Email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onBlur={checkEmail}
-                />
-              </div>
-
-              <div className="field input">
-                <label>Mobile</label>
-                <input
-                  type="number"
-                  name="mobile"
-                  placeholder="Enter your mobile number"
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
-                  onBlur={checkMobile}
-                />
-              </div>
-              <div className="field input">
-                <label>Password</label>
-                <input
-                  type="password"
-                  name="pass1"
-                  className=""
-                  placeholder="Enter your password"
-                  value={pass1}
-                  onChange={(e) => setPass1(e.target.value)}
-                  onBlur={checkPassword}
-                />
-                <i className="bi bi-eye"></i>
-              </div>
-              <div className="field input">
-                <label>Password</label>
-                <input
-                  type="password"
-                  name="pass2"
-                  className=""
-                  placeholder="Repeat your password"
-                  value={pass2}
-                  onChange={(e) => setPass2(e.target.value)}
-                />
-                <i className="bi bi-eye"></i>
-              </div>
-            </div>
-            <div className="login-section-right">
-              <div className="field input">
-                <label>Profile photo</label>
-                <input
-                  type="file"
-                  placeholder="Profile photo"
-                  // value={profileImg}
-                  onChange={(e) => setProfileImg(e.target.files[0])}
-                />
-              </div>
-              <div className="name-details">
+      <div className="wrapper">
+        <section className="form singup">
+          <header>Create Your Driver Account</header>
+          <form action="" method="post">
+            {msg !== "" ? (
+              <div className="error-txt">{msg}</div>
+            ) : (
+              <div className="">{msg}</div>
+            )}
+            {message !== "" ? (
+              <div className="success-txt">{message}</div>
+            ) : (
+              <div className="">{message}</div>
+            )}
+            <div className="loginsection">
+              <div className="login-section-left">
                 <div className="field input">
-                  <label>Adhar photo</label>
+                  <label>Username</label>
                   <input
-                    type="file"
-                    placeholder="Adhar photo"
-                    // value={adharImg}
-                    onChange={(e) => setAdharImg(e.target.files[0])}
+                    type="text"
+                    placeholder="Enter your username"
+                    name="driver"
+                    value={driver}
+                    onChange={(e) => setDriver(e.target.value)}
+                    onBlur={checkUser}
+                  />
+                </div>
+
+                <div className="field input">
+                  <label>Email Address</label>
+                  <input
+                    type="text"
+                    placeholder="Enter your Email"
+                    name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    onBlur={checkEmail}
+                  />
+                </div>
+
+                <div className="field input">
+                  <label>Mobile</label>
+                  <input
+                    type="number"
+                    name="mobile"
+                    placeholder="Enter your mobile number"
+                    value={mobile}
+                    onChange={(e) => setMobile(e.target.value)}
+                    onBlur={checkMobile}
                   />
                 </div>
                 <div className="field input">
-                  <label>License photo</label>
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    name="pass1"
+                    className=""
+                    placeholder="Enter your password"
+                    value={pass1}
+                    onChange={(e) => setPass1(e.target.value)}
+                    onBlur={checkPassword}
+                  />
+                  <i className="bi bi-eye"></i>
+                </div>
+                <div className="field input">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    name="pass2"
+                    className=""
+                    placeholder="Repeat your password"
+                    value={pass2}
+                    onChange={(e) => setPass2(e.target.value)}
+                  />
+                  <i className="bi bi-eye"></i>
+                </div>
+              </div>
+              <div className="login-section-right">
+                <div className="field input">
+                  <label>Profile photo</label>
                   <input
                     type="file"
-                    placeholder="License photo"
-                    // value={licenseImg}
-                    onChange={(e) => setLicenseImg(e.target.files[0])}
+                    placeholder="Profile photo"
+                    // value={profileImg}
+                    onChange={(e) => setProfileImg(e.target.files[0])}
+                  />
+                </div>
+                <div className="name-details">
+                  <div className="field input">
+                    <label>Adhar photo</label>
+                    <input
+                      type="file"
+                      placeholder="Adhar photo"
+                      // value={adharImg}
+                      onChange={(e) => setAdharImg(e.target.files[0])}
+                    />
+                  </div>
+                  <div className="field input">
+                    <label>License photo</label>
+                    <input
+                      type="file"
+                      placeholder="License photo"
+                      // value={licenseImg}
+                      onChange={(e) => setLicenseImg(e.target.files[0])}
+                    />
+                  </div>
+                </div>
+                <div className="field input">
+                  <input
+                    type="text"
+                    placeholder="Adhar Number"
+                    value={adharId}
+                    onChange={(e) => setAdharId(e.target.value)}
+                  />
+                  <i className="bi bi-eye"></i>
+                </div>
+                <div className="field input">
+                  <input
+                    type="text"
+                    placeholder="License number"
+                    value={license}
+                    onChange={(e) => setLicense(e.target.value)}
+                  />
+                  <i className="bi bi-eye"></i>
+                </div>
+                <div className="field input">
+                  <select
+                    className=""
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                  >
+                    <option value="">Select Location</option>
+                    <option value="bangalore">bangalore</option>
+                    <option value="mysore">mysore</option>
+                    <option value="mangalore">mangalore</option>
+                    <option value="gulbarga">gulbarga</option>
+                    <option value="belgaum">belgaum</option>
+                    <option value="bijapur">bijapur</option>
+                    <option value="hubli">hubli</option>
+                    <option value="udupi">udupi</option>
+                    <option value="dharwad">dharwad</option>
+                    <option value="shimoga">shimoga</option>
+                    <option value="kochi">kochi</option>
+                    <option value="kasaragod">kasaragod</option>
+                    <option value="bekal fort">bekal fort</option>
+                  </select>
+                  <i className="bi bi-eye"></i>
+                </div>
+                <div className="field button">
+                  <input
+                    type="submit"
+                    defaultValue="Submit"
+                    className="btn"
+                    onClick={handleSubmit}
                   />
                 </div>
               </div>
-              <div className="field input">
-                <input
-                  type="text"
-                  placeholder="Adhar Number"
-                  value={adharId}
-                  onChange={(e) => setAdharId(e.target.value)}
-                />
-                <i className="bi bi-eye"></i>
-              </div>
-              <div className="field input">
-                <input
-                  type="text"
-                  placeholder="License number"
-                  value={license}
-                  onChange={(e) => setLicense(e.target.value)}
-                />
-                <i className="bi bi-eye"></i>
-              </div>
-              <div className="field input">
-              <select
-              className=""
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}>
-              <option value="">Select Location</option>
-              <option value="bangalore">bangalore</option>
-              <option value="mysore">mysore</option>
-              <option value="mangalore">mangalore</option>
-              <option value="gulbarga">gulbarga</option>
-              <option value="belgaum">belgaum</option>
-              <option value="bijapur">bijapur</option>
-              <option value="hubli">hubli</option>
-              <option value="udupi">udupi</option>
-              <option value="dharwad">dharwad</option>
-              <option value="shimoga">shimoga</option>
-              <option value="kochi">kochi</option>
-              <option value="kasaragod">kasaragod</option>
-              <option value="bekal fort">bekal fort</option>
-            </select>
-                <i className="bi bi-eye"></i>
-              </div>
-              <div className="field button">
-                <input
-                  type="submit"
-                  defaultValue="Submit"
-                  className="btn"
-                  onClick={handleSubmit}
-                />
-              </div>
             </div>
+          </form>
+          <div className="link">
+            Already signed up? <Link to="/driver-login">Login now</Link>
           </div>
-        </form>
-        <div className="link">
-          Already signed up? <Link to="/driver-login">Login now</Link>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
     </div>
   );
 }

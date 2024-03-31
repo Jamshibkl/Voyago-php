@@ -75,7 +75,7 @@ function LoadingPage() {
                 (driver, index) =>
                   index <= 100 && (
                     <div key={index} setDriverId={driver.id}>
-                      {driver.location === pickup && (
+                      {driver.location === pickup && driver.rideStatus === "online" && (
                         <div className="driver-table-info">
                           <h2>Driver details</h2>
                           <div className="driver-profile-sec">
