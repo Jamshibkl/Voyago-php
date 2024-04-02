@@ -11,19 +11,34 @@ function OnTheWay() {
   const [bookings, setBookings] = useState([]);
   const [error, setError] = useState(null); // Track potential errors
 
+  // useEffect(() => {
+  //   const userId = localStorage.getItem("user"); // Get the logged-in user's ID
+
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `http://localhost/devtest/reactjs/get_booking.php`
+  //       ); // Modified URL to include user_id parameter
+  //       setBookings(response.data);
+  //     } catch (error) {
+  //       // Handle errors gracefully, e.g., display an error message
+  //       console.error("Error fetching bookings:", error);
+  //       setError(error); // Store error for potential display
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
   useEffect(() => {
     const userId = localStorage.getItem("user"); // Get the logged-in user's ID
-
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost/devtest/reactjs/get_booking.php`
-        ); // Modified URL to include user_id parameter
+          "http://localhost/devtest/reactjs/RideInformation/get_rideinfo.php"
+        );
         setBookings(response.data);
       } catch (error) {
-        // Handle errors gracefully, e.g., display an error message
-        console.error("Error fetching bookings:", error);
-        setError(error); // Store error for potential display
+        console.error("Error fetching driver information:", error);
       }
     };
 
@@ -37,7 +52,7 @@ function OnTheWay() {
       <div className="rides-customers-info">
         <div className="rides-customers">
           <div className="rides-table">
-            <h2>Booking Details</h2>
+            <h2>Ride History</h2>
             {error ? (
               <p>Error fetching bookings: {error.message}</p>
             ) : (
@@ -51,35 +66,34 @@ function OnTheWay() {
                           {/* <th>Username</th> */}
                           <th>Pickup Location</th>
                           <th>Mobile</th>
-                          <th>Pickup Date</th>
-                          <th>Pickup Time</th>
-                          <th>Cab Type</th>
-                          <th>Booked on</th>
-                          <th>Booked Status</th>
+                          <th>DriverName</th>
+                          <th>tolatHour</th>
+                          <th>totalCharge</th>
+                
+               
                         </tr>
                       </thead>
                       <tbody>
                         {bookings.map((booking, index) => (
                           <tr className="user-data" key={index}>
-                            {booking.username === bookingUser && (
+                            {booking.UserName === bookingUser && (
                               <>
                                 {/* <td>{booking.id}</td> */}
                                 {/* <td>{booking.username}</td> */}
-                                <td>{booking.pickupLocation}</td>
-                                <td>{booking.mobile}</td>
-                                <td>{booking.pickupDate}</td>
-                                <td>{booking.pickupTime}</td>
-                                <td>{booking.cabType}</td>
-                                <td>{booking.created_at}</td>
+                                <td>{booking.location}</td>
+                                <td>{booking.UserMobile}</td>
+                                <td>{booking.driverName}</td>
+                                <td>{booking.tolatHour}</td>
+                                <td>{booking.totalCharge}</td>
                                 <td>
-                                  <div className="edit-btn">
+                                  {/* <div className="edit-btn">
                                     <button className="confirm-btn">
                                       Pending
                                     </button>
                                     <button className="delete-btn">
                                       Cancel
                                     </button>
-                                  </div>
+                                  </div> */}
                                 </td>
                               </>
                             )}

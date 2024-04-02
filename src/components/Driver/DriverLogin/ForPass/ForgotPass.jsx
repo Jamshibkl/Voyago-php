@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function ForPass() {
+function ForgotPass() {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -17,7 +17,7 @@ function ForPass() {
         setError("");
         setEmail(e.target.value);
         if (e.target.value === "") {
-          setError("Email has left blank");
+          setError("Username has left blank");
         }
         break;
       case "pass":
@@ -46,7 +46,7 @@ function ForPass() {
     formData.append("pass2", pass2);
 
     const responce = await axios.post(
-      "http://localhost/devtest/reactjs/forgotPass/forgotuser.php",
+      "http://localhost/devtest/reactjs/DriverForPass/forgotuser.php",
       formData,
       {
         headers: { "Content-Type": "multipart/form-data" },
@@ -57,7 +57,7 @@ function ForPass() {
     if (responce.data.success) {
       setMessage("Password Updated Successfully!");
       setTimeout(() => {
-        navigate("/login")
+        navigate("/driver-login")
       }, 1000);
     }
   };
@@ -72,7 +72,7 @@ function ForPass() {
   };
 
   function checkEmail() {
-    var url = "http://localhost/devtest/reactjs/forgotPass/validuser.php";
+    var url = "http://localhost/devtest/reactjs/DriverForPass/validuser.php";
     var headers = {
       Accept: "application/json",
       "Content-Type": "application/json",
@@ -145,7 +145,7 @@ function ForPass() {
               />
             </div>
             <div>
-              <Link to="/login">Back to Login</Link>
+              <Link to="/driver-login">Back to Login</Link>
             </div>
           </div>
         </section>
@@ -154,4 +154,4 @@ function ForPass() {
   );
 }
 
-export default ForPass;
+export default ForgotPass;

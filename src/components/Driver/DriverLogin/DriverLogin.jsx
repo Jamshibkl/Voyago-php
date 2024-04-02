@@ -135,6 +135,7 @@ function DriverLogin() {
             </div>
           </form>
           <div className="link">
+          <Link to="/for-pass"><p>forgot password?</p></Link>
             Create a new account? <Link to="/driver-signup">Sign-up</Link>
           </div>
         </section>

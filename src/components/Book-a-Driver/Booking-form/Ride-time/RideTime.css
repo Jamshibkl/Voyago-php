@@ -5,86 +5,83 @@
 
 } */
 
-.ridetime{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
+.ridetime {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #myh1 {
-    font-size: 4rem;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(52, 34, 29);
-    padding: 0;
-    margin: 0;
+  font-size: 4rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(52, 34, 29);
+  padding: 0;
+  margin: 0;
 }
 
 #container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    border: 5px solid;
-    border-radius: 50px;
-    background-color: hsla(221, 100%, 63%, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: hsla(221, 100%, 63%, 0.6);
 }
 
 #display {
-    font-size: 5rem;
-    font-family: monospace;
-    font-weight: bold;
-    color: rgb(20, 14, 7);
-    text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.769);
-    margin-bottom: 25px;
+  font-size: 5rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: rgb(20, 14, 7);
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.769);
+  margin-bottom: 25px;
 }
 
 #controls button {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 5px;
-    min-width: 125px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    transition: background-color 0.5s ease;
-
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  min-width: 125px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.5s ease;
 }
 
 #startBtn {
-    background-color: hsl(120, 100%, 37%);
+  background-color: hsl(120, 100%, 37%);
 }
 
 #startBtn:hover {
-    background-color: hsl(120, 100%, 27%);
+  background-color: hsl(120, 100%, 27%);
 }
 
-
 #stopBtn {
-    background-color: hsl(10, 90%, 50%);
+  background-color: hsl(10, 90%, 50%);
 }
 
 #stopBtn:hover {
-    background-color: hsl(10, 90%, 40%);
+  background-color: hsl(10, 90%, 40%);
 }
 
 #resetBtn {
-    background-color: hsl(206, 90%, 50%)
+  background-color: hsl(206, 90%, 50%);
 }
 
 #resetBtn:hover {
-    background-color: hsl(206, 90%, 40%);
+  background-color: hsl(206, 90%, 40%);
 }
 
-.diver-conformation{
-    color: red;
-    padding: 0;
-    margin: 10px;
+.diver-conformation {
+  color: red;
+  padding: 0;
+  margin: 10px;
 }

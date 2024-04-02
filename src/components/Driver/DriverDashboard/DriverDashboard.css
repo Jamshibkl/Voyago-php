@@ -8,18 +8,23 @@
   justify-content: space-evenly;
   align-items: center;
   width: 800px;
-  margin: 10px;
+  margin: 10px 22px;
 }
 
 .drive-dash-data .driver-dash-banner {
-  width: 820px;
-  height: 160px;
+  width: 750px;
+  height: 150px;
   padding: 20px;
-  background: lightskyblue;
-  margin: 50px;
+  background: rgba(135, 207, 235, 0.447);
+  margin: 20px 50px;
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
+}
+.drive-dash-data .dash-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .drive-dash-data .driver-dash-banner h4 {
@@ -29,7 +34,7 @@
 
 .drive-dash-data .driver-dash-banner p {
   margin: 0;
-  width: 600px;
+  width: 520px;
   color: rgba(0, 0, 0, 0.553);
   font-size: 15px;
 }
@@ -40,19 +45,85 @@
   height: 120px;
 }
 
-.driver-dash-chart {
-  width: 300px;
-  height: 410px;
+.driver-bar-chart {
+  width: 370px;
+  align-items: center;
   padding: 20px;
   text-align: center;
   background: #ffffff;
   position: absolute;
-  right: 30px;
-  top: 130px;
+  left: 45.2rem;
+  top: 28rem;
   border-radius: 10px;
 }
+.driver-pai-chart {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  position: absolute;
+  right: 2rem;
+  top: 6rem;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 16px 24px -2px #407cff3e;
+}
+.driver-line-chart {
+  height: 240px;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  position: absolute;
+  left: 22.2rem;
+  top: 28rem;
+  display: flex;
+  border-radius: 10px;
+}
+.driver-feedback-section {
+  padding: 20px;
+  height: 240px;
+  width: 390px;
+  background: #ffffff;
+  position: absolute;
+  right: 2rem;
+  top: 28rem;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+ 
+}
+.driver-feedback-section h3{
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--blue);
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  
+}
+.driver-feedback-section::-webkit-scrollbar {
+  display: none;
+}
+.driver-feedback-section table{
+ width: 100%;
+ height: auto;
+ 
+}
+.driver-feedback-section table tr td{
+ background: rgb(242, 242, 242);
+ 
+ 
 
-.driver-dash-chart img {
+}
+.driver-feedback-section table tr{
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  
+ 
+}
+
+.driver-pai-chart img {
   width: 400px;
   height: 300px;
   position: relative;
@@ -66,22 +137,23 @@
 }
 
 .drive-dash-data .weekly-ride {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   background: #ffffff;
-  border-radius: 20px;
+  border-radius: 10px;
   align-items: center;
   display: flex;
   justify-content: center;
   /* justify-content: center; */
   flex-direction: column;
+  box-shadow: 0px 16px 24px -2px #407cff2c;
 }
 
 .drive-dash-data .weekly-ride p {
   margin: 0;
   text-align: center;
-  padding: 16px;
-  font-size: 22px;
+  padding: 5px;
+  font-size: 15px;
   color: var(--blue);
   font-weight: bold;
 }
@@ -90,17 +162,17 @@
   margin: 0;
   text-align: center;
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   color: var(--blue);
   font-weight: bold;
 }
 
 .drive-dash-data .weekly-ride span {
-  padding: 20px;
+  padding: 10px;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
-  color: rgba(0, 0, 0, 0.636);
+  color: var(--blue);
 }
 
 .weekly-ride img {

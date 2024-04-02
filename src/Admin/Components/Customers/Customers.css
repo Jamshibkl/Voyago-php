@@ -51,10 +51,10 @@ table td {
 }
 
 .edit-btn button {
-    margin: 3.5px 0;
+    margin: 5px;
     width: 100px;
     height: 37px;
-    border-radius: 50px;
+    border-radius: 10px;
     font-weight: bold;
     border: none;
 }
