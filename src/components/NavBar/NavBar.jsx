@@ -64,7 +64,7 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
-                to="/admin"
+                to="/admin-login"
                 className="dropdown-items"
               >
                 Admin

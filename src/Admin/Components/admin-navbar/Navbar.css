@@ -32,3 +32,12 @@
     background-color: antiquewhite;
     margin: 0 10px;
 }
+.admin-nav button {
+    padding: 10px;
+    color: var(--blue);
+    background: #ffffff;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+  }
+  

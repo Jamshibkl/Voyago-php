@@ -40,6 +40,7 @@ import DriverRide from "./components/Driver/DriverRide/DriverRide";
 import Admin from "./Admin/Admin";
 import Login from "./components/Sign-in-up/Login";
 import ForPass from "./components/Sign-in-up/ForgotPass/ForPass";
+import ForgotPass from "./components/Driver/DriverLogin/ForPass/ForgotPass";
 import Dashboard from "./Admin/Components/Dashboard/Dashboard";
 import Drivers from "./Admin/Components/Drivers/Drivers";
 import Customers from "./Admin/Components/Customers/Customers";
@@ -49,6 +50,8 @@ import TotalDrivers from "./Admin/Components/Total-Drivers/TotalDrivers";
 import TotalAdmin from "./Admin/Components/total-admins/TotalAdmins";
 import Contact from "./Admin/Components/Contact/Contact";
 import Booking from './Admin/Components/Total-booking/Booking'
+import AdminSignup from "./Admin/Admin-login/AdminSignup";
+import AdminLogin from "./Admin/Admin-login/AdminLogin";
 function App() {
   const isLoggedIn = false;
   return (
@@ -76,7 +79,10 @@ function App() {
           <Route path="/payment-section/:transactionId/:driverId/:amount/:user" element={<PaymentSection />} />
           <Route path="/payment-checkout/:amount" element={<PaymentCheckout />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin-signup" element={<AdminSignup />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/driver-login" element={<DriverLogin />} />
+          <Route path="/for-pass" element={<ForgotPass />} />
 
           <Route path="/driver-signup" element={<DriverRegister />} />
 
