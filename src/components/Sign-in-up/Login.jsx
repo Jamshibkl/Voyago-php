@@ -10,6 +10,25 @@ function Login() {
   const [pass, setPass] = useState("");
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
+  const [admin, setAdmin] = useState("");
+
+  // useEffect(() => {
+  //   const getProduct = () => {
+  //     fetch("http://localhost/devtest/reactjs/adminRole.php")
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         const extractedRoles = data.map(item => item.role);
+  //         setAdmin(extractedRoles);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   };
+  //   getProduct();
+  // }, []);
+
+
+  // console.log(admin.role);
 
   useEffect(() => {
     let login = localStorage.getItem("login");
@@ -140,12 +159,13 @@ function Login() {
                 />
               </div>
               <div className="link">
-              <Link to="/forgot-password"><p>forgot password?</p></Link>
-              <br />
-              Create a new account? <Link to="/sign-in">Sign-up</Link>
+                <Link to="/forgot-password">
+                  <p>forgot password?</p>
+                </Link>
+                <br />
+                Create a new account? <Link to="/sign-in">Sign-up</Link>
+              </div>
             </div>
-            </div>
-           
           </section>
         </div>
       </div>
