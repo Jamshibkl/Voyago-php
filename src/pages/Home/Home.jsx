@@ -61,7 +61,7 @@ function Home() {
                   to="/how-it-works"
                   className="dropdown-items"
                 >
-                  How it Works
+                  How it Work
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
