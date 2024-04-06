@@ -14,6 +14,9 @@ function DriverNotification() {
   const randomNum = localStorage.getItem("randomNum");
   const mobile = localStorage.getItem("mobile");
 
+  const cancel="Cancel";
+  const accept="Accept";
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,7 +26,7 @@ function DriverNotification() {
         SetBookings(response.data);
       } catch (error) {
         // Handle errors gracefully, e.g., display an error message
-        console.error("Error fetching customers:", error);
+        // console.error("Error fetching customers:", error);
         setError(error); // Store error for potential display
       }
     };
@@ -63,10 +66,18 @@ function DriverNotification() {
     const FinishCode = RideFinishCode();
     localStorage.setItem("FinishCode", FinishCode);
   };
-
+  
+  const handleCansel = (e) => {
+    e.preventDefault();
+    localStorage.setItem("cancel", cancel);
+    localStorage.setItem("randomNum", "");
+    window.location.reload();
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     findingADriver(true);
+    localStorage.setItem("accept", accept);
+    localStorage.setItem("cancel", "");
   };
 
   return (
@@ -142,7 +153,7 @@ function DriverNotification() {
                           <button className="confirm" onClick={handleSubmit}>
                             Confirm
                           </button>
-                          <button className="cancel" >
+                          <button className="cancel" onClick={handleCansel}>
                            Cancel
                           </button>
                         </div>

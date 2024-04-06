@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 .drive-dash-data .dash-top {
   display: flex;
   justify-content: space-evenly;
@@ -56,6 +57,7 @@
   top: 28rem;
   border-radius: 10px;
 }
+
 .driver-pai-chart {
   padding: 20px;
   text-align: center;
@@ -67,6 +69,7 @@
   border-radius: 10px;
   box-shadow: 0px 16px 24px -2px #407cff3e;
 }
+
 .driver-line-chart {
   height: 240px;
   align-items: center;
@@ -79,6 +82,7 @@
   display: flex;
   border-radius: 10px;
 }
+
 .driver-feedback-section {
   padding: 20px;
   height: 240px;
@@ -90,37 +94,41 @@
   border-radius: 10px;
   overflow: hidden;
   overflow-y: scroll;
- 
 }
-.driver-feedback-section h3{
+
+.driver-feedback-section h3 {
   font-size: 20px;
   font-weight: bold;
   color: var(--blue);
   margin: 0;
   padding: 15px;
   text-align: center;
-  
+
 }
+
 .driver-feedback-section::-webkit-scrollbar {
   display: none;
 }
-.driver-feedback-section table{
- width: 100%;
- height: auto;
- 
-}
-.driver-feedback-section table tr td{
- background: rgb(242, 242, 242);
- 
- 
+
+.driver-feedback-section table {
+  width: 100%;
+  height: auto;
 
 }
-.driver-feedback-section table tr{
+
+.driver-feedback-section table tr td {
+  background: rgb(242, 242, 242);
+
+
+
+}
+
+.driver-feedback-section table tr {
   border-radius: 5px;
   padding: 5px;
   border: 1px solid #ccc;
-  
- 
+
+
 }
 
 .driver-pai-chart img {
@@ -161,7 +169,7 @@
 .drive-dash-data .weekly-ride h4 {
   margin: 0;
   text-align: center;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 20px;
   color: var(--blue);
   font-weight: bold;
@@ -219,6 +227,7 @@
   border: 2px solid rgb(255, 255, 255);
   background-color: rgb(146, 180, 184);
 }
+
 .switch svg {
   width: 1.2em;
 }
@@ -243,18 +252,20 @@
   padding: 20px;
 }
 
-.status{
+.status {
   display: none;
 }
-.status2{
+
+.status2 {
   display: none;
 }
 
 
-.offline .status{
+.offline .status {
   display: block;
   color: red;
 }
-.online .status2{
+
+.online .status2 {
   display: block;
 }

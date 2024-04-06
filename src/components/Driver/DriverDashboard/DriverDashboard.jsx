@@ -70,6 +70,8 @@ function DriverDashboard() {
       await DriverVerifyInfo();
     }
   };
+
+  
   const renderCharts = (data) => {
     renderBarChart(data);
     renderPieChart(data);
@@ -259,7 +261,7 @@ function DriverDashboard() {
           </div>
         </div>
       </div>
-      <div className="driver-feedback-section">
+      {/* <div className="driver-feedback-section">
         <h3> User Feedbacks</h3>
         <table>
           <tr>
@@ -283,7 +285,7 @@ function DriverDashboard() {
             <td>feedback</td>
           </tr>
         </table>
-      </div>
+      </div> */}
     </div>
   );
 }
