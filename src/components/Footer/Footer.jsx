@@ -3,6 +3,7 @@ import "./Footer.css";
 import X from "../../Assets/Twetter.jpeg";
 import Youtube from "../../Assets/YouTube.jpeg";
 import Facebook from "../../Assets/facebook.jpeg";
+import { Link } from "react-router-dom";
 export default function Footer() {
   const year = new Date().getFullYear();
 
@@ -27,22 +28,38 @@ export default function Footer() {
 
         <div className="links">
           <div className="email">
-            <p>voyago@gmail.com</p>
-            <p>Link1</p>
-            <p>Link2</p>
-            <p>Link3</p>
+            <Link to='/'>
+            <p>Home</p>
+            </Link>
+            <Link to='/about-us'>
+            <p>About</p>
+            </Link>
+            <Link to='/safety'>
+            <p>Safety</p>
+            </Link>
+            <Link to='/contact'>
+            <p>Contact</p>
+            </Link>
           </div>
           <div className="phone">
-           <p> +919874561232</p>
-            <p>Link1</p>
-            <p>Link2</p>
-            <p>Link3</p>
+           <Link to='/service-status'>
+           <p>Service Status</p>
+           </Link>
+            <Link to='/how-it-works'>
+            <p>How it Works</p>
+            </Link>
+            <Link to='/our-team'>
+            <p>Our Team</p>
+            </Link>
+            <Link to='/leagal-privacy'>
+            <p>Legal and privacy</p>
+            </Link>
           </div>
           <div className="location">
-           <p>Mangalore</p>
-            <p>Link1</p>
-            <p>Link2</p>
-            <p>Link3</p>
+            <p>Reach to us</p>
+            <p>voyago@gmail.com</p>
+            <p>+919895033329</p>
+            <p>Manglore,karnataka,india</p>
           </div>
         </div>
       </div>

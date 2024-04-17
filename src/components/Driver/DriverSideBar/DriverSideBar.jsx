@@ -9,6 +9,7 @@ import {
   faBell,
   faCar,
   faRightFromBracket,
+  faMoneyCheckDollar
 } from "@fortawesome/free-solid-svg-icons";
 function DriverSideBar() {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ function DriverSideBar() {
 
         <div className="Driver-dashboard-section">
           <div className="Driver-dashboard-options">
-            <h4 style={{ fontSize: "15px" }}>{driveremail}</h4>
+            {/* <h4 style={{ fontSize: "15px" }}>{driveremail}</h4> */}
             <NavLink to="/driver-dashbord" style={{ textDecoration: "none" }}>
               <div className="Driver-dashboard-items">
                 <h5>
@@ -84,6 +85,18 @@ function DriverSideBar() {
                     <FontAwesomeIcon icon={faCar} />
                   </span>
                   Rides
+                </h5>
+              </div>
+            </NavLink>
+            <NavLink to="/driver-withdraw" style={{ textDecoration: "none" }}>
+              <div className="Driver-dashboard-items">
+                {/* icons */}
+                <h5>
+                  {" "}
+                  <span>
+                  <FontAwesomeIcon icon={faMoneyCheckDollar} />
+                  </span>
+                  Withdraw
                 </h5>
               </div>
             </NavLink>

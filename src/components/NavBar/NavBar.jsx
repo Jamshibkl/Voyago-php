@@ -78,7 +78,7 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item
                 as={NavLink}
-                to="/legal"
+                to="/leagal-privacy"
                 className="dropdown-items"
               >
                 Legal and Privacy

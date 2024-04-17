@@ -31,8 +31,9 @@ import DriverLogin from "./components/Driver/DriverLogin/DriverLogin";
 import DriverRegister from "./components/Driver/DriverRegister/DriverRegister";
 import DriverVerify from "./components/Driver/DriverVerify/DriverVerify";
 import DriverRelax from "./components/Driver/DriverRelax/DriverRelax";
-import PaymentCheckout from './components/Book-a-Driver/PaymentCheckout/Chekout'
+import PaymentCheckout from "./components/Book-a-Driver/PaymentCheckout/Chekout";
 import DriverDashboard from "./components/Driver/DriverDashboard/DriverDashboard";
+import Withdraw from "./components/Driver/Withdraw/Withdraw";
 import DriverSideBar from "./components/Driver/DriverSideBar/DriverSideBar";
 import DriverProfile from "./components/Driver/DriverProfile/DriverProfile";
 import DriverNotification from "./components/Driver/DriverNotification/DriverNotification";
@@ -49,7 +50,7 @@ import Transactions from "./Admin/Components/Transactions/Transactions";
 import TotalDrivers from "./Admin/Components/Total-Drivers/TotalDrivers";
 import TotalAdmin from "./Admin/Components/total-admins/TotalAdmins";
 import Contact from "./Admin/Components/Contact/Contact";
-import Booking from './Admin/Components/Total-booking/Booking'
+import Booking from "./Admin/Components/Total-booking/Booking";
 import AdminSignup from "./Admin/Admin-login/AdminSignup";
 import AdminLogin from "./Admin/Admin-login/AdminLogin";
 function App() {
@@ -76,8 +77,14 @@ function App() {
           <Route path="/forgot-password" element={<ForPass />} />
           <Route path="/on-the-way/:bookingUser" element={<OnTheWay />} />
           <Route path="/reached-destination" element={<Destination />} />
-          <Route path="/payment-section/:transactionId/:driverId/:amount/:user" element={<PaymentSection />} />
-          <Route path="/payment-checkout/:amount" element={<PaymentCheckout />} />
+          <Route
+            path="/payment-section/:transactionId/:driverId/:amount/:user"
+            element={<PaymentSection />}
+          />
+          <Route
+            path="/payment-checkout/:amount"
+            element={<PaymentCheckout />}
+          />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin-signup" element={<AdminSignup />} />
           <Route path="/admin-login" element={<AdminLogin />} />
@@ -87,12 +94,14 @@ function App() {
           <Route path="/driver-signup" element={<DriverRegister />} />
 
           <Route path="/driver-verify" element={<DriverVerify />} />
+
           <Route path="/driver-relax" element={<DriverRelax />} />
           <Route path="/driver-side" element={<DriverSideBar />} />
           <Route path="/driver-dashbord" element={<DriverDashboard />} />
           <Route path="/driver-profile" element={<DriverProfile />} />
           <Route path="/driver-notify" element={<DriverNotification />} />
           <Route path="/driver-ride" element={<DriverRide />} />
+          <Route path="/driver-withdraw" element={<Withdraw />} />
           <Route path="/admin-dashboard" element={<Dashboard />} />
           <Route
             path="/"

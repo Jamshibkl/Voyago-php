@@ -47,77 +47,66 @@ function Home() {
               <NavDropdown
                 title="Company"
                 id="collapsible-nav-dropdown"
-                className="dropdown-btn"
-              >
+                className="dropdown-btn">
                 <NavDropdown.Item
                   as={NavLink}
                   to="/about-us"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   About us
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/how-it-works"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   How it Work
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/our-team"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Our Team
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/become-a-driver"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Become a Driver
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/admin-login"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Admin
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/service-status"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Service Status
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
-                  to="/legal"
-                  className="dropdown-items"
-                >
+                  to="/leagal-privacy"
+                  className="dropdown-items">
                   Legal and Privacy
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   as={NavLink}
                   to="/book-a-driver"
-                  className="dropdown-items"
-                >
+                  className="dropdown-items">
                   Book a Driver
                 </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link
                 as={NavLink}
                 to="/safety"
-                className="nav-link-with-space"
-              >
+                className="nav-link-with-space">
                 Safety
               </Nav.Link>
               <Nav.Link
                 as={NavLink}
                 to="/contact"
-                className="nav-link-with-space"
-              >
+                className="nav-link-with-space">
                 Contact
               </Nav.Link>
             </Nav>
@@ -126,21 +115,18 @@ function Home() {
               <NavDropdown
                 title={user ? user : "Login"}
                 id="home-dropdown"
-                className="nav-link-with-space text-light"
-              >
+                className="nav-link-with-space text-light">
                 {user ? (
                   <>
                     <NavDropdown.Item
                       className="dropdown-items"
                       as={NavLink}
-                      to={`/on-the-way/${user}`}
-                    >
+                      to={`/on-the-way/${user}`}>
                       Rides
                     </NavDropdown.Item>
                     <NavDropdown.Item
                       className="dropdown-items"
-                      onClick={logoutSubmit}
-                    >
+                      onClick={logoutSubmit}>
                       Logout
                     </NavDropdown.Item>
                   </>
@@ -148,8 +134,7 @@ function Home() {
                   <NavDropdown.Item
                     as={NavLink}
                     to="/login"
-                    className="dropdown-items"
-                  >
+                    className="dropdown-items">
                     Login
                   </NavDropdown.Item>
                 )}
