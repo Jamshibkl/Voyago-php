@@ -67,9 +67,8 @@ function Dashboard() {
         let totalAmount = 0;
         data.forEach((item) => {
           totalAmount += parseInt(item.amount);
-          setTotalAmount(totalAmount)
+          setTotalAmount(totalAmount);
         });
-
       } catch (error) {
         console.log(error);
       }
@@ -112,7 +111,7 @@ function Dashboard() {
                 <div className="dash-information">
                   <h5>Total Revenue</h5>
                   <br />
-                  <h4>{totalAmount}</h4>
+                  <h4>{(totalAmount / 100) * 10}</h4>
                   <br />
                   <h6>Since last month</h6>
                 </div>
