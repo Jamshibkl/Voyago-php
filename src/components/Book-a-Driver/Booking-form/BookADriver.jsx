@@ -75,6 +75,13 @@ function BookADriver() {
   };
 
   function handleSubmit() {
+    const currentDate = new Date();
+  const selectedDate = new Date(pickupDate + 'T' + pickupTime);
+
+  if (selectedDate < currentDate) {
+    setError("Please select a future date and time.");
+    return;
+  }
     // console.log(name);
     if (
       username !== "" &&
