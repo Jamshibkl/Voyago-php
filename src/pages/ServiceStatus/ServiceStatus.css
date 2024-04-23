@@ -270,3 +270,94 @@
   height: 20px;
   color: #000;
 }
+/* Responsive Page CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 991px) {
+  .service-2 {
+    margin-top: 40px;
+    font-size: 32px;
+  }
+  .service-4 {
+    margin: 20px 20px;
+  }
+  .column {
+    width: 100%;
+  }
+  .column-2 {
+    width: 100%;
+    margin: 0;
+    height: auto;
+  }
+  .column-2 img {
+    width: 100%;
+    height: auto;
+  }
+  .service-6 {
+    font-size: 20px;
+  }
+  .service-7 {
+    font-size: 18px;
+  }
+  .service-9 {
+    margin: 40px 20px;
+    padding: 50px 20px;
+  }
+  .service-10 {
+    margin-bottom: 40px;
+  }
+  .service-11 {
+    white-space: initial;
+  }
+  .img-2 {
+    margin-top: 40px;
+  }
+  .service-12 {
+    margin-top: 40px;
+    padding: 0 20px;
+  }
+  .service-13 {
+    margin-left: 10px;
+  }
+  .service-14 {
+    margin: 40px 0 0 10px;
+  }
+  .service-15 {
+    max-width: 100%;
+  }
+  .service-16 {
+    margin-top: 40px;
+  }
+  .service-17 {
+    max-width: 100%;
+  }
+  .service-18 {
+    margin-top: 40px;
+  }
+  .service-19 {
+    margin-top: 40px;
+  }
+  .service-20 {
+    max-width: 100%;
+  }
+  .img-3 {
+    margin-top: 40px;
+  }
+  .service-21 {
+    margin-top: 40px;
+  }
+  .service-22 {
+    max-width: 100%;
+  }
+  .horizontal_line {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media screen and (max-width: 450px) {
+
+.service-4 {
+  display: flex;
+  flex-direction: column;
+}
+}

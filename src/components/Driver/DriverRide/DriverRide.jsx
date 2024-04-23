@@ -5,7 +5,7 @@ import axios from "axios";
 
 function DriverRide() {
   const [driver, setDriver] = useState([]);
-  const driverEmail = localStorage.getItem("driveremail");
+  const driverEmail = localStorage.getItem("email");
   // console.log(driverEmail)
 
   useEffect(() => {

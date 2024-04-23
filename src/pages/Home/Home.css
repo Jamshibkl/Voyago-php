@@ -128,6 +128,57 @@ p {
   margin-left: -180px;
   margin-top: -50px;
 }
+/* Responsive CSS */
+
+/* For smaller devices */
+
+@media screen and (max-width: 992px) {
+  .main_section {
+    flex-direction: column; /* Change flex direction for smaller devices */
+    align-items: center; /* Center align items for smaller devices */
+  }
+  .me-auto {
+    text-align: center;
+  }
+
+  .main_left {
+    width: 80%; /* Adjust width for smaller devices */
+    text-align: center; /* Center align text for smaller devices */
+  }
+
+  .main_btn,
+  h1,
+  p {
+    margin-left: 0; /* Remove left margin for smaller devices */
+  }
+
+  .heading {
+    font-size: 40px; /* Decrease font size for smaller devices */
+    margin-top: 50px; /* Adjust top margin for smaller devices */
+  }
+
+  .main_left p {
+    width: 90%; /* Adjust width for smaller devices */
+    margin: 20px auto; /* Center align paragraph for smaller devices */
+  }
+
+  .main_btn {
+    width: 100%; /* Adjust button width for smaller devices */
+    margin: 20px 0; /* Adjust top margin for smaller devices */
+  }
+
+  .main_container {
+    width: 100%; /* Adjust width for smaller devices */
+    border-radius: 20px; /* Adjust border radius for smaller devices */
+    margin-bottom: 30px; /* Adjust bottom margin for smaller devices */
+  }
+
+  .car_avtar {
+    width: 100%; /* Make image full width for smaller devices */
+    margin-left: 0; /* Remove left margin for smaller devices */
+    margin-top: 0; /* Remove top margin for smaller devices */
+  }
+}
 
 /* feature section */
 
@@ -151,7 +202,8 @@ p {
   text-align: center;
   margin: 20px 0;
   color: var(--blue);
-  font: 800 58px Inter, sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
 }
 
 .feature_content p {
@@ -184,7 +236,7 @@ p {
 
 .faq_container {
   width: 80%;
-  margin: 30px 150px;
+  margin: auto;
 }
 .main_section {
   animation-name: fadeInDown;
@@ -283,7 +335,13 @@ p {
 }
 
 .main_btn:hover {
-  background-image: linear-gradient(90deg, #53cbef 0%, #1697f3 50%, #17e3c8 75%, #53cbef 100%);
+  background-image: linear-gradient(
+    90deg,
+    #53cbef 0%,
+    #1697f3 50%,
+    #17e3c8 75%,
+    #53cbef 100%
+  );
   animation: slidernbw 5s linear infinite;
   color: #000; /* Change to desired hover background color */
   transform: scale(1.05); /* Scale the button on hover */
@@ -303,9 +361,9 @@ p {
 }
 @keyframes slidernbw {
   to {
-   background-position: 20vw;
+    background-position: 20vw;
   }
- }
+}
 
 .main_btn.animate {
   animation: pulseAnimation 2s infinite;

@@ -47,3 +47,38 @@
   height: 370px;
 }
 
+/* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .feature-row {
+    flex-direction: column; /* Change flex direction for smaller devices */
+    padding: 0 20px; /* Adjust padding for smaller devices */
+  }
+
+  .feature-content {
+    width: 100%; /* Make content full width for smaller devices */
+    padding: 20px 0; /* Adjust padding for smaller devices */
+    text-align: center; /* Center align text for smaller devices */
+  }
+
+  .feature-content h2 {
+    font-size: 30px; /* Decrease font size for smaller devices */
+  }
+
+  .feature-content p {
+    font-size: 18px; /* Decrease font size for smaller devices */
+  }
+
+  .feature-content .btn {
+    margin-top: 20px; /* Adjust top margin for smaller devices */
+    padding: 15px 30px; /* Adjust padding for smaller devices */
+    font-size: 14px; /* Decrease font size for smaller devices */
+  }
+
+  .feature-imgae,
+  .feature-imgae img {
+    width: 100%; /* Make image full width for smaller devices */
+    height: auto; /* Auto height for responsive images */
+  }
+}

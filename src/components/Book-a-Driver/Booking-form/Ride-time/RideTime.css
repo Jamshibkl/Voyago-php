@@ -14,6 +14,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #myh1 {
@@ -23,7 +24,15 @@
   padding: 0;
   margin: 0;
 }
-
+.ride-container {
+  background: #ffffff;
+  padding: 20PX;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 #container {
   display: flex;
   flex-direction: column;
@@ -84,4 +93,41 @@
   color: red;
   padding: 0;
   margin: 10px;
+}
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .ridetime {
+    height: auto; 
+    padding: 20px;
+  }
+
+  #myh1 {
+    font-size: 3rem; 
+  }
+
+  .ride-container {
+    padding: 10px; 
+    border-radius: 5px; 
+  }
+
+  #container {
+    padding: 20px;
+    border-radius: 30px; 
+  }
+
+  #display {
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+  }
+
+  #controls button {
+    font-size: 1rem; 
+    padding: 8px 16px; 
+    min-width: 100px; 
+  }
+
+  .diver-conformation {
+    font-size: 0.8rem; 
+    margin: 5px; 
+  }
 }

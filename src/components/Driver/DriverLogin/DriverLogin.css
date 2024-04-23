@@ -164,3 +164,47 @@ form .name-details .field:last-child{
     font-size: 18px;
     font-weight: 500;
 }
+/* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+    .driver-signup-fom {
+        min-height: auto;
+    }
+
+    .wrapper1 {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .form1 {
+        padding: 20px;
+    }
+
+    .form1 header {
+        font-size: 20px;
+    }
+
+    .form1 form .field input {
+        font-size: 14px;
+    }
+
+    .form1 form .button input {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .users {
+        padding: 20px;
+    }
+
+    .users header .content img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .users header .details span {
+        font-size: 16px;
+    }
+}
+

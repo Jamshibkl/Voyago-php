@@ -79,7 +79,7 @@ function BookADriver() {
   const selectedDate = new Date(pickupDate + 'T' + pickupTime);
 
   if (selectedDate < currentDate) {
-    setError("Please select a future date and time.");
+    setError("Please select a current date and time.");
     return;
   }
     // console.log(name);
@@ -171,7 +171,7 @@ function BookADriver() {
               type="text"
               name="pickupLocation"
               className=""
-              placeholder="Enter 4 letters to Search Your Pickup Location"
+              placeholder="Enter Your Pickup Location"
               value={pickupLocation}
               onChange={(e) => handleInputChange(e, "pickupLocation")}
               // onBlur={checkUser}

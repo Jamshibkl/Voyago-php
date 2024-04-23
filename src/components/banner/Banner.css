@@ -68,3 +68,52 @@
   height: auto;
   margin-left: 100px;
 }
+/* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .banner {
+    margin-top: 100px; /* Adjust margin-top for smaller devices */
+    padding: 0 20px; /* Adjust padding for smaller devices */
+    height: auto; /* Auto height for responsive banners */
+  }
+
+  .banner-2 {
+    flex-direction: column; /* Change flex direction for smaller devices */
+  }
+
+  .column {
+    width: 100%; /* Make column full width for smaller devices */
+    margin-left: 0; /* Reset margin-left for smaller devices */
+  }
+
+  .Banner_img {
+    width: 100%; /* Make image full width for smaller devices */
+    margin-left: 0; /* Reset margin-left for smaller devices */
+    margin-top: 20px; /* Adjust margin-top for smaller devices */
+  }
+
+  .banner-3 {
+    margin-top: 20px; /* Adjust margin-top for smaller devices */
+    text-align: center; /* Center align text for smaller devices */
+  }
+
+  .banner-4 {
+    font-size: 32px; /* Decrease font size for smaller devices */
+  }
+
+  .banner-5 {
+    font-size: 24px; /* Decrease font size for smaller devices */
+  }
+
+  .banner-6 {
+    font-size: 16px; /* Decrease font size for smaller devices */
+  }
+
+  .banner-7 {
+    width: 100%;
+  }
+  .home_banner_img {
+    width: 0px;
+  }
+}

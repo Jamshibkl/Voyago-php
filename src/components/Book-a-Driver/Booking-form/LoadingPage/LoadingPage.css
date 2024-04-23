@@ -162,3 +162,45 @@ thead input{
     background: #000;
     margin-bottom: 30px;
 }
+/* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+    .finding-page {
+        margin: 10px; /* Adjust margin for smaller devices */
+        min-width: auto; /* Remove minimum width for smaller devices */
+    }
+
+    .loading-text,
+    .loading-text2 {
+        width: auto; /* Remove fixed width for smaller devices */
+    }
+
+    .driver-container hr {
+        margin: 0 20px; /* Adjust margin for smaller devices */
+    }
+
+    .driver-profile-sec img {
+        width: 100px; /* Decrease image width for smaller devices */
+        height: 100px; /* Decrease image height for smaller devices */
+    }
+
+    .driver-profile-sec-name {
+        font-size: 18px; /* Decrease font size for smaller devices */
+    }
+
+    .driver-name {
+        margin: 3px 0; /* Adjust margin for smaller devices */
+    }
+
+    .driver-profile-tables {
+        width: 80%; /* Adjust width for smaller devices */
+    }
+    .driver-profile-tables .request-btns {
+        margin: 10px;
+    }
+
+    .profile-hr-line {
+        margin-bottom: 20px; /* Adjust margin for smaller devices */
+    }
+}

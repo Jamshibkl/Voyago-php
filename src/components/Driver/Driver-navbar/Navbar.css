@@ -37,3 +37,14 @@
   text-align: center;
   color: #b1b1b1;
 }
+@media screen and (max-width: 768px) {
+  .driver-nav {
+    width: auto; /* Change flex-direction to column for smaller devices */
+  }
+  .driver-nav .driver-profile {
+    gap: 5px;
+  }
+  .driver-nav .driver-profile span{
+    display: none;
+  }
+}

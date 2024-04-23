@@ -25,7 +25,7 @@ function NavBar() {
         <Navbar.Brand className="logo">VOYAGO</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="navbar-nav">
-          <Nav className="me-auto nav_links">
+          <Nav className=" nav_links">
             <Nav.Link as={NavLink} to="/" className="nav-link-with-space">
               Home
             </Nav.Link>
@@ -104,7 +104,7 @@ function NavBar() {
             </Nav.Link>
           </Nav>
 
-          <Nav className="ms-auto">
+          <Nav className="nav-logo">
             <NavDropdown
               title={user ? user : "Login"}
               id="user-dropdown"

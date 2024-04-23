@@ -142,7 +142,7 @@ function AdminLogin() {
               <div className="link">
               <Link to="/forgot-password"><p>forgot password?</p></Link>
               <br />
-              Create a new account? <Link to="/sign-in">Sign-up</Link>
+              {/* Create a new account? <Link to="/sign-in">Sign-up</Link> */}
             </div>
             </div>
            

@@ -12,7 +12,7 @@ body {
   background: url("../../Assets/edu-lauton-TyQ-0lPp6e4-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: cover; 
+  background-size: cover;
   width: 100%;
 }
 
@@ -29,7 +29,7 @@ body {
   width: 100%;
   line-height: 1.5;
   color: rgb(154, 154, 154);
-  margin: 50px 0 ;
+  margin: 50px 0;
   padding: 0 200px;
   text-align: center;
 }
@@ -80,7 +80,7 @@ body {
   font-size: 25px;
   font-weight: bold;
   color: var(--blue);
- margin: 0;
+  margin: 0;
 }
 .steps_para {
   font-size: 20px;
@@ -129,7 +129,6 @@ body {
   margin: 0;
   width: 500px;
   padding: 5px 0px 0px 0px;
-
 }
 .for_rectangle_div {
   width: 8px;
@@ -148,7 +147,6 @@ body {
   width: 400px;
   height: 400px;
   background: rgb(236, 236, 236);
-
 }
 .banner_work {
   background-color: #f4f4f4;
@@ -210,94 +208,157 @@ body {
   color: var(--white);
   border: none;
 }
-.ready-50 {
+.how-works .container {
   border-radius: 20px;
-  align-self: center;
-  display: flex;
-  margin-top: 97px;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  padding: 31px 0 31px 26px;
-}
-
-.ready-51 {
-  border-radius: 10px;
+  margin: 50px 100px;
   background-color: #f4f4f4;
-  display: flex;
-  /* padding-right: 48px; */
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 20px;
-  width: 98%;
 }
 
-.ready-52 {
+.how-works .content {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  align-self: start;
-  position: relative;
-  display: flex;
-  min-height: 500px;
-  flex-grow: 1;
-  flex-basis: 0%;
-  align-items: end;
-  padding: 0 0 43px 60px;
+  align-items: center;
 }
 
-.ready-13 {
-  position: absolute;
-  inset: 0;
-  height: 100%;
+.how-works .image-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.how-works .avatar {
   width: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-.ready-53 {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: start;
-  overflow: hidden;
-  z-index: 10;
-  display: flex;
-  min-height: 500px;
-  margin-top: -43px;
-  width: 100%;
-  justify-content: center;
-  padding: 50px 60px 50px 28px;
+  height: auto;
+  border-radius: 10px;
 }
 
-.ready-54 {
-  display: flex;
-  flex-grow: 1;
-  flex-basis: 0%;
-  flex-direction: column;
+.how-works .text-content {
+  flex: 2;
+}
+
+.how-works .title {
   font-size: 30px;
-  margin: auto 0;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.ready-55 {
-  color: #000;
-  font-family: Inter, sans-serif;
-  font-weight: 800;
+.how-works .description {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
 }
 
-.ready-56 {
-  color: rgba(0, 0, 0, 0.54);
-  font-weight: 400;
-  margin-top: 22px;
-}
-
-.ready-57 {
+.how-works .cta-btn {
+  border: none;
   border-radius: 10px;
   background-color: #407bff;
-  align-self: start;
-  margin-top: 50px;
-  justify-content: center;
-  color: #f4f4f4;
-  padding: 22px 34px;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 18px;
   cursor: pointer;
-  border: none;
+  transition: background-color 0.3s;
+}
+
+.how-works .cta-btn:hover {
+  background-color: #3067d4;
+}
+
+/* Responsive How It Works Page CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .works_heading {
+    font-size: 40px;
+    padding: 50px 20px;
+    text-align: center;
+    margin: 0;
+  }
+  .how_it_works .works_para {
+    padding: 0 20px;
+    width: 100%;
+  }
+  .passenger_section,
+  .for_driver_section {
+    padding: 20px 10px;
+  }
+  .passenger_working,
+  .for_driver_working {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .passenger_img,
+  .for_driver_img {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  .rectangle_div,
+  .for_rectangle_div {
+    display: none;
+  }
+  .vertical_line,
+  .for_vertical_line {
+    display: none;
+  }
+  .steps_heading,
+  .steps_para,
+  .for_driver_heading,
+  .for_driver_para {
+    width: 100%;
+    text-align: center;
+  }
+  .how-works .title {
+    font-size: 24px;
+  }
+  .how-works .description {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .how-works .cta-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* For even smaller devices */
+@media screen and (max-width: 576px) {
+  .works_heading {
+    font-size: 30px;
+  }
+  .how_it_works .works_para {
+    padding: 0 10px;
+  }
+  .steps_para,
+  .for_driver_para {
+    width: 100%;
+    padding: 0 10px;
+  }
+  .how-works .content {
+    flex-direction: column;
+  }
+  .how-works .container {
+    margin: 10px;
+  }
+  .how-works .title {
+    font-size: 20px;
+  }
+  .how-works .description {
+    font-size: 14px;
+  }
+  .how-works .cta-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* For very small devices */
+@media screen and (max-width: 375px) {
+  .works_heading {
+    font-size: 24px;
+  }
+  .how_it_works .works_para {
+    padding: 0 5px;
+  }
+  .steps_para,
+  .for_driver_para {
+    padding: 0 5px;
+  }
 }

@@ -89,6 +89,8 @@ function RideTime() {
 
   return (
     <div className="ridetime">
+      <div className="ride-container">
+        <h1 style={{margin:"0",fontWeight:"bold",padding:"10px",color:"blue"}}>Track Your Ride!</h1>
       <h1 id="myh1">Ride Time</h1>
       <h5 className="diver-conformation">
         {error == "" ? (
@@ -110,6 +112,7 @@ function RideTime() {
           {/* </Link> */}
           {/* <button id="resetBtn" onClick={reset}>Reset</button> */}
         </div>
+      </div>
       </div>
     </div>
   );
