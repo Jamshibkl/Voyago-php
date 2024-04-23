@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./DriverNotification.css";
 import axios from "axios";
 import DriverSideBar from "../DriverSideBar/DriverSideBar";
+import { faDisplay } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+
 function DriverNotification() {
+  const navigate = useNavigate();
+
   const [bookings, SetBookings] = useState([]);
   const [error, setError] = useState(null); // Track potential errors
   const [conform, setConform] = useState(null);
@@ -14,8 +19,8 @@ function DriverNotification() {
   const randomNum = localStorage.getItem("randomNum");
   const mobile = localStorage.getItem("mobile");
 
-  const cancel="Cancel";
-  const accept="Accept";
+  const cancel = "Cancel";
+  const accept = "Accept";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,8 +70,10 @@ function DriverNotification() {
     e.preventDefault();
     const FinishCode = RideFinishCode();
     localStorage.setItem("FinishCode", FinishCode);
+    localStorage.setItem("randomNum", "");
+    navigate("/driver-Qrcode");
   };
-  
+
   const handleCansel = (e) => {
     e.preventDefault();
     localStorage.setItem("cancel", cancel);
@@ -154,7 +161,7 @@ function DriverNotification() {
                             Confirm
                           </button>
                           <button className="cancel" onClick={handleCansel}>
-                           Cancel
+                            Cancel
                           </button>
                         </div>
                       </div>

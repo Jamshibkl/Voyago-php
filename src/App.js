@@ -37,6 +37,7 @@ import Withdraw from "./components/Driver/Withdraw/Withdraw";
 import DriverSideBar from "./components/Driver/DriverSideBar/DriverSideBar";
 import DriverProfile from "./components/Driver/DriverProfile/DriverProfile";
 import DriverNotification from "./components/Driver/DriverNotification/DriverNotification";
+import Qrcode from "./components/Driver/DriverNotification/Qrcode/Qrcode";
 import DriverRide from "./components/Driver/DriverRide/DriverRide";
 import Admin from "./Admin/Admin";
 import Login from "./components/Sign-in-up/Login";
@@ -100,6 +101,7 @@ function App() {
           <Route path="/driver-dashbord" element={<DriverDashboard />} />
           <Route path="/driver-profile" element={<DriverProfile />} />
           <Route path="/driver-notify" element={<DriverNotification />} />
+          <Route path="/driver-Qrcode" element={<Qrcode />} />
           <Route path="/driver-ride" element={<DriverRide />} />
           <Route path="/driver-withdraw" element={<Withdraw />} />
           <Route path="/admin-dashboard" element={<Dashboard />} />

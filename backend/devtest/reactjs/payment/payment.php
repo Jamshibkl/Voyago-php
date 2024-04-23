@@ -25,14 +25,11 @@ switch($method)
            {
                 $userName = $_POST['userName'];
                 $driverid = $_POST['driverid'];
-                $cardNumber = $_POST['cardNumber'];
-                $expiryDate = $_POST['expiryDate'];
-                $cvv = $_POST['cvv'];
                 $transactionId = $_POST['transactionId'];
                 $amount = $_POST['amount'];
 
-                $result= mysqli_query($db_conn,"INSERT INTO transaction (userName, driverid, cardNumber, expiryDate, cvv, transactionId,amount )
-                VALUES('$userName', '$driverid', '$cardNumber','$expiryDate', '$cvv','$transactionId','$amount')");
+                $result= mysqli_query($db_conn,"INSERT INTO transaction (userName, driverid, transactionId,amount )
+                VALUES('$userName', '$driverid','$transactionId','$amount')");
 
                 if($result){
                 
