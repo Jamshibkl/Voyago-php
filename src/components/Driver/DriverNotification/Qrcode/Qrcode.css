@@ -1,0 +1,36 @@
+.qrcode-section {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(246, 249, 252);
+}
+
+.Qrcode{
+    width: 300px;
+    height: 300px;
+    background: #fff;
+}
+
+.driverInfo p{
+    padding:0 0 10px 0;
+    margin: 0;
+}
+
+.gobackbtn{
+    width: 130px;
+    height: 45px;
+    margin: 15px;
+    border: none;
+    border-radius: 50px;
+    background-color: #407bff;
+    cursor: pointer;
+    color: #fff;
+    font-size: large;
+    font-weight: bold;
+}
