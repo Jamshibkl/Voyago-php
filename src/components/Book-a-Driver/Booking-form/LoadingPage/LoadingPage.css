@@ -162,3 +162,9 @@ thead input{
     background: #000;
     margin-bottom: 30px;
 }
+
+.not-fount h3{
+    color: rgba(255, 0, 0, 0.748);
+    font-size: 40px;
+    font-weight: 700;
+}

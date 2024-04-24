@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../NavBar/NavBar";
 import BookingImg from "../../../Assets/book a drive image.jpg";
+import axios from "axios";
 // import { Link } from "react-router-dom";
 import "./BookADriver.css";
 import { useNavigate } from "react-router-dom";
@@ -29,11 +30,52 @@ function BookADriver() {
   const [cabType, setCabType] = useState("");
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
+  const [location, setLocation] = useState("");
+  
 
   const navigate = useNavigate();
 
-  // const userId = localStorage.getItem("user"); // Get the logged-in user's ID
-  // console.log(userId);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "http://localhost/devtest/reactjs/location/get_locations.php"
+  //       ); // Modified URL
+  //       setLocation(response.data);
+  //     } catch (error) {
+  //       // Handle errors gracefully, e.g., display an error message
+  //       // console.error("Error fetching customers:", error);
+  //       setError(error); // Store error for potential display
+  //     }
+  //   };
+  //   console.log(location);
+
+  //   fetchData();
+  // }, []);
+
+  function checkLocation() {
+    var url = "http://localhost/devtest/reactjs/location/locations.php";
+    var headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    };
+    var Data = {
+      location: pickupLocation,
+    };
+    fetch(url, {
+      method: "POST",
+      headers: headers,
+      body: JSON.stringify(Data),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        setError(response[0].result);
+      })
+      .catch((err) => {
+        setMsg(err);
+        console.log(err);
+      });
+  }
 
   useEffect(() => {
     setTimeout(function () {
@@ -41,41 +83,43 @@ function BookADriver() {
     }, 1000);
   }, [msg]);
 
-  const handleInputChange = (e, type) => {
-    switch (type) {
-      case "pickupLocation":
-      // case "dropoffLocation":
-        setError("");
-        const isKarnatakaCity = karnatakaCities.includes(
-          e.target.value.toLowerCase()
-        );
-        if (!isKarnatakaCity) {
-          setError("Sorry service is not available!");
-        }
-        setPickupLocation(
-          type === "pickupLocation" ? e.target.value : pickupLocation
-        );
-        setDropoffLocation(
-          type === "dropoffLocation" ? e.target.value : dropoffLocation
-        );
-        break;
-      default:
-        setError("");
-        setUsername(type === "username" ? name : name);
-        setPickupLocation(
-          type === "pickupLocation" ? e.target.value : pickupLocation
-        );
-        setDropoffLocation(
-          type === "dropoffLocation" ? e.target.value : dropoffLocation
-        );
-        setPickupDate(type === "pickupDate" ? e.target.value : pickupDate);
-        setPickupTime(type === "pickupTime" ? e.target.value : pickupTime);
-        setCabType(type === "cabType" ? e.target.value : cabType);
-    }
-  };
+ 
+
+  // const handleInputChange = (e, type) => {
+  //   switch (type) {
+  //     case "pickupLocation":
+  //     // case "dropoffLocation":
+  //       setError("");
+  //       // const isKarnatakaCity = location.includes(
+  //       //   e.target.value.toLowerCase()
+  //       // );
+  //       // if (!isKarnatakaCity) {
+  //       //   setError("Sorry service is not avable!");
+  //       // }
+  //       setPickupLocation(
+  //         type === "pickupLocation" ? e.target.value : pickupLocation
+  //       );
+  //       setDropoffLocation(
+  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
+  //       );
+  //       break;
+  //     default:
+  //       setError("");
+  //       setUsername(type === "username" ? name : name);
+  //       setPickupLocation(
+  //         type === "pickupLocation" ? e.target.value : pickupLocation
+  //       );
+  //       setDropoffLocation(
+  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
+  //       );
+  //       setPickupDate(type === "pickupDate" ? e.target.value : pickupDate);
+  //       setPickupTime(type === "pickupTime" ? e.target.value : pickupTime);
+  //       setCabType(type === "cabType" ? e.target.value : cabType);
+  //   }
+  // };
 
   function handleSubmit() {
-    // console.log(name);
+    setUsername(name);
     if (
       username !== "" &&
       pickupLocation !== "" &&
@@ -110,13 +154,13 @@ function BookADriver() {
           setError(err);
           console.log(err);
         });
-        localStorage.setItem("pickup",pickupLocation)
-        localStorage.setItem("username",username)
-        localStorage.setItem("pickupTime",pickupTime)
-        localStorage.setItem("pickupDate",pickupDate)
-        localStorage.setItem("cabType",cabType)
-        localStorage.setItem("mobile",dropoffLocation)
-        navigate("/find-a-driver");
+      localStorage.setItem("pickup", pickupLocation);
+      localStorage.setItem("username", username);
+      localStorage.setItem("pickupTime", pickupTime);
+      localStorage.setItem("pickupDate", pickupDate);
+      localStorage.setItem("cabType", cabType);
+      localStorage.setItem("mobile", dropoffLocation);
+      navigate("/find-a-driver");
       setUsername("");
       setPickupLocation("");
       setDropoffLocation("");
@@ -145,29 +189,26 @@ function BookADriver() {
             )}
           </p>
           <div className="form-username">
-            {/* <label className="form-label">Enter Your User Name</label> */}
-            {/* <br /> */}
             <input
               type="text"
               name="username"
               className=""
               placeholder="Enter Your User Name "
               value={username}
-              onChange={(e) => handleInputChange(e, "username")}
-              // onBlur={checkUser}
+              // onChange={(e) => handleInputChange(e, "username")}
+              onChange={(e) => setUsername(username)}
             />
           </div>
           <div className="form-picup">
-            {/* <label className="form-label">Choose Location</label> */}
-            {/* <br /> */}
             <input
               type="text"
               name="pickupLocation"
               className=""
               placeholder="Enter 4 letters to Search Your Pickup Location"
               value={pickupLocation}
-              onChange={(e) => handleInputChange(e, "pickupLocation")}
-              // onBlur={checkUser}
+              // onChange={(e) => handleInputChange(e, "pickupLocation")}
+              onChange={(e) => setPickupLocation(e.target.value)}
+              onBlur={checkLocation}
             />
           </div>
           <div className="form-outline">
@@ -179,7 +220,8 @@ function BookADriver() {
               className=""
               placeholder="Mobile number"
               value={dropoffLocation}
-              onChange={(e) => handleInputChange(e, "dropoffLocation")}
+              // onChange={(e) => handleInputChange(e, "dropoffLocation")}
+              onChange={(e) => setDropoffLocation(e.target.value)}
               // onBlur={checkEmail}
             />
           </div>
@@ -191,10 +233,9 @@ function BookADriver() {
                 type="date"
                 name="pickupDate"
                 className=""
-                // placeholder="Enter your password"
                 value={pickupDate}
-                onChange={(e) => handleInputChange(e, "pickupDate")}
-                // onBlur={checkPassword}
+                // onChange={(e) => handleInputChange(e, "pickupDate")}
+                onChange={(e) => setPickupDate(e.target.value)}
               />
             </div>
             <div className="form-picup-info ">
@@ -204,21 +245,21 @@ function BookADriver() {
                 type="time"
                 name="pickupTime"
                 className=""
-                // placeholder="Repeat your password"
                 value={pickupTime}
-                onChange={(e) => handleInputChange(e, "pickupTime")}
+                // onChange={(e) => handleInputChange(e, "pickupTime")}
+                onChange={(e) => setPickupTime(e.target.value)}
               />
             </div>
           </div>
           <div className="form-cabtype ">
-            {/* <label className="form-label">Cab Type</label> */}
             <br />
 
             <select
               name="cabType"
               className=""
               value={cabType}
-              onChange={(e) => handleInputChange(e, "cabType")}
+              // onChange={(e) => handleInputChange(e, "cabType")}
+              onChange={(e) => setCabType(e.target.value)}
             >
               <option value="">Select Cab Type</option>
               <option value="Luxury">Luxury</option>

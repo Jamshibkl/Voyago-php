@@ -75,65 +75,71 @@ function LoadingPage() {
                 (driver, index) =>
                   index <= 100 && (
                     <div key={index} setDriverId={driver.id}>
-                      {driver.location === pickup && driver.rideStatus === "online" && (
-                        <div className="driver-table-info">
-                          <h2>Driver details</h2>
-                          <div className="driver-profile-sec">
-                            <img
-                              src={`http://localhost/devtest/reactjs/DriverVerifyInfo/images/Profile/${driver.profileImg}`}
-                              alt="njsnu"
-                              className="driver-profile img"
-                            />
-                            <h5 className="driver-name">{driver.driver} </h5>
-                          </div>
-                          <div className="driver-profile-tables">
-                            <table>
-                              <thead>
-                                <tr>
-                                  <th className="profile-tableth">Name</th>
-                                  <th className="profile-table-th-info">
-                                    {driver.driver}
-                                  </th>
-                                </tr>
-                                <tr>
-                                  <th className="profile-tableth">Email</th>
-                                  <th className="profile-table-th-info">
-                                    {driver.email}
-                                  </th>
-                                </tr>
-                                <tr>
-                                  <th className="profile-tableth">
-                                    Mobile Number
-                                  </th>
-                                  <th className="profile-table-th-info">
-                                    {driver.mobile}
-                                  </th>
-                                </tr>
-                                <tr>
-                                  <th className="profile-tableth">Driver Id</th>
-                                  <th className="profile-table-th-info">
-                                    {driver.id}
-                                  </th>
-                                </tr>
-                              </thead>
-                            </table>
-                            <div className="request-btns">
-                              <button
-                                className="accept-btn"
-                                onClick={() => handleSubmit(driver)}
-                              >
-                                Accept
-                              </button>
-                              <button className="reject-btn">Reject</button>
+                      {driver.location === pickup &&
+                        driver.rideStatus === "online" && (
+                          <div className="driver-table-info">
+                            <h2>Driver details</h2>
+                            <div className="driver-profile-sec">
+                              <img
+                                src={`http://localhost/devtest/reactjs/DriverVerifyInfo/images/Profile/${driver.profileImg}`}
+                                alt="njsnu"
+                                className="driver-profile img"
+                              />
+                              <h5 className="driver-name">{driver.driver} </h5>
                             </div>
-                            <div className="profile-hr-line"></div>
+                            <div className="driver-profile-tables">
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th className="profile-tableth">Name</th>
+                                    <th className="profile-table-th-info">
+                                      {driver.driver}
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th className="profile-tableth">Email</th>
+                                    <th className="profile-table-th-info">
+                                      {driver.email}
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th className="profile-tableth">
+                                      Mobile Number
+                                    </th>
+                                    <th className="profile-table-th-info">
+                                      {driver.mobile}
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th className="profile-tableth">
+                                      Driver Id
+                                    </th>
+                                    <th className="profile-table-th-info">
+                                      {driver.id}
+                                    </th>
+                                  </tr>
+                                </thead>
+                              </table>
+                              <div className="request-btns">
+                                <button
+                                  className="accept-btn"
+                                  onClick={() => handleSubmit(driver)}
+                                >
+                                  Accept
+                                </button>
+                                <button className="reject-btn">Reject</button>
+                              </div>
+                              <div className="profile-hr-line"></div>
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                     </div>
                   )
               )}
             </div>
+            {/* <div className="not-fount">
+              <h3>Driver not found</h3>
+            </div> */}
           </div>
         </div>
       </div>
