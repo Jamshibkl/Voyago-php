@@ -17,10 +17,35 @@ function SignInUp() {
   const [licenseImg, setLicenseImg] = useState("");
   const [profileImg, setProfileImg] = useState("");
   const [location, setLocation] = useState("");
+  // const [usedLocations, SetUsedLocations] = useState("");
 
   const [message, setMessage] = useState("");
   const [msg, setMsg] = useState("");
+  const [error, setError] = useState("");
 
+  const DriverLocationInfo = async () => {
+    const formData = new FormData();
+    formData.append("location", location);
+
+
+    const responce = await axios.post(
+      "http://localhost/devtest/reactjs/location/locations.php",
+      formData,
+      {
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+
+    if (responce.data.success) {
+      setMessage(responce.data.success);
+      // setTimeout(() => {
+      //   navigate("/driver-login");
+      // }, 500);
+    }
+  };
+
+  
+ 
   const DriverVerifyInfo = async () => {
     const formData = new FormData();
     formData.append("driver", driver);
@@ -68,6 +93,7 @@ function SignInUp() {
     ) {
       if (pass1 === pass2) {
         await DriverVerifyInfo();
+        await DriverLocationInfo();
       } else {
         setMsg("password not match");
       }
@@ -306,12 +332,13 @@ function SignInUp() {
                   <i className="bi bi-eye"></i>
                 </div>
                 <div className="field input">
-                  <select
-                    className=""
+                  <input
+                    type="text"
+                    placeholder="Location"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   >
-                    <option value="">Select Location</option>
+                    {/* <option value="">Select Location</option>
                     <option value="bangalore">bangalore</option>
                     <option value="mysore">mysore</option>
                     <option value="mangalore">mangalore</option>
@@ -324,8 +351,8 @@ function SignInUp() {
                     <option value="shimoga">shimoga</option>
                     <option value="kochi">kochi</option>
                     <option value="kasaragod">kasaragod</option>
-                    <option value="bekal fort">bekal fort</option>
-                  </select>
+                    <option value="bekal fort">bekal fort</option> */}
+                  </input>
                   <i className="bi bi-eye"></i>
                 </div>
                 <div className="field button">

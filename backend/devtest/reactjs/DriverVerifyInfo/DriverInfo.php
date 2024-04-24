@@ -74,13 +74,22 @@ switch($method)
                 $profileImg_temp = $_FILES['profileImg']['tmp_name'];
 
                 $location = $_POST['location'];
+                
+                $rideStatus ="offline";
 
                 $destination1= $_SERVER['DOCUMENT_ROOT'].'/devtest/reactjs/DriverVerifyInfo/images/adhar'."/".$adharImg;
                 $destination2= $_SERVER['DOCUMENT_ROOT'].'/devtest/reactjs/DriverVerifyInfo/images/license'."/".$licenseImg;
                 $destination3= $_SERVER['DOCUMENT_ROOT'].'/devtest/reactjs/DriverVerifyInfo/images/Profile'."/".$profileImg;
 
-                $result= mysqli_query($db_conn,"INSERT INTO DriverVerifyInfo (driver, email, mobile, pass, adharId, adharImg, license, licenseImg, profileImg, location )
-                VALUES('$driver', '$email','$mobile', '$pass','$adharId','$adharImg','$license','$licenseImg','$profileImg','$location')");
+                $result= mysqli_query($db_conn,"INSERT INTO DriverVerifyInfo (driver, email, mobile, pass, adharId, adharImg, license, licenseImg, profileImg, location ,rideStatus)
+                VALUES('$driver', '$email','$mobile', '$pass','$adharId','$adharImg','$license','$licenseImg','$profileImg','$location','$rideStatus')");
+
+                $search= mysqli_query($db_conn,"SELECT * FROM locations WHERE location LIKE '%$location' ");
+
+                if($search ->num_rows==0){
+                  $result= mysqli_query($db_conn,"INSERT INTO locations (location )
+                  VALUES('$location')");
+                }
 
                 if($result){
                   move_uploaded_file($adharImg_temp,$destination1);
