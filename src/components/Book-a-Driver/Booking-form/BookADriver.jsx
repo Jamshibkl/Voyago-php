@@ -29,29 +29,9 @@ function BookADriver() {
   const [pickupTime, setPickupTime] = useState("");
   const [cabType, setCabType] = useState("");
   const [error, setError] = useState("");
-  const [msg, setMsg] = useState("");
-  const [location, setLocation] = useState("");
-  
+  const [msg, setMsg] = useState(""); 
 
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "http://localhost/devtest/reactjs/location/get_locations.php"
-  //       ); // Modified URL
-  //       setLocation(response.data);
-  //     } catch (error) {
-  //       // Handle errors gracefully, e.g., display an error message
-  //       // console.error("Error fetching customers:", error);
-  //       setError(error); // Store error for potential display
-  //     }
-  //   };
-  //   console.log(location);
-
-  //   fetchData();
-  // }, []);
 
   function checkLocation() {
     var url = "http://localhost/devtest/reactjs/location/locations.php";
@@ -82,41 +62,6 @@ function BookADriver() {
       setMsg("");
     }, 1000);
   }, [msg]);
-
- 
-
-  // const handleInputChange = (e, type) => {
-  //   switch (type) {
-  //     case "pickupLocation":
-  //     // case "dropoffLocation":
-  //       setError("");
-  //       // const isKarnatakaCity = location.includes(
-  //       //   e.target.value.toLowerCase()
-  //       // );
-  //       // if (!isKarnatakaCity) {
-  //       //   setError("Sorry service is not avable!");
-  //       // }
-  //       setPickupLocation(
-  //         type === "pickupLocation" ? e.target.value : pickupLocation
-  //       );
-  //       setDropoffLocation(
-  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
-  //       );
-  //       break;
-  //     default:
-  //       setError("");
-  //       setUsername(type === "username" ? name : name);
-  //       setPickupLocation(
-  //         type === "pickupLocation" ? e.target.value : pickupLocation
-  //       );
-  //       setDropoffLocation(
-  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
-  //       );
-  //       setPickupDate(type === "pickupDate" ? e.target.value : pickupDate);
-  //       setPickupTime(type === "pickupTime" ? e.target.value : pickupTime);
-  //       setCabType(type === "cabType" ? e.target.value : cabType);
-  //   }
-  // };
 
   function handleSubmit() {
     setUsername(name);
@@ -195,7 +140,6 @@ function BookADriver() {
               className=""
               placeholder="Enter Your User Name "
               value={username}
-              // onChange={(e) => handleInputChange(e, "username")}
               onChange={(e) => setUsername(username)}
             />
           </div>
@@ -206,23 +150,18 @@ function BookADriver() {
               className=""
               placeholder="Enter 4 letters to Search Your Pickup Location"
               value={pickupLocation}
-              // onChange={(e) => handleInputChange(e, "pickupLocation")}
               onChange={(e) => setPickupLocation(e.target.value)}
               onBlur={checkLocation}
             />
           </div>
           <div className="form-outline">
-            {/* <label className="form-label">Dropoff Location</label> */}
-            {/* <br /> */}
             <input
               type="number"
               name="dropoffLocation"
               className=""
               placeholder="Mobile number"
               value={dropoffLocation}
-              // onChange={(e) => handleInputChange(e, "dropoffLocation")}
               onChange={(e) => setDropoffLocation(e.target.value)}
-              // onBlur={checkEmail}
             />
           </div>
           <div className="bookig-date-time">
@@ -234,7 +173,6 @@ function BookADriver() {
                 name="pickupDate"
                 className=""
                 value={pickupDate}
-                // onChange={(e) => handleInputChange(e, "pickupDate")}
                 onChange={(e) => setPickupDate(e.target.value)}
               />
             </div>
@@ -246,7 +184,6 @@ function BookADriver() {
                 name="pickupTime"
                 className=""
                 value={pickupTime}
-                // onChange={(e) => handleInputChange(e, "pickupTime")}
                 onChange={(e) => setPickupTime(e.target.value)}
               />
             </div>
@@ -258,7 +195,6 @@ function BookADriver() {
               name="cabType"
               className=""
               value={cabType}
-              // onChange={(e) => handleInputChange(e, "cabType")}
               onChange={(e) => setCabType(e.target.value)}
             >
               <option value="">Select Cab Type</option>
@@ -268,7 +204,6 @@ function BookADriver() {
               <option value="Sedan">Sedan</option>
             </select>
           </div>
-          {/* <br /> */}
           <div className="">
             <input
               type="submit"
