@@ -43,7 +43,6 @@ function Transactions() {
                     <tr>
                       <th>ID</th>
                       <th>User Name</th>
-                      <th>Card Number</th>
                       {/* <th>Expiry Date</th>
                       <th>Cvv</th> */}
                       <th>Amount</th>
@@ -55,7 +54,6 @@ function Transactions() {
                       <tr className="user-data" key={index}>
                         <td>{payment.id}</td>
                         <td>{payment.userName}</td>
-                        <td>{payment.cardNumber}</td>
                         {/* <td>{payment.expiryDate}</td>
                         <td>{payment.cvv}</td> */}
                         <td>{payment.amount}</td>

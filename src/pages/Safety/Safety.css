@@ -14,11 +14,11 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 .info {
-    width: 800px;
-
+    width: 100%;
 }
 
 .info h1 {
@@ -27,7 +27,7 @@
     margin: 0;
     font-size: 40px;
     margin-bottom: 25px;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .info p {
@@ -56,17 +56,17 @@
 }
 
 .passengers {
-    margin: 50px 90px;
+    margin: 5% 5%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 
 .driverSafety {
-    margin-top: 50px;
+    margin-top: 5%;
     width: 100%;
-    margin: 100px 0;
 }
 
 .our-section2 h2 {
@@ -77,18 +77,19 @@
 }
 
 .passengers-section {
-    margin: 50px 90px 100px;
+    margin: 5% 5%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .safetys {
-    width: 330px;
-    height: 300px;
+    width: 30%;
+    height: auto;
     background-color: #f4f4f4;
-    margin-bottom: 40px;
+    border-radius: 5px;
+    padding: 20px;
 }
-
 
 .safetys h4 {
     color: var(--blue);
@@ -100,7 +101,6 @@
 }
 
 .safetys p {
-    width: 330px;
     padding: 10px 20px;
     margin: 0;
     line-height: 1.5;
@@ -109,9 +109,10 @@
 }
 
 .drivers-section {
-    margin: 50px 90px;
+    margin: 5% 5%;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 
@@ -122,12 +123,12 @@
 
 .safetyMeasures {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 5%;
 }
 
 .safetyMeasures h2 {
     margin: 0;
-    padding: 70px 0 0;
+    padding: 5% 0;
     font-size: 30px;
     text-align: center;
     color: black;
@@ -136,24 +137,26 @@
 
 .covid-information {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin: 80px 100px;
+    margin: 5% 5%;
+    flex-wrap: wrap;
 }
 
 .covid-img img {
-    width: 500px;
-    height: 320px;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
 }
 
 .covid-info {
-    width: 600px;
+    width: 45%;
 }
 
 .covid-info p {
     padding: 10px;
     margin: 0;
-    width: 550px;
+    width: 100%;
     font-size: 19px;
     line-height: 1.5;
     color: grey;
@@ -163,18 +166,20 @@
 
 
 .covid-safety {
-    margin: 150px 90px 50px;
+    margin: 5% 5%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .covid-safety-section {
-    width: 330px;
-    height: 280px;
+    width: 30%;
+    padding: 20px;
+    height: auto;
     background-color: #f4f4f4;
-    margin-bottom: 40px;
+   border-radius: 5px;
 }
-
 
 .covid-safety-section h4 {
     color: black;
@@ -186,7 +191,6 @@
 }
 
 .covid-safety-section p {
-    width: 330px;
     padding: 10px 15px;
     margin: 0;
     line-height: 1.5;
@@ -199,15 +203,15 @@
 
 
 .communitySafety {
-    margin: 150px 90px;
+    margin: 0 5%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .community-info {
-    width: 800px;
-
+    width: 45%;
 }
 
 .community-info .community-heading {
@@ -226,16 +230,9 @@
     line-height: 1.2;
     color: grey;
 }
-
-.community-img {
-    width: 500px;
-    height: 500px;
-    border-radius: 10px;
-    background-color: rgb(221, 221, 221);
-}
-
 .community-img .image {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     border-radius: 10px;
 }
 
@@ -243,14 +240,16 @@
 
 
 .safety-features {
-    margin: 150px 90px;
+    margin: 0 5%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .reporting-Features{
-    width: 500px;
+    width: auto;
+    margin: 15px 0;
 }
 
 .safety-features .feature-heading{
@@ -264,7 +263,7 @@
 .safety-features .feature-para{
     padding: 15px 10px 0 0;
     margin: 0;
-    width: 500px;
+    width: 100%;
     font-size: 20px;
     line-height: 1.2;
     color: grey;
@@ -275,7 +274,7 @@
 
 
 .contact-team{
-    margin: 150px 200px 70px;
+    margin: 0 5%;
 }
 
 .contact-team .contact-heading{
@@ -290,4 +289,74 @@
     margin: 0;
     font-size: 19px;
     color: rgb(87, 87, 87);
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .ourSafety {
+        margin: 5% 5%;
+        flex-wrap: wrap;
+        
+    }
+    .covid-safety-section {
+        height: auto;
+    }
+    .covid-info {
+        width: 100%;
+    }
+    .info {
+        width: 90%;
+    }
+    .info p{
+        margin: 20px 0;
+    }
+    .safety-img .image,
+    .community-img .image,
+    .covid-img img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .info {
+        width: 100%;
+    }
+    .safetys,
+    .covid-safety-section,
+    .community-info,
+    .reporting-Features {
+        width: 100%;
+        margin: 5% 0;
+    }
+    .safety-img .image,
+    .community-img .image,
+    .covid-img img {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .info h1 {
+        font-size: 30px;
+    }
+    .info p {
+        font-size: 20px;
+    }
+    .safetys h4,
+    .covid-safety-section h4,
+    .community-info .community-heading,
+    .safety-features .feature-heading,
+    .contact-team .contact-heading {
+        font-size: 18px;
+    }
+    .safetys p,
+    .covid-safety-section p,
+    .community-info .community-para,
+    .safety-features .feature-para,
+    .contact-team .team-para {
+        font-size: 16px;
+    }
+    .info {
+        margin: 5% 5%;
+    }
 }

@@ -174,3 +174,49 @@
     font-weight: 500;
     margin-top: 16px;
   }
+  /* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .review {
+    flex-direction: column; /* Change flex direction for smaller devices */
+    align-items: center; /* Center align items for smaller devices */
+    margin-top: 50px; /* Adjust margin-top for smaller devices */
+    padding: 0 20px; /* Adjust padding for smaller devices */
+  }
+
+  .review-2,
+  .review-5,
+  .review-8,
+  .review-11,
+  .review-14,
+  .review-17 {
+    width: 100%; /* Make reviews full width for smaller devices */
+    margin-bottom: 20px; /* Add some space between reviews for smaller devices */
+  }
+
+  .review_img {
+    width: 100px; /* Decrease image width for smaller devices */
+    height: 100px; /* Decrease image height for smaller devices */
+    margin-top: -20px; /* Adjust margin-top for smaller devices */
+  }
+
+  .review-3,
+  .review-6,
+  .review-9,
+  .review-12,
+  .review-15,
+  .review-18 {
+    margin-top: 10px; /* Adjust margin-top for smaller devices */
+    font-size: 14px; /* Decrease font size for smaller devices */
+  }
+
+  .review-4,
+  .review-7,
+  .review-10,
+  .review-13,
+  .review-16,
+  .review-19 {
+    font-size: 12px; /* Decrease font size for smaller devices */
+  }
+}

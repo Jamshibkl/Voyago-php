@@ -3,6 +3,7 @@ import "./DriverDashboard.css";
 import DriverSideBar from "../DriverSideBar/DriverSideBar";
 import ChartImg from "../../../Assets/pie-chart-example.svg";
 import DriverNavigate from "../../../Assets/dirver-dash.png";
+import driverBanner from '../../../Assets/driving-a-car-in-big-city-vector.jpg'
 import bannerImg from "../../../Assets/City driver-pana (1).svg";
 import NavBar from "../Driver-navbar/Navbar";
 import axios from "axios";
@@ -177,6 +178,8 @@ function DriverDashboard() {
 
         <div className="drive-dash-data">
           <NavBar />
+          {/* <img src={driverBanner} alt="" style={{backgroundSize:"cover",backgroundPosition:"center",width:"100%", height:"250px", padding:"0 50px"}}/> */}
+
           <div className="driver-dash-banner">
             <div>
               <h4>Want to be your own boss? Start today.</h4>
@@ -189,10 +192,10 @@ function DriverDashboard() {
             </div>
             <img src={bannerImg} alt="" />
           </div>
-
           <div className="driver-dash-ride">
             {driverInfo ? (
               <>
+                <div className="weeky-data">
                 <div className="weekly-ride">
                   <p>Total Rides</p>
                   <span>
@@ -208,6 +211,9 @@ function DriverDashboard() {
                   </span>
                   <h4>{(driverInfo.totalAmount / 100) * 90}</h4>
                 </div>
+                </div>
+                <br />
+                <div className="weeky-data">
                 <div className="weekly-ride">
                   <p>Total Hour</p>
                   <span>
@@ -216,7 +222,7 @@ function DriverDashboard() {
                   <h4>{driverInfo.totalHours}</h4>
                 </div>
                 <div className="weekly-ride" onClick={findARide}>
-                  <h4>Find A Ride</h4>
+                  <h4>Set Your Status</h4>
                   {
                     <div onClick={findARide}>
                       <input id="checkbox" type="checkbox" />
@@ -239,13 +245,14 @@ function DriverDashboard() {
                     </div>
                   }
                 </div>
+                </div>
               </>
             ) : (
               <p></p>
             )}
           </div>
-        </div>
-        <div className="driver-bar-chart">
+          
+          {/* <div className="driver-bar-chart">
           <h4>Driver Stats</h4>
           <div className="chart-container">
             <canvas id="barChart"></canvas>
@@ -260,8 +267,12 @@ function DriverDashboard() {
           <div className="chart-container">
             <canvas id="lineChart"></canvas>
           </div>
-        </div>
+        </div> */}
       </div>
+      
+        </div>
+        
+        
       {/* <div className="driver-feedback-section">
         <h3> User Feedbacks</h3>
         <table>

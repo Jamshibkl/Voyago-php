@@ -7,12 +7,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 800px;
+  width: auto;
   margin: 10px 22px;
 }
 
 .drive-dash-data .driver-dash-banner {
-  width: 750px;
+  width: auto;
   height: 150px;
   padding: 20px;
   background: rgba(135, 207, 235, 0.447);
@@ -82,7 +82,10 @@
   display: flex;
   border-radius: 10px;
 }
-
+.driver-dashboard-section .charts {
+  display: flex;
+  justify-content: space-evenly;
+}
 .driver-feedback-section {
   padding: 20px;
   height: 240px;
@@ -103,7 +106,6 @@
   margin: 0;
   padding: 15px;
   text-align: center;
-
 }
 
 .driver-feedback-section::-webkit-scrollbar {
@@ -113,22 +115,16 @@
 .driver-feedback-section table {
   width: 100%;
   height: auto;
-
 }
 
 .driver-feedback-section table tr td {
   background: rgb(242, 242, 242);
-
-
-
 }
 
 .driver-feedback-section table tr {
   border-radius: 5px;
   padding: 5px;
   border: 1px solid #ccc;
-
-
 }
 
 .driver-pai-chart img {
@@ -137,16 +133,18 @@
   position: relative;
   right: 60px;
 }
-
 .driver-dash-ride {
   display: flex;
-  justify-content: space-evenly;
-  gap: 20px;
+  flex-direction: column;
 }
-
+.drive-dash-data .weeky-data {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 80px;
+}
 .drive-dash-data .weekly-ride {
-  width: 150px;
-  height: 150px;
+  width: 500px;
+  height: 180px;
   background: #ffffff;
   border-radius: 10px;
   align-items: center;
@@ -209,7 +207,6 @@
   box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
 }
 
-
 .switch2 {
   position: relative;
   width: 70px;
@@ -219,10 +216,8 @@
   z-index: 1;
   cursor: pointer;
   box-shadow: 0px 0px 1px rgb(151, 243, 255) inset,
-    0px 0px 2px rgb(151, 243, 255) inset,
-    0px 0px 10px rgb(151, 243, 255) inset,
-    0px 0px 40px rgb(151, 243, 255),
-    0px 0px 100px rgb(151, 243, 255),
+    0px 0px 2px rgb(151, 243, 255) inset, 0px 0px 10px rgb(151, 243, 255) inset,
+    0px 0px 40px rgb(151, 243, 255), 0px 0px 100px rgb(151, 243, 255),
     0px 0px 5px rgb(151, 243, 255);
   border: 2px solid rgb(255, 255, 255);
   background-color: rgb(146, 180, 184);
@@ -236,12 +231,11 @@
   fill: rgb(48, 48, 48);
 }
 
-
-#checkbox:checked+.switch svg {
+#checkbox:checked + .switch svg {
   filter: drop-shadow(0px 0px 5px rgb(151, 243, 255));
 }
 
-#checkbox:checked+.switch svg path {
+#checkbox:checked + .switch svg path {
   fill: rgb(255, 255, 255);
 }
 
@@ -260,7 +254,6 @@
   display: none;
 }
 
-
 .offline .status {
   display: block;
   color: red;
@@ -268,4 +261,78 @@
 
 .online .status2 {
   display: block;
+}
+/* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .drive-dash-data .driver-dash-ride {
+    width: 90%;
+    margin: 10px auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .drive-dash-data .driver-dash-banner {
+    width: auto;
+    margin: 20px auto;
+    flex-direction: column;
+    height: auto;
+    margin: 20px;
+  }
+  .drive-dash-data .weeky-data {
+    flex-direction: column;
+    width: 100%;
+  }
+  .drive-dash-data .driver-dash-banner p {
+    width: 100%;
+  }
+  .driver-bar-chart,
+  .driver-pai-chart,
+  .driver-line-chart,
+  .driver-feedback-section {
+    width: 90%;
+    margin: 20px auto;
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+  }
+
+  .driver-pai-chart img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    position: static;
+    right: auto;
+  }
+
+  .driver-dash-ride {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .drive-dash-data .weekly-ride {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .switch,
+  .switch2 {
+    width: 50px;
+    height: 50px;
+  }
+
+  .switch svg {
+    width: 1em;
+  }
+
+  .reviwes {
+    height: auto;
+  }
+
+  .status,
+  .status2 {
+    display: block;
+  }
 }

@@ -60,7 +60,11 @@ function LoadingPage() {
     DriverVerifyInfo(driver);
     localStorage.setItem("randomNum", randomNum);
   };
-
+  const handleReject = async (driver) => {
+    if (window.confirm("Are you sure you want to reject this driver?")) {
+      navigate('/book-a-driver');
+    }
+  };
   return (
     <div className="main-loading">
       <div className="fixed-section">
@@ -127,7 +131,9 @@ function LoadingPage() {
                                 >
                                   Accept
                                 </button>
-                                <button className="reject-btn">Reject</button>
+                                <button className="reject-btn"
+                                onClick={() => handleReject(driver)}
+                                >Reject</button>
                               </div>
                               <div className="profile-hr-line"></div>
                             </div>

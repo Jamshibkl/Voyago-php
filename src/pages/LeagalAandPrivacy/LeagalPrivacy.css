@@ -36,3 +36,44 @@
     font-size: 24px;
     padding-top: 12px;
 }
+/* Responsive Page CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 992px) {
+    .inner-container {
+      padding: 20px;
+    }
+    .inner-container h1 {
+      font-size: 28px;
+    }
+    .inner-container .para {
+      font-size: 16px;
+    }
+    .sec-heading {
+      font-size: 24px;
+    }
+    .therd-heading {
+      font-size: 20px;
+    }
+  }
+  
+  /* For mobile devices */
+  @media screen and (max-width: 576px) {
+    .inner-container {
+      margin: 10px;
+      padding: 10px;
+    }
+    .inner-container h1 {
+      font-size: 24px;
+    }
+    .inner-container .para {
+      font-size: 14px;
+    }
+    .sec-heading {
+      font-size: 20px;
+    }
+    .therd-heading {
+      font-size: 18px;
+    }
+  }
+  

@@ -1,106 +1,121 @@
 .driver-notification-section {
-    display: flex;
-    background: #e7f2fd;
+  display: flex;
+  background: #e7f2fd;
 }
-.driver-notification-section .driver-notification h1{
-    padding: 30px 0px;
-    font-size: 40px;
-    font-weight: bold;
-    color: var(--blue);
+.driver-notification-section .driver-notification h1 {
+  padding: 30px 0px;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--blue);
 }
 .driver-notification-section .driver-notification .booking-info-form {
-    width: 900px;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
+  width: 900px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .driver-notification-section .driver-notification form label {
-    font-weight: 600;
-    margin-bottom:10px; 
-    color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--blue);
 }
 .driver-notification-section .driver-notification form {
-    margin: 0px 100px;
+  margin: 0px 100px;
 }
 .driver-notification-section .driver-notification form label span {
-    color: black;
+  color: black;
 }
 
 .driver-notification-section .driver-notification form .horizontal-line {
-    width: 80%;
-    height: 1px;
-    background: black;
-    margin: 10px 20px; 
+  width: 80%;
+  height: 1px;
+  background: black;
+  margin: 10px 20px;
 }
-.driver-notification .booking-details{
-    height: 550px;
-    overflow: hidden;
-    /* overflow-x: hidden; */
-    overflow-y: scroll;
+.driver-notification .booking-details {
+  height: 550px;
+  overflow: hidden;
+  /* overflow-x: hidden; */
+  overflow-y: scroll;
 }
-.driver-notification .booking-details::-webkit-scrollbar{
-    width: 20px;
+.driver-notification .booking-details::-webkit-scrollbar {
+  width: 20px;
 }
-/* 
-.driver-notification .booking-conform{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-.driver-notification-section .driver-notification form .confirm
- {
-    width: 100px;
-    height: 45px;
-    padding: 0px;
-    background: var(--blue);
-    border-radius: 20px;
-    border: none;
-    color: #ffffff;
-    font-size: 20px;
-    margin-left: auto; 
-    margin-right: 10px;
-    /* margin-top: -100px;  */
+
+.driver-notification-section .driver-notification form .confirm {
+  width: 100px;
+  height: 45px;
+  padding: 0px;
+  background: var(--blue);
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: 10px;
+  /* margin-top: -100px;  */
 }
-.driver-notification-section .driver-notification form .confirm-btn
- {
-    width: 100px;
-    height: 45px;
-    padding: 0px;
-    background: rgb(17, 213, 20);
-    border-radius: 20px;
-    border: none;
-    color: #ffffff;
-    font-size: 20px;
-    margin-left: 0; 
-    margin-right: 10px;
-    /* margin-top: -100px;  */
+.driver-notification-section .driver-notification form .confirm-btn {
+  width: 100px;
+  height: 45px;
+  padding: 0px;
+  background: rgb(17, 213, 20);
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  font-size: 20px;
+  margin-left: 0;
+  margin-right: 10px;
+  /* margin-top: -100px;  */
 }
 .driver-notification-section .driver-notification form .cancel {
-    width: 100px;
-    height: 45px;
-    background: rgba(255, 0, 0, 0.642);
-    font-size: 20px;
-    border-radius: 20px;
-    border: none;
-    color: #ffffff;
-    margin-left: 10px; 
+  width: 100px;
+  height: 45px;
+  background: rgba(255, 0, 0, 0.642);
+  font-size: 20px;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  margin-left: 10px;
 }
 
-.conform-false{
-    display: none;
+.conform-false {
+  display: none;
 }
 
-.conform-OTP{
+.conform-OTP {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .driver-notification-section .driver-notification .booking-info-form {
+    width: 100%;
+  }
+  .driver-notification .booking-details {
+    height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  .driver-notification {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 20px;
+  }
+  .driver-notification-section .driver-notification form {
+    margin: 0;
+  }
+  .driver-notification-section .driver-notification form .confirm,
+  .driver-notification-section .driver-notification form .confirm-btn,
+  .driver-notification-section .driver-notification form .cancel {
+    width: 90px;
+    height: 40px;
+    font-size: 16px;
+  }
 }
-
-/* .finishRide{
-    display: none;
-} */

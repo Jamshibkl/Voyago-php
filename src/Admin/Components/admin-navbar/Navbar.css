@@ -1,23 +1,18 @@
+/* CSS for Desktop View */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.admin-logo{
-    width: 1164px;
+.admin-logo {
+    width: 100%; /* Full width for desktop */
+    max-width: 1164px; /* Limit width to 1164px */
     height: 64px;
-    background-color:#264a99;
+    background-color: #264a99;
     display: flex;
     justify-content: end;
     align-items: center;
-    padding:  0 50px;
-
+    padding: 0 50px;
 }
 
-.social-logo{
+.social-logo,
+.social-profile {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -25,19 +20,31 @@
     margin: 0 10px;
 }
 
-.social-profile{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: antiquewhite;
-    margin: 0 10px;
-}
 .admin-nav button {
-    padding: 10px;
+    padding: 10px 20px; /* Add more horizontal padding */
     color: var(--blue);
     background: #ffffff;
     border-radius: 10px;
     border: none;
     font-weight: bold;
-  }
-  
+}
+
+/* CSS for Mobile and Tablet View */
+
+@media screen and (max-width: 992px) {
+    .admin-logo {
+        height: auto; 
+        padding: 10px; 
+        justify-content: center; 
+    }
+
+    .social-logo,
+    .social-profile {
+        margin: 0 5px; 
+    }
+
+    .admin-nav button {
+        padding: 8px 16px; 
+        font-size: 14px; 
+    }
+}

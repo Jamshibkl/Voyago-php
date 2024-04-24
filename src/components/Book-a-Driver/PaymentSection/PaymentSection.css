@@ -111,10 +111,76 @@ body {
   color: #ffffff;
   border: 2px solid #444bf7;
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 10px;
   box-shadow: 0px 16px 24px -2px #407cff9f;
 }
 .payment-bro {
   width: 500px;
   height: 500px;
+}
+/* Responsive CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .payment-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-details {
+    width: 90%;
+    padding: 20px;
+  }
+  .payment-feedback h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .payment-section form {
+    width: 90%;
+  }
+
+  .driver-info-container {
+    width: 90%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .driver-info-profile img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .feedback-submit {
+    margin: 10px 150px;
+    
+  }
+}
+
+/* For larger devices */
+@media screen and (min-width: 1024px) {
+  .payment-section {
+    justify-content: center;
+  }
+
+  .payment-details {
+    width: 50%;
+    padding: 50px;
+  }
+
+  .payment-section form {
+    width: 100%;
+  }
+
+  .driver-info-container {
+    width: 100%;
+    height: 250px;
+    margin-top: 0;
+  }
+
+  .driver-info-profile img {
+    max-width: 180px;
+    max-height: 180px;
+  }
 }

@@ -29,7 +29,12 @@ function BookADriver() {
   const [pickupTime, setPickupTime] = useState("");
   const [cabType, setCabType] = useState("");
   const [error, setError] = useState("");
+<<<<<<< HEAD
   const [msg, setMsg] = useState(""); 
+=======
+  const [msg, setMsg] = useState("");
+  const [location, setLocation] = useState("");
+>>>>>>> cbc274aa8cde29fba1d1f61d5016339effb54197
 
   const navigate = useNavigate();
 
@@ -63,7 +68,50 @@ function BookADriver() {
     }, 1000);
   }, [msg]);
 
+<<<<<<< HEAD
+=======
+  // const handleInputChange = (e, type) => {
+  //   switch (type) {
+  //     case "pickupLocation":
+  //     // case "dropoffLocation":
+  //       setError("");
+  //       // const isKarnatakaCity = location.includes(
+  //       //   e.target.value.toLowerCase()
+  //       // );
+  //       // if (!isKarnatakaCity) {
+  //       //   setError("Sorry service is not avable!");
+  //       // }
+  //       setPickupLocation(
+  //         type === "pickupLocation" ? e.target.value : pickupLocation
+  //       );
+  //       setDropoffLocation(
+  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
+  //       );
+  //       break;
+  //     default:
+  //       setError("");
+  //       setUsername(type === "username" ? name : name);
+  //       setPickupLocation(
+  //         type === "pickupLocation" ? e.target.value : pickupLocation
+  //       );
+  //       setDropoffLocation(
+  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
+  //       );
+  //       setPickupDate(type === "pickupDate" ? e.target.value : pickupDate);
+  //       setPickupTime(type === "pickupTime" ? e.target.value : pickupTime);
+  //       setCabType(type === "cabType" ? e.target.value : cabType);
+  //   }
+  // };
+
+>>>>>>> cbc274aa8cde29fba1d1f61d5016339effb54197
   function handleSubmit() {
+    const currentDate = new Date();
+    const selectedDate = new Date(pickupDate + "T" + pickupTime);
+
+    if (selectedDate < currentDate) {
+      setError("Please select a future date and time.");
+      return;
+    }
     setUsername(name);
     if (
       username !== "" &&
@@ -195,8 +243,13 @@ function BookADriver() {
               name="cabType"
               className=""
               value={cabType}
+<<<<<<< HEAD
               onChange={(e) => setCabType(e.target.value)}
             >
+=======
+              // onChange={(e) => handleInputChange(e, "cabType")}
+              onChange={(e) => setCabType(e.target.value)}>
+>>>>>>> cbc274aa8cde29fba1d1f61d5016339effb54197
               <option value="">Select Cab Type</option>
               <option value="Luxury">Luxury</option>
               <option value="SUV">SUV</option>

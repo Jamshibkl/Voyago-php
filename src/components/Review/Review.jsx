@@ -69,8 +69,8 @@ function Review() {
             efficient scheduling options make it stand out. It's been a reliable
             companion for my daily travels.&quot;
           </div>
-        </div>{" "}
-        <div className="review-17">
+        </div>
+        {/* <div className="review-17">
           <img
             loading="lazy"
             srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/ff8d7a1fb6ad6252bcd4bb596078b417117bf4edd5a0036027d6ab42cf84a443?apiKey=b5f3e675c69d443bb59ae6ade7d87645&"
@@ -83,7 +83,7 @@ function Review() {
             time-saver, and the drivers are always friendly. Voyago has become
             an integral part of my daily routine.&quot;
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

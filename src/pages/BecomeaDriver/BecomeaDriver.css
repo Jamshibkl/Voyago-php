@@ -213,11 +213,84 @@
 }
 
 .driver-shedules p{
-    width: 250px;
+    width: 100;
     box-sizing: border-box;
     font-size: 14px;
     padding: 10px;
     margin: 0;
     text-align: left;
     color: gray;
+}
+/* Responsive CSS */
+
+/* For smaller devices */
+
+@media screen and (max-width: 768px) {
+    .driver-navbar {
+        padding: 0 20px; /* Adjust padding for smaller devices */
+    }
+
+    .driver-navbar .driver-navbar-left .nav-brand {
+        font-size: 20px; /* Decrease font size for smaller devices */
+    }
+
+    .driver-navbar .driver-navbar-right .nav-btn {
+        width: 120px; /* Adjust button width for smaller devices */
+        height: 40px; /* Adjust button height for smaller devices */
+        font-size: 12px; /* Decrease font size for smaller devices */
+    }
+
+    .driver-header .driver-title {
+        width: auto; /* Remove fixed width for smaller devices */
+        padding: 10px 20px; /* Adjust padding for smaller devices */
+    }
+
+    .driver-header .driver-title h2 {
+        font-size: 30px; /* Decrease font size for smaller devices */
+    }
+
+    .driver-header .driver-title h5 {
+        font-size: 16px; /* Decrease font size for smaller devices */
+    }
+
+    .driver-header .driver-cover-pic img {
+        height: auto; /* Make image responsive for smaller devices */
+        border-radius: 5px; /* Decrease border radius for smaller devices */
+    }
+
+    .become-a-driver .sing-up-in {
+        flex-direction: column; /* Change flex direction for smaller devices */
+        align-items: center; /* Center align items for smaller devices */
+        margin: 20px 0; /* Adjust margin for smaller devices */
+    }
+
+    .driver-sing-up-in {
+        width: 80%; /* Adjust width for smaller devices */
+    }
+
+    .driver-contents-section {
+        padding: 0 20px; /* Adjust padding for smaller devices */
+    }
+
+    .driver-contents-section h3 {
+        font-size: 20px; /* Decrease font size for smaller devices */
+        text-align: center;
+    }
+
+    .become-a-section .driver-shedules {
+        width: 100%; /* Make section full width for smaller devices */
+        height: auto; /* Make section height auto for smaller devices */
+        margin-bottom: 20px; /* Add margin bottom for smaller devices */
+    }
+    .driver-contents-section .become-a-section {
+        flex-direction: column;
+    }
+    .become-a-driver .driver-header {
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 450px) { 
+    .driver-header .driver-cover-pic img {
+       width: 100%;
+    }
 }

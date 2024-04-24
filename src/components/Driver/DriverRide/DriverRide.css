@@ -1,54 +1,99 @@
 .Driver-ride-section {
-    display: flex;
-    background: #e7f2fd;
+  display: flex;
+  background: #e7f2fd;
 }
 
 .Driver-ride-section .ride-information {
-    padding: 50px;
-    width: 80%;
+  padding: 50px;
+  width: 80%;
 }
 
 .Driver-ride-section .current-ride h2 {
-    color: var(--blue);
-    font-size: 40px;
-    font-weight: bold;
-    padding: 20px;
+  color: var(--blue);
+  font-size: 40px;
+  font-weight: bold;
+  padding: 20px;
 }
-
+.Driver-ride-section .current-ride table {
+  border-collapse: collapse;
+}
 .Driver-ride-section .current-ride table tr th {
-    margin: 50px;
-    padding: 16px;
-    font-weight: bolder;
-    border: 1px solid rgb(0, 0, 0);
-
+  margin: 50px;
+  padding: 16px;
+  font-weight: bolder;
+  border: 1px solid rgb(0, 0, 0);
 }
-
 
 .Driver-ride-section .current-ride td {
-    padding: 14px;
-    background: rgb(239, 238, 238);
-    font-weight: 500;
-    margin: 10px;
-    border: 1px solid rgb(0, 0, 0);
-
+  padding: 14px;
+  background: #f2f2f2;
+  font-weight: 500;
+  margin: 10px;
+  border: 1px solid rgb(0, 0, 0);
 }
 
-.Driver-ride-section .current-ride table tr:nth-child(2) {
-    background-color: rgb(238, 238, 238);
-    /* Set your desired background color */
-    border-radius: 20px;
-    /* Set your desired border radius */
-    margin: 20px;
-
+.Driver-ride-section .current-ride table tr:nth-of-type(even) {
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  /* Set your desired border radius */
+  margin: 20px;
 }
 
 .Driver-ride-section .current-ride table tr td:nth-child(5) {
-    color: var(--blue);
-    font-weight: bold;
+  color: var(--blue);
+  font-weight: bold;
 }
 
 .Driver-ride-section .current-ride table tr td:nth-child(4) {
-    color: var(--blue);
-    font-weight: bold;
+  color: var(--blue);
+  font-weight: bold;
+}
+/* Responsive CSS */
+@media screen and (max-width: 768px) {
+  .Driver-ride-section .ride-information {
+    padding: 20px;
+    width: 100%;
+  }
 
+  .Driver-ride-section .current-ride h2 {
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .Driver-ride-section .current-ride table tr th,
+  .Driver-ride-section .current-ride td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .Driver-ride-section .current-ride table tr:nth-child(2) {
+    margin: 10px 0;
+  }
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
 }

@@ -23,7 +23,6 @@ body {
     0 10px 10px -5px rgba(0, 0, 0, 0.336);
   border-radius: 20px;
   width: 400px;
-
 }
 .booikg-container .register-container-heading {
   padding: 8px 0px;
@@ -51,19 +50,20 @@ body {
   margin: 0;
 }
 
-.form-username{
+.form-username {
   height: 65.44px;
   display: none;
 }
-.form-picup{
+.form-picup {
   height: 65.44px;
 }
 
-.form-outline{
+.form-outline {
   height: 65.44px;
 }
 
-.user-booking .booikg-container input[type="text"],[type="number"] {
+.user-booking .booikg-container input[type="text"],
+[type="number"] {
   width: 100%;
   padding: 10px 0 10px 12px;
   border: 1px solid black;
@@ -80,7 +80,7 @@ body {
   /* background: rgb(238, 238, 238); */
   border-radius: 8px;
 }
-.user-booking .booikg-container .form-cabtype  {
+.user-booking .booikg-container .form-cabtype {
   width: 100%;
   height: 60px;
   margin-bottom: 10px;
@@ -89,7 +89,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.user-booking .booikg-container select  {
+.user-booking .booikg-container select {
   width: 100%;
   padding: 10px 0 10px 12px;
   border-radius: 8px;
@@ -123,6 +123,60 @@ body {
   height: 90px;
 }
 
-.form-picup-info{
+.form-picup-info {
   height: 33px;
+}
+/* Responsive Page CSS */
+
+/* For smaller devices */
+/* Responsive Page CSS */
+
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .user-booking {
+    flex-direction: column;
+    margin-left: 0;
+    padding: 10px;
+    align-items: center;
+  }
+  .booikg-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .booikg-container .bookig-date-time {
+    height: auto;
+  }
+  .booikg-container .booking-img img {
+    width: 100%;
+    height: auto;
+  }
+  .user-booking .valid-msg {
+    padding: 5px 0;
+    text-align: center;
+  }
+  .user-booking .booikg-container input[type="date"],
+  .user-booking .booikg-container input[type="time"] {
+    width: 100%;
+  }
+  .user-booking .booikg-container .form-cabtype {
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .user-booking .booikg-container .bookig-date-time {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .user-booking .booikg-container input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .booikg-container .form-check {
+    padding: 10px;
+  }
+  .form-picup-info {
+    height: auto;
+  }
+  .user-booking .booikg-container select {
+    margin: 10px 0px;
+  }
 }

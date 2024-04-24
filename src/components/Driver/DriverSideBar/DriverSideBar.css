@@ -115,3 +115,46 @@
   border: none;
   font-weight: bold;
 }
+.Driver-SideBar {
+  width: 20%;
+  height: 100vh;
+  background-color: var(--blue);
+  border-right: 2px solid var(--blue);
+  border-top: 10px;
+  transition: width 0.3s;
+}
+
+.Driver-SideBar.open {
+  width: 100%;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.toggle-button span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  background: var(--blue);
+}
+
+@media screen and (max-width: 768px) {
+  .Driver-SideBar {
+    width: 0;
+  }
+  
+  .Driver-SideBar.open {
+    width: 100%;
+  }
+
+  .toggle-button {
+    display: block;
+  }
+}

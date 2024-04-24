@@ -202,3 +202,57 @@ input[type="file"]::-webkit-file-upload-button {
     border-radius: 10px;
     font-weight: 500;
   }
+  @media screen and (max-width: 768px) {
+    .driver-signup-fom {
+        margin: 20px;
+    }
+
+    .wrapper {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .form {
+        padding: 20px;
+    }
+
+    .form header {
+        font-size: 20px;
+    }
+
+    .form form .field input {
+        font-size: 14px;
+    }
+
+    .form form .button input {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .users {
+        padding: 20px;
+    }
+
+    .users header .content img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .users header .details span {
+        font-size: 16px;
+    }
+
+    .loginsection {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .login-section-left,
+    .login-section-right {
+        width: 100%;
+    }
+
+    .login-section-right input[type="file"]::-webkit-file-upload-button {
+        width: 100%;
+    }
+}

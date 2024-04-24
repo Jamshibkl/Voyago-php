@@ -146,3 +146,35 @@
     align-items:center ;
 
 }
+/* CSS for Desktop View */
+.admin-SideBar {
+    width: 250px; 
+}
+
+@media screen and (max-width: 768px) {
+    .admin-SideBar {
+        width: 100%; 
+        max-width: 250px; 
+    }
+
+    .admin-brand h3 {
+        font-size: 16px; 
+    }
+
+    .dashboard-options {
+        height: auto; 
+        max-height: calc(100vh - 80px); 
+        overflow-y: auto; 
+    }
+
+    .dashboard-options .dashboard-head,
+    .dashboard-options .dashboard-items,
+    .dashboard-options .dashboard-span {
+        width: 100%; 
+        max-width: none; 
+    }
+
+    .dashboard-options .dashboard-items h5 {
+        font-size: 14px; 
+    }
+}

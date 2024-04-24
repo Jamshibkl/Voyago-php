@@ -55,7 +55,7 @@ function Drivers() {
                 <p>Error fetching drivers: {error.message}</p>
               ) : (
                 drivers.length > 0 && (
-                  <table>
+                  <table >
                     <thead>
                       <tr>
                         <th>ID</th>

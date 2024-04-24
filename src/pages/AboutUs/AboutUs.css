@@ -1,8 +1,14 @@
+:root {
+    --blue: #407bff;
+    --white: #ffffff;
+}
+
 body {
     margin: 0;
     padding: 0;
 }
 
+/* General Styles */
 .Banner-img {
     width: 100%;
     margin: 20px;
@@ -13,171 +19,240 @@ body {
 }
 
 .aboutUs {
-    margin: auto 60px;
+    margin: auto 5%;
 }
 
 .aboutUs .heading {
-    margin: 70px 30px 40px;
-    font-size: 45px;
-    margin-bottom: 20px;
+    margin: 5% 0;
+    font-size: 30px;
+    margin-bottom: 2%;
     color: black;
 }
 
 .aboutUs .about-Para {
-    margin: 10px 45px 40px;
-    width: 1200px !important;
+    margin: 2% 0 5%;
+    width: 100%;
     font-size: 20px;
     font-weight: 400;
     color: grey;
-    margin-bottom: 20px;
-    width: 80%;
 }
 
 .aboutUs h4 {
-    margin-left: 30px;
-    margin-bottom: 10px;
+    margin: 2% 0;
     color: rgb(0, 153, 255);
 }
 
 .ourStory hr {
-    margin: 10px 30px 50px 30px;
+    margin: 2% 0 5%;
 }
 
 .content {
     display: flex;
-    margin: 70px 30px;
-    /* height: 476px; */
-    /* background-color: blue; */
-    justify-content: space-evenly;
+    margin: 5% 0;
+    justify-content: space-around;
     align-items: center;
-    padding:  20px 0;
+    flex-wrap: wrap;
+    padding: 2%;
 }
 
 .content .content-Container {
-    width: 550px;
+    width: 45%;
     background-color: #F4F4F4;
     border-radius: 15px;
+    margin-bottom: 5%;
 }
 
-/* .driver {
-    height: 433.84px;
-} */
-
-/* .content {
-    margin: 50px;
-} */
-
 .content .content-Image img {
-    width: 500px;
+    width: 100%;
     border-radius: 5px;
 }
 
 .content .content-Container .content-para {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
-    padding: 20px 30px;
+    padding: 2%;
     line-height: 1.3;
-    width: 100%;
 }
 
 .content .content-Container h2 {
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
-    padding: 15px;
+    padding: 2%;
     margin: 0;
     color: var(--blue);
     font-weight: bold;
 }
 
-.driver{
+.driver {
     width: 100%;
-    height: 433.84px;
+    height: auto;
 }
 
 .driver-img {
     width: 100%;
 }
 
-
 .driver-content {
     display: flex;
-    height: 433.84px;
-    padding: 0 100px;
-    position: relative;
-    top: -437px;
-    justify-content: space-between;
+    /* flex-wrap: wrap; */
+    padding: 0 20px;
+    justify-content: space-around;
     align-items: center;
     color: white;
+    margin-top: -250px;
 }
 
-.join-Us {
-    width: 420px;
-    height: 149px;
-
-}
-
+.join-Us,
 .skilled-driver {
-    width: 445px;
-    height: 227px;
+    width: 100%;
+    max-width: 450px;
+    margin: 20px;
 }
 
-.join-Us-h3{
-    font-size: 1.4rem;
-}
-
+.join-Us-h3,
 .skilled_driver_h3 {
-    font-size: 1.3rem;
+    font-size: 24px;
     margin-left: 20px;
 }
 
 .skilled_driver_para {
-    font-size: 18px;
-    width: 400px;
+    font-size: 16px;
     margin-left: 25px;
 }
 
-
-
 .commitment-container {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 5%;
 }
 
 .commitment {
-    margin: 30px 60px;
+    margin: 2% 5%;
     background-color: #F4F4F4;
-    border-radius: 25px;
-
+    border-radius: 10px;
 }
 
 .commitment h1 {
-    padding: 20px 65px;
+    padding: 2% 5%;
     font-weight: bold;
     color: var(--blue);
-    margin-left: 6px;
-    font-size: 37px;
     margin: 0;
+    font-size: 24px;
 }
 
 .info-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
 }
 
 .commitment-info {
-    width: 600px;
+    width: 45%;
+    margin-bottom: 5%;
 }
 
 .commitment-info p {
-    font-size: 18px;
+    font-size: 20px;
     color: hsl(0deg 1.15% 51.4% / 85%);
     line-height: 1.5;
-    width: 600px;
-    margin-left: 10px;
+    margin-left: 2%;
 }
 
 .commitment-img {
-    height: 450px;
-    width: 450px;
+    width: 45%;
+    height: auto;
 }
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .aboutUs .about-Para {
+        font-size: 16px;
+    }
+    .commitment-info {
+        width: 100%;
+        padding: 20px;
+    }
+    .commitment {
+        margin: 6% 5%;
+    }
+
+}
+@media screen and (max-width: 768px) {
+    .aboutUs .heading {
+        font-size: 24px;
+    }
+  
+    .aboutUs .about-Para {
+        font-size: 14px;
+    }
+  
+    .content .content-Container {
+        width: 90%;
+    }
+  
+    .content .content-Image img {
+        width: 100%;
+    }
+  
+    .content .content-Container .content-para {
+        font-size: 14px;
+    }
+  
+    .content .content-Container h2 {
+        font-size: 20px;
+    }
+    .driver-content {
+        margin-top: -150px;
+    }
+    .join-Us,
+    .skilled-driver {
+        width: 90%;
+    }
+  
+    .join-Us-h3 {
+        font-size: 8px;
+        margin: auto;
+    }
+  
+    .skilled_driver_h3 {
+        font-size: 8px;
+        margin: auto;
+    }
+  
+    .skilled_driver_para {
+        font-size: 8px;
+        margin: auto;
+    }
+    .commitment h1 {
+        font-size: 20px;
+        padding: 2% 5%;
+    }
+  
+    .commitment-info p {
+        font-size: 14px;
+    }
+    
+}
+
+@media screen and (max-width: 450px) {
+    .driver-content {
+        margin-top: -100px;
+    }
+    
+    .join-Us-h3 {
+        font-size: 6px;
+        margin: 0;
+    }
+  
+    .skilled_driver_h3 {
+        font-size: 6px;
+        margin: 0;
+    }
+  
+    .skilled_driver_para {
+        font-size: 6px;
+        margin: 0;
+    }
+}
+
+/* Add more media queries for other screen sizes as needed */

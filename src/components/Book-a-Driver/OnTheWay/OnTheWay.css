@@ -60,32 +60,33 @@
 }
 
 
-.rides-customers-info .edit-btn {
-  height: 45px;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  /* width: 120px; */
-}
+/* Responsive CSS */
 
-.rides-customers-info .edit-btn button {
-  margin: 3.5px 0;
-  width: 100px;
-  height: 37px;
-  border-radius: 50px;
-  font-weight: bold;
-  border: none;
-}
+/* For smaller devices */
+@media screen and (max-width: 768px) {
+  .rides-customers {
+      margin: 20px; 
+      width: 100%; 
+  }
 
-.rides-customers-info .edit-btn button:hover {
-  font-size: large;
-}
+  .rides-customers h2 {
+      font-size: 24px; 
+      padding: 5px 0; 
+  }
 
-.rides-customers .delete-btn {
-  background-color: rgb(202, 30, 3);
-  color: white;
-}
-.rides-customers .confirm-btn{
-  background-color: yellow;
-  color: black;
+  .rides-table {
+      height: auto; 
+      max-height: 300px; 
+      margin-top: 10px; 
+  }
+
+  .rides-table table {
+      padding: 20px; 
+  }
+
+  .rides-customers-info table td,
+  .rides-customers-info table th {
+      height: 35px; 
+      font-size: 14px; 
+  }
 }

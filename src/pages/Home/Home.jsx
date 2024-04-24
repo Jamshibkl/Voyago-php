@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 import CarAnimate from "../../Assets/Car driving-rafiki (2).svg";
@@ -12,6 +12,7 @@ import "./Home.css";
 
 function Home() {
   const navigate = useNavigate(); // Utilize useNavigate hook
+  const [isAnimated, setIsAnimated] = useState(false);
 
   const handleBookClick = () => {
     const isLoggedIn = localStorage.getItem("login");
@@ -20,6 +21,7 @@ function Home() {
     } else {
       navigate("/login"); // Redirect to login page if not logged in
     }
+    setIsAnimated(true);
   };
   function logoutSubmit() {
     localStorage.setItem("login", "");
@@ -160,7 +162,9 @@ function Home() {
             your doorstep, we make owning a car a pleasure.
           </p>
           {/* <NavLink to="/book-a-driver"> */}
-          <button className="main_btn" onClick={handleBookClick}>
+          <button  
+          className={`main_btn ${isAnimated ? "animate" : ""}`}
+           onClick={handleBookClick}>
             Book a Driver
           </button>
           {/* </NavLink> */}

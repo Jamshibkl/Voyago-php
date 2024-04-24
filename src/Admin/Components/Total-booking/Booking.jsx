@@ -38,7 +38,7 @@ function Booking() {
                 <p>Error fetching bookings: {error.message}</p>
               ) : (
                 bookings.length > 0 && (
-                  <table>
+                  <table >
                     <thead>
                       <tr>
                         <th>ID</th>

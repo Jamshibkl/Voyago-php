@@ -51,7 +51,7 @@ function OnTheWay() {
       <NavBar />
       <div className="rides-customers-info">
         <div className="rides-customers">
-          <div className="rides-table">
+          <div className="rides-table" style={{overflowX:"auto"}}>
             <h2>Ride History</h2>
             {error ? (
               <p>Error fetching bookings: {error.message}</p>
@@ -59,7 +59,7 @@ function OnTheWay() {
               bookings.length > 0 && (
                 <div>
                   {bookings.length !== 0 ? (
-                    <table>
+                    <table id="customers" style={{overflowX:"auto"}}>
                       <thead>
                         <tr>
                           {/* <th>ID</th> */}
@@ -69,8 +69,6 @@ function OnTheWay() {
                           <th>DriverName</th>
                           <th>tolatHour</th>
                           <th>totalCharge</th>
-                
-               
                         </tr>
                       </thead>
                       <tbody>
@@ -85,16 +83,6 @@ function OnTheWay() {
                                 <td>{booking.driverName}</td>
                                 <td>{booking.tolatHour}</td>
                                 <td>{booking.totalCharge}</td>
-                                <td>
-                                  {/* <div className="edit-btn">
-                                    <button className="confirm-btn">
-                                      Pending
-                                    </button>
-                                    <button className="delete-btn">
-                                      Cancel
-                                    </button>
-                                  </div> */}
-                                </td>
                               </>
                             )}
                           </tr>
