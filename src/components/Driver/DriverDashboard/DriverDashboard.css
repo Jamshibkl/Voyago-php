@@ -106,7 +106,6 @@
   margin: 0;
   padding: 15px;
   text-align: center;
-
 }
 
 .driver-feedback-section::-webkit-scrollbar {
@@ -116,22 +115,16 @@
 .driver-feedback-section table {
   width: 100%;
   height: auto;
-
 }
 
 .driver-feedback-section table tr td {
   background: rgb(242, 242, 242);
-
-
-
 }
 
 .driver-feedback-section table tr {
   border-radius: 5px;
   padding: 5px;
   border: 1px solid #ccc;
-
-
 }
 
 .driver-pai-chart img {
@@ -214,7 +207,6 @@
   box-shadow: 0px 0px 3px rgb(2, 2, 2) inset;
 }
 
-
 .switch2 {
   position: relative;
   width: 70px;
@@ -224,10 +216,8 @@
   z-index: 1;
   cursor: pointer;
   box-shadow: 0px 0px 1px rgb(151, 243, 255) inset,
-    0px 0px 2px rgb(151, 243, 255) inset,
-    0px 0px 10px rgb(151, 243, 255) inset,
-    0px 0px 40px rgb(151, 243, 255),
-    0px 0px 100px rgb(151, 243, 255),
+    0px 0px 2px rgb(151, 243, 255) inset, 0px 0px 10px rgb(151, 243, 255) inset,
+    0px 0px 40px rgb(151, 243, 255), 0px 0px 100px rgb(151, 243, 255),
     0px 0px 5px rgb(151, 243, 255);
   border: 2px solid rgb(255, 255, 255);
   background-color: rgb(146, 180, 184);
@@ -241,12 +231,11 @@
   fill: rgb(48, 48, 48);
 }
 
-
-#checkbox:checked+.switch svg {
+#checkbox:checked + .switch svg {
   filter: drop-shadow(0px 0px 5px rgb(151, 243, 255));
 }
 
-#checkbox:checked+.switch svg path {
+#checkbox:checked + .switch svg path {
   fill: rgb(255, 255, 255);
 }
 
@@ -265,7 +254,6 @@
   display: none;
 }
 
-
 .offline .status {
   display: block;
   color: red;
@@ -278,75 +266,73 @@
 
 /* For smaller devices */
 @media screen and (max-width: 768px) {
-
   .drive-dash-data .driver-dash-ride {
-    width: 90%; /* Adjust width for smaller devices */
-    margin: 10px auto; /* Center-align the component for smaller devices */
-    flex-direction: column; /* Change flex-direction to column for smaller devices */
-    align-items: center; /* Center-align the items for smaller devices */
+    width: 90%;
+    margin: 10px auto;
+    flex-direction: column;
+    align-items: center;
   }
 
   .drive-dash-data .driver-dash-banner {
-    width: auto; /* Adjust width for smaller devices */
+    width: auto;
     margin: 20px auto;
     flex-direction: column;
     height: auto;
-    margin: 10px;
+    margin: 20px;
   }
   .drive-dash-data .weeky-data {
     flex-direction: column;
     width: 100%;
   }
- .drive-dash-data .driver-dash-banner p {
+  .drive-dash-data .driver-dash-banner p {
     width: 100%;
   }
   .driver-bar-chart,
   .driver-pai-chart,
   .driver-line-chart,
   .driver-feedback-section {
-    width: 90%; /* Adjust width for smaller devices */
-    margin: 20px auto; /* Center-align the component for smaller devices */
-    position: static; /* Remove absolute positioning for smaller devices */
-    left: auto; /* Reset left positioning for smaller devices */
-    right: auto; /* Reset right positioning for smaller devices */
-    top: auto; /* Reset top positioning for smaller devices */
+    width: 90%;
+    margin: 20px auto;
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
   }
 
   .driver-pai-chart img {
-    width: 100%; /* Adjust width for smaller devices */
-    height: auto; /* Reset height for smaller devices */
-    margin: 0; /* Reset margin for smaller devices */
-    position: static; /* Remove absolute positioning for smaller devices */
-    right: auto; /* Reset right positioning for smaller devices */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    position: static;
+    right: auto;
   }
 
   .driver-dash-ride {
-    flex-direction: column; /* Change flex-direction to column for smaller devices */
-    gap: 10px; /* Reduce gap between items for smaller devices */
+    flex-direction: column;
+    gap: 10px;
   }
 
   .drive-dash-data .weekly-ride {
-    width: 90%; /* Adjust width for smaller devices */
-    margin: 10px auto; /* Center-align the component for smaller devices */
+    width: 90%;
+    margin: 10px auto;
   }
 
   .switch,
   .switch2 {
-    width: 50px; /* Adjust width for smaller devices */
-    height: 50px; /* Adjust height for smaller devices */
+    width: 50px;
+    height: 50px;
   }
 
   .switch svg {
-    width: 1em; /* Adjust width for smaller devices */
+    width: 1em;
   }
 
   .reviwes {
-    height: auto; /* Reset height for smaller devices */
+    height: auto;
   }
 
   .status,
   .status2 {
-    display: block; /* Show status indicators for smaller devices */
+    display: block;
   }
-
 }

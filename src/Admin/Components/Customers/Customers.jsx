@@ -51,7 +51,7 @@ function Customers() {
                 <p>Error fetching customers: {error.message}</p>
               ) : (
                 customers.length > 0 && (
-                  <table>
+                  <table >
                     <thead>
                       <tr>
                         <th>ID</th>

@@ -4,7 +4,7 @@ import NavBar from "../../NavBar/NavBar";
 import PaymentSucsessIcon from "../../../Assets/payment-sucssesfull.png";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function PaymentSection() {
   const { transactionId, driverId, amount, user } = useParams();
   const [driver, setDriver] = useState(null);
@@ -148,6 +148,14 @@ function PaymentSection() {
             type="submit">
             Submit
           </button>
+          <Link to='/'>
+          <button
+            className="feedback-submit"
+           
+            type="submit">
+            Back to Home
+          </button>
+          </Link>
         </div>
       </div>
     </>

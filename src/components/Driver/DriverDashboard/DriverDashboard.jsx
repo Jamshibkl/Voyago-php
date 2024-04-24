@@ -222,7 +222,7 @@ function DriverDashboard() {
                   <h4>{driverInfo.totalHours}</h4>
                 </div>
                 <div className="weekly-ride" onClick={findARide}>
-                  <h4>Find A Ride</h4>
+                  <h4>Set Your Status</h4>
                   {
                     <div onClick={findARide}>
                       <input id="checkbox" type="checkbox" />

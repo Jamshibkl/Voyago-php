@@ -20,12 +20,11 @@ function DriverSideBar() {
     localStorage.setItem("loginStatus", "Logged out successfully!");
     navigate("/driver-login");
   }
-
   const driveremail = localStorage.getItem("email");
 
   return (
     <div className={`Driver-SideBar ${isOpen ? 'open' : ''}`}>
-      <div className={`Driver-brand ${isOpen ? 'open' : ''}`}>
+      <div className="Driver-brand">
         <h3>VOYAGO</h3>
         <div className="toggle-button" onClick={() => setIsOpen(!isOpen)}>
         <span></span>

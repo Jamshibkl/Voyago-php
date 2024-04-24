@@ -27,9 +27,11 @@ function DriverRide() {
     <div className="Driver-ride-section">
       <DriverSideBar />
       <div className="ride-information">
+      
         <div className="current-ride">
-          <h2>Ride History</h2>
-          <table>
+        <h2>Ride History</h2>
+        <div style={{overflowX:"auto"}}>
+          <table id="customers">
             <thead>
               <tr>
                 <th>from</th>
@@ -55,6 +57,7 @@ function DriverRide() {
               ))}
             </tbody>
           </table>
+        </div>
         </div>
       </div>
     </div>

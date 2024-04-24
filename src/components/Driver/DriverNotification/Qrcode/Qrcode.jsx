@@ -2,6 +2,7 @@ import React from "react";
 import "./Qrcode.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import DriverSideBar from "../../DriverSideBar/DriverSideBar";
 import QRCode from "qrcode.react";
 import axios from "axios";
 
@@ -134,7 +135,10 @@ function Qrcode() {
   return (
     <>
       {rideTime ? (
+      <div style={{display:"flex"}}>
+        <DriverSideBar />
         <div className="qrcode-section">
+          
           <div className="driverInfo">
             <h5>
               <p>
@@ -166,6 +170,7 @@ function Qrcode() {
             Done
           </button>
         </div>
+        </div>
       ) : (
         <div className="qrcode-section">
           <div className="loader-container">
@@ -175,7 +180,9 @@ function Qrcode() {
         </div>
       )}
     </>
+    
   );
+ 
 }
 
 export default Qrcode;
