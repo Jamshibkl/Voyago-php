@@ -139,11 +139,11 @@ function AdminLogin() {
                   style={{ background: "#407BFF" }}
                 />
               </div>
-              <div className="link">
+              {/* <div className="link">
               <Link to="/forgot-password"><p>forgot password?</p></Link>
               <br />
-              {/* Create a new account? <Link to="/sign-in">Sign-up</Link> */}
-            </div>
+              Create a new account? <Link to="/sign-in">Sign-up</Link>
+            </div> */}
             </div>
            
           </section>

@@ -78,19 +78,7 @@ function SignInUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (mobile.length !== 10 || isNaN(mobile)) {
-      setMsg("Mobile number must be 10 digits.");
-      return;
-    }
-    if (adharId.length !== 12 || isNaN(adharId)) {
-      setMsg("Adhar number must be 12 digits.");
-      return;
-    }
-    if (license.length !== 12 || isNaN(license)) {
-      setMsg("License number must be 16 digits.");
-      return;
-    }
-    
+   
     if (
       driver !== "" &&
       email !== "" &&
@@ -104,6 +92,19 @@ function SignInUp() {
       profileImg !== "" &&
       location !== ""
     ) {
+      // if (mobile.length !== 10 || isNaN(mobile)) {
+      //   setMsg("Mobile number must be 10 digits.");
+      //   return;
+      // }
+      // if (adharId.length !== 12 || isNaN(adharId)) {
+      //   setMsg("Adhar number must be 12 digits.");
+      //   return;
+      // }
+      // if (license.length !== 12 || isNaN(license)) {
+      //   setMsg("License number must be 16 digits.");
+      //   return;
+      // }
+      
       
       if (pass1 === pass2) {
         await DriverVerifyInfo();
@@ -111,6 +112,7 @@ function SignInUp() {
       } else {
         setMsg("password not match");
       }
+      
     } else {
       setMsg("All fields are required!");
     }
@@ -197,27 +199,6 @@ function SignInUp() {
     }
   }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (name.length === 0) {
-  //     alert("name blank");
-  //   } else if (email.length === 0) {
-  //     alert("email blank");
-  //   } else if (password.length === 0) {
-  //     alert("pass blank");
-  //   } else {
-  //     const url = "http://localhost/page/log-in.php";
-  //     let fData = new FormData();
-  //     fData.append("name", name);
-  //     fData.append("email", email);
-  //     fData.append("password", password);
-  //     fData.append("password", password2);
-  //     axios
-  //       .post(url, fData)
-  //       .then((Response) => alert(Response.data))
-  //       .catch((error) => alert(error));
-  //   }
-  // };
 
   return (
     <div className="driver-signup-fom">
@@ -353,20 +334,7 @@ function SignInUp() {
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                   >
-                    {/* <option value="">Select Location</option>
-                    <option value="bangalore">bangalore</option>
-                    <option value="mysore">mysore</option>
-                    <option value="mangalore">mangalore</option>
-                    <option value="gulbarga">gulbarga</option>
-                    <option value="belgaum">belgaum</option>
-                    <option value="bijapur">bijapur</option>
-                    <option value="hubli">hubli</option>
-                    <option value="udupi">udupi</option>
-                    <option value="dharwad">dharwad</option>
-                    <option value="shimoga">shimoga</option>
-                    <option value="kochi">kochi</option>
-                    <option value="kasaragod">kasaragod</option>
-                    <option value="bekal fort">bekal fort</option> */}
+                   
                   </input>
                   <i className="bi bi-eye"></i>
                 </div>
