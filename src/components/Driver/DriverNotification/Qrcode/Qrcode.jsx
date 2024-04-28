@@ -126,6 +126,13 @@ function Qrcode() {
     const RandomOTP = null;
     localStorage.setItem("RandomOTP", RandomOTP);
     localStorage.setItem("tranId", Trid);
+    localStorage.setItem("StartOtp", "");
+    localStorage.setItem("FinishCode", "");
+    localStorage.setItem("accept", "");
+    localStorage.setItem("loaded", "");
+    localStorage.setItem("rideTime", "");
+    localStorage.setItem("driver_id", "");
+
     if (user) {
       DriverVerifyInfo();
       navigate(-1);

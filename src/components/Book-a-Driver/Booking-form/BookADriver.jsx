@@ -29,12 +29,9 @@ function BookADriver() {
   const [pickupTime, setPickupTime] = useState("");
   const [cabType, setCabType] = useState("");
   const [error, setError] = useState("");
-<<<<<<< HEAD
-  const [msg, setMsg] = useState(""); 
-=======
   const [msg, setMsg] = useState("");
   const [location, setLocation] = useState("");
->>>>>>> cbc274aa8cde29fba1d1f61d5016339effb54197
+  
 
   const navigate = useNavigate();
 
@@ -68,8 +65,8 @@ function BookADriver() {
     }, 1000);
   }, [msg]);
 
-<<<<<<< HEAD
-=======
+ 
+
   // const handleInputChange = (e, type) => {
   //   switch (type) {
   //     case "pickupLocation":
@@ -103,15 +100,7 @@ function BookADriver() {
   //   }
   // };
 
->>>>>>> cbc274aa8cde29fba1d1f61d5016339effb54197
   function handleSubmit() {
-    const currentDate = new Date();
-    const selectedDate = new Date(pickupDate + "T" + pickupTime);
-
-    if (selectedDate < currentDate) {
-      setError("Please select a future date and time.");
-      return;
-    }
     setUsername(name);
     if (
       username !== "" &&
@@ -188,6 +177,7 @@ function BookADriver() {
               className=""
               placeholder="Enter Your User Name "
               value={username}
+              // onChange={(e) => handleInputChange(e, "username")}
               onChange={(e) => setUsername(username)}
             />
           </div>
@@ -198,18 +188,23 @@ function BookADriver() {
               className=""
               placeholder="Enter 4 letters to Search Your Pickup Location"
               value={pickupLocation}
+              // onChange={(e) => handleInputChange(e, "pickupLocation")}
               onChange={(e) => setPickupLocation(e.target.value)}
               onBlur={checkLocation}
             />
           </div>
           <div className="form-outline">
+            {/* <label className="form-label">Dropoff Location</label> */}
+            {/* <br /> */}
             <input
               type="number"
               name="dropoffLocation"
               className=""
               placeholder="Mobile number"
               value={dropoffLocation}
+              // onChange={(e) => handleInputChange(e, "dropoffLocation")}
               onChange={(e) => setDropoffLocation(e.target.value)}
+              // onBlur={checkEmail}
             />
           </div>
           <div className="bookig-date-time">
@@ -221,6 +216,7 @@ function BookADriver() {
                 name="pickupDate"
                 className=""
                 value={pickupDate}
+                // onChange={(e) => handleInputChange(e, "pickupDate")}
                 onChange={(e) => setPickupDate(e.target.value)}
               />
             </div>
@@ -232,6 +228,7 @@ function BookADriver() {
                 name="pickupTime"
                 className=""
                 value={pickupTime}
+                // onChange={(e) => handleInputChange(e, "pickupTime")}
                 onChange={(e) => setPickupTime(e.target.value)}
               />
             </div>
@@ -243,13 +240,9 @@ function BookADriver() {
               name="cabType"
               className=""
               value={cabType}
-<<<<<<< HEAD
+              // onChange={(e) => handleInputChange(e, "cabType")}
               onChange={(e) => setCabType(e.target.value)}
             >
-=======
-              // onChange={(e) => handleInputChange(e, "cabType")}
-              onChange={(e) => setCabType(e.target.value)}>
->>>>>>> cbc274aa8cde29fba1d1f61d5016339effb54197
               <option value="">Select Cab Type</option>
               <option value="Luxury">Luxury</option>
               <option value="SUV">SUV</option>
@@ -257,6 +250,7 @@ function BookADriver() {
               <option value="Sedan">Sedan</option>
             </select>
           </div>
+          {/* <br /> */}
           <div className="">
             <input
               type="submit"

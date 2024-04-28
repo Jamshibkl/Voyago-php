@@ -10,7 +10,7 @@ if (mysqli_connect_error()) {
     exit();
 }
 
-$sql = "SELECT id, userName, cardNumber, expiryDate, cvv, transactionId, amount FROM transaction";
+$sql = "SELECT id, userName, transactionId, amount FROM transaction";
 $result = mysqli_query($conn, $sql);
 
 if ($result && mysqli_num_rows($result) > 0) {
