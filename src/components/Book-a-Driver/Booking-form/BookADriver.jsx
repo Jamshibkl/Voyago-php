@@ -172,7 +172,7 @@ function BookADriver() {
       setPickupTime("");
       setCabType("");
     } else {
-      setError("All fields are required!");
+      // setError("All fields are required!");
     }
   }
 
