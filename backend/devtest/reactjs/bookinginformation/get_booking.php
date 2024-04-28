@@ -10,7 +10,7 @@ if (mysqli_connect_error()) {
     exit();
 }
 
-$sql = "SELECT * FROM driververifyinfo";
+$sql = "SELECT id,driverId, driverName, driverEmail, driverMobile, randomNum FROM bookingInfo";
 $result = mysqli_query($conn, $sql);
 
 if ($result && mysqli_num_rows($result) > 0) {
