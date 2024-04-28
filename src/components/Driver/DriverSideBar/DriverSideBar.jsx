@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./DriverSideBar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import {
   faBell,
   faCar,
   faRightFromBracket,
-  faMoneyCheckDollar
+  faMoneyCheckDollar,
 } from "@fortawesome/free-solid-svg-icons";
 
 function DriverSideBar() {
@@ -17,22 +17,22 @@ function DriverSideBar() {
 
   function logoutSubmit() {
     localStorage.setItem("driver-login", "");
-    localStorage.setItem("loginStatus", "Logged out successfully!");
+    // localStorage.setItem("loginStatus", "Logged out successfully!");
     navigate("/driver-login");
   }
   const driveremail = localStorage.getItem("email");
 
   return (
-    <div className={`Driver-SideBar ${isOpen ? 'open' : ''}`}>
+    <div className={`Driver-SideBar ${isOpen ? "open" : ""}`}>
       <div className="Driver-brand">
         <h3>VOYAGO</h3>
         <div className="toggle-button" onClick={() => setIsOpen(!isOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      </div>
-      
+
       <div className="Driver-dashboard-section">
         <div className="Driver-dashboard-options">
           <h4 style={{ fontSize: "15px" }}>{driveremail}</h4>

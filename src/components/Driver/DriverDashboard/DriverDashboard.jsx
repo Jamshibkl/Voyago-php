@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./DriverDashboard.css";
 import DriverSideBar from "../DriverSideBar/DriverSideBar";
-import ChartImg from "../../../Assets/pie-chart-example.svg";
-import DriverNavigate from "../../../Assets/dirver-dash.png";
-import driverBanner from '../../../Assets/driving-a-car-in-big-city-vector.jpg'
 import bannerImg from "../../../Assets/City driver-pana (1).svg";
 import NavBar from "../Driver-navbar/Navbar";
 import axios from "axios";
 import Chart from "chart.js/auto";
-import DriverFeedback from "./DriverFeedback"; // Import DriverFeedback component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCar,

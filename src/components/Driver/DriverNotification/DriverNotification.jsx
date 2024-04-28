@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./DriverNotification.css";
 import axios from "axios";
 import DriverSideBar from "../DriverSideBar/DriverSideBar";
-import { faDisplay } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
 function DriverNotification() {
@@ -17,7 +16,11 @@ function DriverNotification() {
   const pickupTime = localStorage.getItem("pickupTime");
   const pickupDate = localStorage.getItem("pickupDate");
   const randomNum = localStorage.getItem("randomNum");
+  const driver_id = localStorage.getItem("driver_id");
+  const driveremail = localStorage.getItem("driveremail");
   const mobile = localStorage.getItem("mobile");
+
+  console.log(driver_id);
 
   const cancel = "Cancel";
   const accept = "Accept";
@@ -100,7 +103,7 @@ function DriverNotification() {
             <div className="booking-details">
               {bookings.map((bookings, index) => (
                 <form action="" key={index}>
-                  {bookings.randomNum === randomNum && (
+                  {bookings.id === driver_id && bookings.email ===driveremail &&  (
                     <div className="booking-info-form">
                       <>
                         <label htmlFor="">

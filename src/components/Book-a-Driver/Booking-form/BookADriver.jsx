@@ -31,26 +31,9 @@ function BookADriver() {
   const [error, setError] = useState("");
   const [msg, setMsg] = useState("");
   const [location, setLocation] = useState("");
+  
 
   const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "http://localhost/devtest/reactjs/location/get_locations.php"
-  //       ); // Modified URL
-  //       setLocation(response.data);
-  //     } catch (error) {
-  //       // Handle errors gracefully, e.g., display an error message
-  //       // console.error("Error fetching customers:", error);
-  //       setError(error); // Store error for potential display
-  //     }
-  //   };
-  //   console.log(location);
-
-  //   fetchData();
-  // }, []);
 
   function checkLocation() {
     var url = "http://localhost/devtest/reactjs/location/locations.php";
@@ -81,6 +64,8 @@ function BookADriver() {
       setMsg("");
     }, 1000);
   }, [msg]);
+
+ 
 
   // const handleInputChange = (e, type) => {
   //   switch (type) {
@@ -116,13 +101,6 @@ function BookADriver() {
   // };
 
   function handleSubmit() {
-    const currentDate = new Date();
-    const selectedDate = new Date(pickupDate + "T" + pickupTime);
-
-    if (selectedDate < currentDate) {
-      setError("Please select a future date and time.");
-      return;
-    }
     setUsername(name);
     if (
       username !== "" &&
@@ -263,7 +241,8 @@ function BookADriver() {
               className=""
               value={cabType}
               // onChange={(e) => handleInputChange(e, "cabType")}
-              onChange={(e) => setCabType(e.target.value)}>
+              onChange={(e) => setCabType(e.target.value)}
+            >
               <option value="">Select Cab Type</option>
               <option value="Luxury">Luxury</option>
               <option value="SUV">SUV</option>

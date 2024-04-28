@@ -68,6 +68,7 @@ function Dashboard() {
         data.forEach((item) => {
           totalAmount += parseInt(item.amount);
           setTotalAmount(totalAmount);
+          console.log(totalAmount);
         });
       } catch (error) {
         console.log(error);

@@ -1,16 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Chekout.css";
-import { Link, useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import {
-  faUser,
-  faCreditCard,
-  faCalendarDays,
-  faLock,
-  faIndianRupeeSign,
-} from "@fortawesome/free-solid-svg-icons";
+
 
 function Chekout() {
   const navigate = useNavigate();
@@ -29,6 +21,8 @@ function Chekout() {
 
   const handleSubmit = async () => {
     navigate(`/payment-section/${tranId}/${driverId}/${amount}/${user}`)
+    localStorage.setItem("tranId", "");
+
   };
   return (
     <div>

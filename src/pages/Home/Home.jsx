@@ -25,7 +25,7 @@ function Home() {
   };
   function logoutSubmit() {
     localStorage.setItem("login", "");
-    localStorage.setItem("loginStatus", "Logged out successfully!");
+    // localStorage.setItem("loginStatus", "Logged out successfully!");
     navigate("/login");
   }
 

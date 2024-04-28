@@ -59,6 +59,7 @@ function LoadingPage() {
   const handleSubmit = async (driver) => {
     DriverVerifyInfo(driver);
     localStorage.setItem("randomNum", randomNum);
+    localStorage.setItem("driver_id", driver.id);
   };
   const handleReject = async (driver) => {
     if (window.confirm("Are you sure you want to reject this driver?")) {
