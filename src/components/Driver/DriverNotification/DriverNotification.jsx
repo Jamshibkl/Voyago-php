@@ -103,7 +103,7 @@ function DriverNotification() {
             <div className="booking-details">
               {bookings.map((bookings, index) => (
                 <form action="" key={index}>
-                  {bookings.id === driver_id && bookings.email ===driveremail &&  (
+                  {bookings.randomNum === randomNum && (
                     <div className="booking-info-form">
                       <>
                         <label htmlFor="">
