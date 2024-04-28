@@ -5,21 +5,7 @@ import axios from "axios";
 // import { Link } from "react-router-dom";
 import "./BookADriver.css";
 import { useNavigate } from "react-router-dom";
-const karnatakaCities = [
-  "bangalore",
-  "mysore",
-  "mangalore",
-  "hubli",
-  "gulbarga",
-  "belgaum",
-  "bijapur",
-  "shimoga",
-  "udupi",
-  "dharwad",
-  "kochi",
-  "kasaragod",
-  "bekal fort",
-];
+
 function BookADriver() {
   const name = localStorage.getItem("user");
   const [username, setUsername] = useState("");
@@ -67,40 +53,19 @@ function BookADriver() {
 
  
 
-  // const handleInputChange = (e, type) => {
-  //   switch (type) {
-  //     case "pickupLocation":
-  //     // case "dropoffLocation":
-  //       setError("");
-  //       // const isKarnatakaCity = location.includes(
-  //       //   e.target.value.toLowerCase()
-  //       // );
-  //       // if (!isKarnatakaCity) {
-  //       //   setError("Sorry service is not avable!");
-  //       // }
-  //       setPickupLocation(
-  //         type === "pickupLocation" ? e.target.value : pickupLocation
-  //       );
-  //       setDropoffLocation(
-  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
-  //       );
-  //       break;
-  //     default:
-  //       setError("");
-  //       setUsername(type === "username" ? name : name);
-  //       setPickupLocation(
-  //         type === "pickupLocation" ? e.target.value : pickupLocation
-  //       );
-  //       setDropoffLocation(
-  //         type === "dropoffLocation" ? e.target.value : dropoffLocation
-  //       );
-  //       setPickupDate(type === "pickupDate" ? e.target.value : pickupDate);
-  //       setPickupTime(type === "pickupTime" ? e.target.value : pickupTime);
-  //       setCabType(type === "cabType" ? e.target.value : cabType);
-  //   }
-  // };
 
   function handleSubmit() {
+    const currentDate = new Date();
+    const selectedDate = new Date(pickupDate + "T" + pickupTime);
+
+    if (selectedDate < currentDate) {
+      setError("Please select a future date and time.");
+      return;
+    }
+    if (dropoffLocation.length !== 10 || isNaN(dropoffLocation)) {
+      setError("Mobile number must be 10 digits.");
+      return;
+    }
     setUsername(name);
     if (
       username !== "" &&

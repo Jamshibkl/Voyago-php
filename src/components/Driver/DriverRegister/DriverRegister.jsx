@@ -78,18 +78,18 @@ function SignInUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // if (mobile.length !== 10 || isNaN(mobile)) {
-    //   setMsg("Mobile number must be 10 digits.");
-    //   return;
-    // }
-    // if (adharId.length !== 12 || isNaN(adharId)) {
-    //   setMsg("Adhar number must be 12 digits.");
-    //   return;
-    // }
-    // if (license.length !== 12 || isNaN(license)) {
-    //   setMsg("License number must be 16 digits.");
-    //   return;
-    // }
+    if (mobile.length !== 10 || isNaN(mobile)) {
+      setMsg("Mobile number must be 10 digits.");
+      return;
+    }
+    if (adharId.length !== 12 || isNaN(adharId)) {
+      setMsg("Adhar number must be 12 digits.");
+      return;
+    }
+    if (license.length !== 12 || isNaN(license)) {
+      setMsg("License number must be 16 digits.");
+      return;
+    }
     
     if (
       driver !== "" &&
