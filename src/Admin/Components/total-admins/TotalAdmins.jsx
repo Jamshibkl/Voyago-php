@@ -75,9 +75,9 @@ function TotalAdmins() {
                           <td>{admins.created_at}</td>
                           <td>
                             <div className="edit-btn">
-                              <button className="edit-btn">
+                              {/* <button className="edit-btn">
                                Edit
-                              </button>
+                              </button> */}
                               <button className="delete-btn" onClick={() => handleDelete(admins.id)}>
                                 Delete
                               </button>

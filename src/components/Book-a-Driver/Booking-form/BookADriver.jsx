@@ -56,7 +56,7 @@ function BookADriver() {
 
   function handleSubmit() {
     const currentDate = new Date();
-    const selectedDate = new Date(pickupDate + "T" + pickupTime);
+    const selectedDate = new Date(pickupDate);
 
     if (selectedDate < currentDate) {
       setError("Please select a future date and time.");
@@ -162,7 +162,7 @@ function BookADriver() {
             {/* <label className="form-label">Dropoff Location</label> */}
             {/* <br /> */}
             <input
-              type="number"
+              type="text"
               name="dropoffLocation"
               className=""
               placeholder="Mobile number"
@@ -189,7 +189,7 @@ function BookADriver() {
               <label className="form-label">Pickup Time</label>
               <br />
               <input
-                type="time"
+                type="text"
                 name="pickupTime"
                 className=""
                 value={pickupTime}

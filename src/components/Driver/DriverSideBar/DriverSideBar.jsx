@@ -17,7 +17,7 @@ function DriverSideBar() {
 
   function logoutSubmit() {
     localStorage.setItem("driver-login", "");
-    localStorage.setItem("loginStatusDriver", "Logged out successfully!");
+    localStorage.setItem("loginStatus", "Logged out successfully!");
     navigate("/driver-login");
   }
   const driveremail = localStorage.getItem("email");
